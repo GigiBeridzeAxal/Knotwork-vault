@@ -26,4 +26,4 @@ Gigi asked on 2026-11-09 for a fully working sign-in without any email sending: 
 - Deploys need two Worker secrets (`MONGODB_URI`, `AUTH_PEPPER`) and `npm run db:setup`. See [[Deploy Knotwork]].
 - The free Worker allows about 10 ms of CPU per request, so password hashing uses fewer rounds than usual (the pepper makes up for it), and the CPU per request still has to be measured before deploying.
 
-Related: [[Knotwork]], [[MongoDB Atlas]], [[ADR-0003 Knotwork runs on the Cloudflare free plan]]
+Related: [[Knotwork]], [[MongoDB Atlas]], [[ADR-0003 Knotwork runs on the Cloudflare free plan]], [[ADR-0009 Knotwork keeps one database connection in a Durable Object]] (replaces "one connection per request")

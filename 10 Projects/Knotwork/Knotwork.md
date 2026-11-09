@@ -6,22 +6,25 @@ updated: 2026-11-09
 tags: [project, cloudflare, portfolio]
 repo: https://github.com/GigiBeridzeAxal/knotwork
 url: https://knotwork.gigiberidze.com
-stack: [Cloudflare Workers, Hono, MongoDB Atlas, Cron Triggers, React, Tailwind, Vite]
+stack: [Cloudflare Workers, Durable Objects, Hono, MongoDB Atlas, Cron Triggers, React, Tailwind, Vite]
 ---
 # Knotwork
 
 A workflow automation engine (a small n8n), and Gigi's first portfolio project for the Work section of [[gigiberidze.com]]. Tagline: *Workflows that hold.*
 
 ## Status
-Live and public at https://knotwork.gigiberidze.com since 2026-11-07. v1 merged to `main` as PR #1 (squash `478d8009`, 2026-11-08). The ink and lime landing page at `/` and the app at `/workflows` were deployed 2026-11-08 (version `90721a08`, still live).
+Live and public at https://knotwork.gigiberidze.com since 2026-11-07. **With accounts since 2026-11-09 19:36 UTC** (version `b4f019c1`, from PR #3 at `304c751`). Sign-in is at `/login` and `/signup`.
 
-**Accounts and workspaces (2026-11-09):** [PR #3](https://github.com/GigiBeridzeAxal/knotwork/pull/3) adds sign-up, log-in, a demo account, Personal workspace plus a + box in the sidebar, and moves the data to [[MongoDB Atlas]]. It is stacked on PR #2 (home dashboard), so #2 merges first. Reviewed in 13 rounds with the [[Review criteria skill]] (security 8, logic 8, docs 9). Not deployed yet: the CPU per request on the free plan still has to be measured on a preview version, and deploying needs Gigi's go-ahead. See [[ADR-0008 Knotwork has accounts and stores data in MongoDB Atlas]].
+**Accounts and workspaces:** [PR #3](https://github.com/GigiBeridzeAxal/knotwork/pull/3) adds sign-up, log-in, a demo account, a Personal workspace plus a + box in the sidebar, and moves the data to [[MongoDB Atlas]]. It is stacked on PR #2 (home dashboard), so #2 merges first. Both are still open; production was deployed from the PR branch. Reviewed in 14 rounds with the [[Review criteria skill]]. See [[ADR-0008 Knotwork has accounts and stores data in MongoDB Atlas]] and [[ADR-0009 Knotwork keeps one database connection in a Durable Object]].
+
+**Not deployed yet (on the PR #3 branch):** `1b5a0e5` adds Log in and Sign up links to the front page, and `ee4c9c6` fixes the editor replacing an edit typed while it loads.
+
+**Old data:** the per-browser workspaces from before accounts lived in D1 and did not carry over.
 
 ## How it works
-- **Worker**: Hono API on Cloudflare Workers, D1 database, a cron trigger every minute that runs scheduled workflows.
+- **Worker**: Hono API on Cloudflare Workers, with a cron trigger every minute that runs scheduled workflows. It hands `/api/`, `/hooks/` and the cron tick to one Durable Object, the hub, which keeps the database connection open ([[ADR-0009 Knotwork keeps one database connection in a Durable Object]]).
 - **Dashboard**: React + Tailwind, built with the Cloudflare Vite plugin and served by the same Worker.
-- **Live version (until PR #3 deploys)**: no sign-in; each browser gets its own workspace ([[ADR-0004 Knotwork is public with per-browser workspaces]], now superseded). Data in D1 (id in `wrangler.jsonc` on `main`).
-- **From PR #3**: accounts and workspaces, data in [[MongoDB Atlas]], secrets `MONGODB_URI` and `AUTH_PEPPER`. Every limit (runs and bytes per hour, pending runs, rate limits, the storage guard) is listed in the repo README and `shared/limits.ts`.
+- **Data**: accounts and workspaces in [[MongoDB Atlas]], secrets `MONGODB_URI` and `AUTH_PEPPER`. Every limit (runs and bytes per hour, pending runs, rate limits, the storage guard) is listed in the repo README and `shared/limits.ts`.
 - **Cost**: must stay free. No paid hosting, no paid AI credits. See [[ADR-0003 Knotwork runs on the Cloudflare free plan]].
 
 ## Brand
@@ -33,12 +36,16 @@ Not connected to Workers Builds yet, so merges do **not** auto-deploy. Deploy by
 ## Next
 - [ ] Connect the repo to Workers Builds so merges deploy themselves (Workers & Pages > knotwork > Settings > Builds)
 - [ ] Add Knotwork to the Work section on [[gigiberidze.com]]
-- [ ] Measure CPU per request on the PR #3 preview (needs the Preview URLs toggle on briefly), then merge #2 and #3 and deploy ([[Deploy Knotwork]])
+- [x] CPU per request measured in production 2026-11-09: Worker p99 2 ms (requests) and 6 ms (cron), limit 10 ms
+- [ ] Deploy `1b5a0e5` and `ee4c9c6`, then merge #2 and #3 ([[Deploy Knotwork]])
+- [ ] Check the Durable Object usage after a normal day (Workers & Pages > Durable Objects)
+- [ ] Run the browser scenarios on Firefox, and on WebKit again after `ee4c9c6`
+- [ ] The demo workflow "Retry and recover" calls an address that always answers 503, so it never recovers; its title promises it does
 - [x] Concurrent saves now get a 409 conflict instead of the last save winning (PR #3)
 - [x] Findings of the 2026-11-09 backend audit fixed in PR #3
 
 ## Testing
-Multi-user browser scenarios live in the vault kit (`60 Resources/Skills/browser-scenario-testers/kit/examples/knotwork/`). Run them against `npx vite` locally or the live site with `BST_BASE_URL`.
+Multi-user browser scenarios live in the vault kit (`60 Resources/Skills/browser-scenario-testers/kit/examples/knotwork/`). Run them against `npx vite` locally with a throwaway database, never with test accounts on the live site. 2026-11-09: 11 of 11 pass on Chromium at `ee4c9c6`; Chromium and WebKit passed 8 of 9 at `304c751` on Gigi's PC and found the editor bug fixed in `ee4c9c6`. The dev build loads the session twice (React StrictMode), which is how that bug showed.
 
 ## Related
 - Local checkout: `C:\Users\PC\Downloads\knotwork`

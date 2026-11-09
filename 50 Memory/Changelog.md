@@ -10,6 +10,9 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-09** Knotwork: browser scenarios found the editor replacing an edit typed while it loads (dev build only); fixed in `ee4c9c6`. Front page got Log in and Sign up links (`1b5a0e5`). Both pushed to PR #3, not deployed yet. [[Knotwork]]
+- **2026-11-09** Knotwork with accounts is live: version `b4f019c1` deployed 19:36 UTC from PR #3 at `304c751`, with the database connection held in a Durable Object. Watched for an hour: no errors, Worker CPU p99 6 ms. [[ADR-0009 Knotwork keeps one database connection in a Durable Object]]
+- **2026-11-09** Knotwork: first accounts deploy `681fc677` (19:25 UTC) rolled back to `90721a08` after seven minutes; every request spent about 1.7 s opening a database connection. [[Deploy Knotwork]]
 - **2026-11-09** Knotwork accounts and workspaces: PR #3 opened (stacked on #2). Worker secrets `MONGODB_URI` and `AUTH_PEPPER` set; Atlas indexes created; preview version `f64c6ab2` uploaded (not deployed; production still `90721a08`). WAF rate-limit rule "Knotwork API" added for `/api/`. [[ADR-0008 Knotwork has accounts and stores data in MongoDB Atlas]]
 - **2026-11-09** Free MongoDB Atlas M0 cluster `knotwork` created for Knotwork. [[MongoDB Atlas]]
 - **2026-11-09** Review criteria skill condensed to one 44 KB `SKILL.md` (plus `web-perf.cjs`) so it fits the 48 KB save-card limit; Gigi saved it to their claude.ai skills. [[Review criteria skill]]

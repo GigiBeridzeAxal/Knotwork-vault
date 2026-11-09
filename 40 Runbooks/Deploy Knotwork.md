@@ -13,6 +13,8 @@ Knotwork is **not** on Workers Builds yet, so deploy by hand from Gigi's PC. Dep
 > [!warning] Claude's auto mode on Gigi's PC blocks npm and npx ("Code from External"), writing secrets ("Secret-Store Writes") and switching on settings that open access ("Security Weaken"). Switch that session to **Ask permissions**, or Gigi runs those steps themselves.
 
 ## With accounts (PR #3 onward)
+For a normal code change, one line is enough: `cd C:\Users\PC\Downloads\knotwork; git pull --ff-only; npm run deploy`. Steps 2 to 4 are only for a new secret, a new index or a risky change.
+
 1. `cd C:\Users\PC\Downloads\knotwork`, `git pull`, `npm ci`, `npm run build`.
 2. **Secrets, once** (already set 2026-11-09). In PowerShell, without printing them:
    - `(Get-Content ..\knotwork-secrets\mongodb.env -TotalCount 1).Substring(12) | npx wrangler versions secret put MONGODB_URI`
@@ -23,6 +25,13 @@ Knotwork is **not** on Workers Builds yet, so deploy by hand from Gigi's PC. Dep
 5. **Deploy (with Gigi's OK):** `npm run deploy`, or `npx wrangler versions deploy <version-id>`.
 6. Check https://knotwork.gigiberidze.com: sign up, log in, the demo, a workflow run. Then `npx wrangler deployments status`.
 7. Add a line to [[Changelog]] with the version id.
+
+## Watch and roll back
+- After a risky deploy, watch for an hour: `npx wrangler tail --format json` into a file outside the repo, then compare CPU per event with the limits (Worker 10 ms; the hub Durable Object 30 s).
+- Roll back when the Worker goes over its CPU limit, 5xx responses pass 1%, or runs stop moving: `npx wrangler rollback <version-id>`. The last version from before accounts is `90721a08`.
+- Send Gigi one command per message. Two commands in one message got the wrong one run on 2026-11-09.
+- Claude's auto mode on Gigi's PC also blocks `wrangler deploy` and `wrangler rollback` ("Production Deploy"), so Gigi runs them.
+- Traffic to preview URLs doesn't show up in `wrangler tail`, so CPU can only be measured on the deployed version.
 
 The four rate-limit bindings (namespace ids 1001 to 1004) are in `wrangler.jsonc` and need no setup. The WAF rule is described in [[Cloudflare]].
 
