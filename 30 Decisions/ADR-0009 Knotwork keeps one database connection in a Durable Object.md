@@ -31,5 +31,6 @@ The Worker forwards `/api/`, `/hooks/` and the cron tick to one Durable Object, 
 - Everything goes through one object in one region. Visitors far from Europe get a longer round trip.
 - `wrangler.jsonc` has the `HUB` binding and a `v1` migration for the class. Cloudflare refuses `wrangler rollback` to a version from before a Durable Object migration, so `90721a08` and `681fc677` can no longer be rolled back to. The way back if the hub is the problem: deploy with `--var HUB_OFF:1`, which runs without it ([[Deploy Knotwork]]).
 - Tests run without the binding and open a connection per request.
+- Note 2026-11-09 (PR #5, #11, #12): when the hub replaces its connection was narrowed after review. The decision stands; the current rules are in [[Knotwork]] and the repo README.
 
 Related: [[Knotwork]], [[MongoDB Atlas]], [[Cloudflare]], [[ADR-0003 Knotwork runs on the Cloudflare free plan]], [[Deploy Knotwork]]
