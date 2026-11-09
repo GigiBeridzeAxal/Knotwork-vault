@@ -108,12 +108,14 @@ Each phase ends with something that can be opened and clicked.
 
 ### Phase 0: land what is built, stop deploying by hand (next)
 - Connect the repo to Workers Builds so a merge into `main` deploys itself (the same setup as [[gigiberidze.com]]). The Worker keeps its secrets across deploys.
+- Done 2026-11-09: PR #2 and #3 merged. Still open: connect Builds (waits for a click by Gigi).
 - Merge PR #2, then PR #3. The first automatic deploy also ships `1b5a0e5` and `ee4c9c6`.
 - Narrow the Atlas user to `readWrite` on `knotwork` ([[MongoDB Atlas]]). Check a full day of Durable Object usage.
 - **Done when:** `main` matches the live site and a merged PR is live minutes later with nobody typing.
 - **Needs from Gigi:** one OK to change the Cloudflare and Atlas settings through the browser ([[Working agreements]]). No commands.
 
-### Phase 1: a safety net
+### Phase 1: a safety net (done 2026-11-09, PR #4)
+CI lives in `.github/workflows/ci.yml` and `live-check.yml`; scenarios in the repo's `e2e/`. CI runs on `ubuntu-22.04` because MongoDB 8 refuses to start on the 6.19 kernel of newer runners.
 - GitHub Actions on every PR: type-check, unit tests, engine tests against a throwaway MongoDB.
 - The 11 browser scenarios on Chromium, Firefox and WebKit in Actions ([[Browser scenario testers skill]]).
 - A scheduled check of the live site that opens an issue when sign-in or a demo run fails.

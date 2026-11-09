@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-09** Knotwork: PR #2 and #3 merged into `main` (not deployed by that; production still `b4f019c1`). PR #4 merged: GitHub Actions CI (75 tests against MongoDB, 11 browser scenarios on Chromium, Firefox and WebKit), a live check every 30 minutes that opens a `live-check` issue, and the "Retry and recover" demo fix. Workers Builds and the narrower Atlas role are filled in and wait for Gigi's final click. [[Knotwork system plan]]
 - **2026-11-09** Knotwork PR #2 and PR #3 merged to `main` by Gigi (merge commits, `main` at `c7cba02`). Follow-up [PR #5](https://github.com/GigiBeridzeAxal/knotwork/pull/5) opened from review round 15: safer hub reconnects, sign up from the demo, 503 when the hub is unreachable, hub operations in the README. Production still `b4f019c1`. [[Knotwork]]
 - **2026-11-09** Knotwork: full system plan written (38 capabilities, 17 built; six phases, phase 0 is automatic deploys and merging PR #2 and #3). [[Knotwork system plan]]
 - **2026-11-09** Knotwork: browser scenarios found the editor replacing an edit typed while it loads (dev build only); fixed in `ee4c9c6`. Front page got Log in and Sign up links (`1b5a0e5`). Both pushed to PR #3, not deployed yet. [[Knotwork]]
