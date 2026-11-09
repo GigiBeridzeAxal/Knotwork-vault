@@ -42,3 +42,4 @@ Gigi's portfolio project: the site at **gigiberidze.com** and the systems built 
 - [[How this vault works]]: the method and the rules
 - [[Links]]: dashboards and URLs
 - [[Professional UI design skill]]: how agents should design screens
+- [[Browser scenario testers skill]]: multi-account, multi-browser Playwright testing
