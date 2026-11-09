@@ -18,7 +18,11 @@ What agents may do on their own, and what needs Gigi's OK first.
 - Payments, sign-ups and legal filings. Personal details always come from Gigi.
 - Creating paid resources of any kind.
 
+## Which model for which task
+- Gigi, 2026-11-09: use Fable for important or hard tasks and Opus for easy and medium ones, to keep usage under control. In practice: security work and core design on Fable; UI polish, docs, test writing and performance or docs reviews on Opus.
+
 ## Facts that shape how to work
 - Claude sessions can't create GitHub repos. Gigi creates them.
 - Claude desktop auto mode on Gigi's PC blocks npm and npx; switch to Ask permissions for those steps.
+- Cloud sessions can't run MongoDB (downloading a database binary is blocked). Knotwork's access tests run on an in-memory stand-in (`test/fakeMongo.ts`); the real-database tests and the WebKit and Firefox scenarios run only in GitHub Actions.
 - Cloud sessions can't reach gigiberidze.com or the Cloudflare dashboard. Use Gigi's Chrome.
