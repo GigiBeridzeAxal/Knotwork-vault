@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-09** Knotwork [PR #6](https://github.com/GigiBeridzeAxal/knotwork/pull/6) merged: `/docs` user guide and `/demo` one-click demo (not deployed yet). gigiberidze.com PR #7 (case study) waits for `/demo` to be live. [[Update the Knotwork case study and docs]]
 - **2026-11-09** Knotwork phase 4 built: knotwork [PR #7](https://github.com/GigiBeridzeAxal/knotwork/pull/7) adds ready-made Slack, Discord, Telegram and GitHub steps and the "New GitHub star to Discord" example, with 23 unit tests and browser scenario 12. Review APPROVE (round 2), CI green. Open, to merge after the secrets PR. [[ADR-0011 Knotwork ready-made steps call only their own service]]
 - **2026-11-09** Knotwork phase 3 built: knotwork [PR #9](https://github.com/GigiBeridzeAxal/knotwork/pull/9) adds the canvas editor (default view, the step list stays as a second view), testing one step, version history (newest 20 saves), a template gallery with 9 templates, and import and export. Open, not merged. [[ADR-0010 Knotwork canvas is nested blocks drawn from the steps]]
 - **2026-11-09** Knotwork case study and docs: gigiberidze.com [PR #7](https://github.com/GigiBeridzeAxal/gigiberidze.com/pull/7) (case study at `/work/knotwork`, Knotwork first in Work) and knotwork [PR #6](https://github.com/GigiBeridzeAxal/knotwork/pull/6) (`/docs` user guide, `/demo` one-click demo, README screenshots). Both open. [[Update the Knotwork case study and docs]]
