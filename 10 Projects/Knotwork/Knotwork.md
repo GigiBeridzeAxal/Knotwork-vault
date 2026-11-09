@@ -21,7 +21,7 @@ Live and public at https://knotwork.gigiberidze.com since 2026-11-07. **With acc
 
 **Old data:** the per-browser workspaces from before accounts lived in D1 and did not carry over.
 
-**Canvas editor (phase 3):** [PR #9](https://github.com/GigiBeridzeAxal/knotwork/pull/9) adds the canvas as the default editor view, testing one step, version history, a template gallery and import and export. Open as of 2026-11-09. See [[ADR-0010 Knotwork canvas is nested blocks drawn from the steps]].
+**Canvas editor (phase 3):** [PR #9](https://github.com/GigiBeridzeAxal/knotwork/pull/9) adds the canvas as the default editor view, testing one step, version history, a template gallery and import and export. Merged into `main` on 2026-11-09. See [[ADR-0010 Knotwork canvas is nested blocks drawn from the steps]].
 
 **Ready-made steps (phase 4):** [PR #7](https://github.com/GigiBeridzeAxal/knotwork/pull/7) adds Slack, Discord, Telegram and GitHub steps with their own forms and the example "New GitHub star to Discord". Credentials default to `{{ secrets.NAME }}`, so it should merge after the secrets PR (phase 2). Reviewed with the [[Review criteria skill]]: WARN, then APPROVE in round 2. CI green. The "watch a feed" trigger is not built yet. See [[ADR-0011 Knotwork ready-made steps call only their own service]].
 

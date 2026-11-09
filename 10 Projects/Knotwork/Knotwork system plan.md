@@ -77,10 +77,10 @@ A run moves through `queued → running → (waiting →) succeeded | failed | s
 | Step-by-step editor | Done |  |
 | Home dashboard, run history and run log | Done |  |
 | Two people saving at once: nothing lost | Done |  |
-| Starter templates | Built, in PR #9 (9 templates, gallery at `/templates`) | 3 |
-| Visual canvas editor | Built, in PR #9 | 3 |
-| Test one step without running everything | Built, in PR #9 | 3 |
-| Version history, import and export | Built, in PR #9 | 3 |
+| Starter templates | Done (9 templates, gallery at `/templates`) | 3 |
+| Visual canvas editor | Done | 3 |
+| Test one step without running everything | Done | 3 |
+| Version history, import and export | Done | 3 |
 
 ### Accounts and teams
 | Capability | Status | Phase |
@@ -134,7 +134,7 @@ CI lives in `.github/workflows/ci.yml` and `live-check.yml`; scenarios in the re
 - Test a single step with sample data.
 - Template gallery, version history, import and export.
 - **Done when:** a new visitor builds a branching workflow in the demo without instructions, on desktop and phone.
-- **State 2026-11-09:** built in knotwork [PR #9](https://github.com/GigiBeridzeAxal/knotwork/pull/9). The canvas draws "if" and "loop" blocks as soon as phase 2 adds those step types; until then the step picker has no branching step to add.
+- **State 2026-11-09:** merged into `main` as knotwork [PR #9](https://github.com/GigiBeridzeAxal/knotwork/pull/9). The canvas draws "if" and "loop" blocks as soon as phase 2 adds those step types; until then the step picker has no branching step to add.
 
 ### Phase 4: ready-made steps
 - Slack, Discord, Telegram and GitHub steps with proper forms.
