@@ -19,7 +19,7 @@ A forgotten password needs a way back in, and Knotwork sends no email ([[ADR-000
 3. No recovery at all.
 
 ## Decision
-Option 2. An account can make 8 codes (password needed). Each is 12 characters with 60 random bits, shown once, and stored only as a keyed hash (keyed with the `AUTH_PEPPER` secret). A code plus the email sets a new password once; the same database update that sets the password removes the code. Recovering signs out every device and ends the account's API keys. Changing the password in Settings does the same and also ends the remaining codes. Wrong codes are limited to 10 per email and network per 15 minutes, and the answer is the same for a wrong code and an unknown email.
+Option 2. An account can make 8 codes (password needed). Each is 12 characters with 60 random bits, shown once, and stored only as a keyed hash (keyed with the `AUTH_PEPPER` secret). A code plus the email sets a new password once; the same database update that sets the password ends the whole set (someone else may hold a copy of the sheet), so the user makes new codes afterwards. Recovering signs out every device and ends the account's API keys. Changing the password in Settings does the same and also ends the remaining codes. Wrong codes are limited to 10 per email and network per 15 minutes, and the answer is the same for a wrong code and an unknown email.
 
 ## Consequences
 - No mail provider, no cost, nothing to configure.

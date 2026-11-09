@@ -22,7 +22,7 @@ Phase 5 of the [[Knotwork system plan]] lets several accounts work in one worksp
 ## Decision
 Options 2 and 4.
 - A workspace has one owner for good. Others join through a link as editor or viewer. Editors change workflows and start runs; viewers read and change nothing; only the owner manages people, links, the name and deletion. Personal workspaces can't be shared, and the demo account can't invite or join.
-- A link is shown once and stored only as a hash. It works for 7 days or 10 people, lets each account in once (so a removed or demoted member can't walk back in with it), and is deleted when used up. A workspace holds 10 members and 5 open links.
+- A link is shown once and stored only as a hash. It works for 7 days or 10 people, lets each account in once, and is deleted when used up. Removing someone, or making them a viewer, deletes the link they joined with, so they can't come back through it from a second account. A workspace holds 10 members and 5 open links.
 - Role and membership are read from the `members` collection on every request, so a removal or role change applies on the member's next request. The dashboard picks the new role up within 30 seconds.
 - Runs, limits and storage are always charged to the workspace's owner.
 - Viewers and read-only API keys never get webhook URLs. After removing an editor the owner can make a new webhook URL per workflow.
@@ -31,3 +31,4 @@ Options 2 and 4.
 - Members pay one extra database lookup per request (measured: one more round trip than an owner).
 - Anyone holding an unused link can join until it expires or is revoked, so links should be sent privately.
 - Ownership can't be handed over yet.
+- Removing or demoting one person ends their link for everyone who hasn't used it yet; the owner sends a new one.
