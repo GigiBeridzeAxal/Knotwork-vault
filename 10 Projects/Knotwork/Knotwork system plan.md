@@ -47,7 +47,7 @@ A run moves through `queued → running → (waiting →) succeeded | failed | s
 | Run by hand with test input | Done |  |
 | Webhook with a private, signed URL | Done |  |
 | Schedule (cron, UTC, every 5 minutes at most) | Done |  |
-| Check the sender's signature (GitHub, Stripe) | To build | 2 |
+| Check the sender's signature (GitHub, Stripe) | Built, PR #10 | 2 |
 | Watch a feed or a page for new items | To build | 4 |
 
 ### Steps
@@ -56,9 +56,9 @@ A run moves through `queued → running → (waiting →) succeeded | failed | s
 | HTTP request to any public API | Done |  |
 | Transform, filter, delay, log | Done |  |
 | Templates that pass data between steps | Done |  |
-| Secrets per workspace (API keys kept out of the workflow) | To build | 2 |
-| If / else branches | To build | 2 |
-| Loop over a list | To build | 2 |
+| Secrets per workspace (API keys kept out of the workflow) | Built, PR #10 | 2 |
+| If / else branches | Built, PR #10 | 2 |
+| Loop over a list | Built, PR #10 | 2 |
 | Ready-made steps: Slack, Discord, Telegram, GitHub | In review ([PR #7](https://github.com/GigiBeridzeAxal/knotwork/pull/7)) | 4 |
 
 ### Engine
@@ -68,7 +68,7 @@ A run moves through `queued → running → (waiting →) succeeded | failed | s
 | Retries with backoff, delays up to a week | Done |  |
 | One stuck run can't hold up the others | Done |  |
 | Fair limits per account and a storage guard | Done |  |
-| Run a past run again | To build | 2 |
+| Run a past run again | Built, PR #10 | 2 |
 | Tell me when a workflow fails | To build | 2 |
 
 ### Editor and dashboard
@@ -128,6 +128,7 @@ CI lives in `.github/workflows/ci.yml` and `live-check.yml`; scenarios in the re
 - Webhooks that check the sender's signature (GitHub, Stripe); run a past run again.
 - An "on failure" step so a workflow can report that it broke.
 - **Done when:** one workflow takes a signed GitHub webhook, branches, loops over a list and posts to a chat with a stored secret.
+- **State 2026-11-09:** built in knotwork [PR #10](https://github.com/GigiBeridzeAxal/knotwork/pull/10), except the "on failure" step, which was left out on purpose and stays on the roadmap. The done-when flow is covered by tests with a stubbed chat service; it has not been run against real GitHub and Slack yet. Decisions: [[ADR-0015 Knotwork runs nested steps as a flat program]], [[ADR-0016 Knotwork secrets are encrypted with a key made from the pepper]]. How to connect a service: [[Set up a signed webhook in Knotwork]].
 
 ### Phase 3: the canvas
 - A visual node editor drawn from the same workflow data as the step list.
