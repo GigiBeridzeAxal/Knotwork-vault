@@ -88,9 +88,9 @@ A run moves through `queued → running → (waiting →) succeeded | failed | s
 | Sign up, log in, demo account | Done |  |
 | Workspaces (Personal plus 5 more) | Done |  |
 | Change password, delete account | Done |  |
-| Get back in without email (recovery codes) | In review (PR #8) | 5 |
-| Invite people to a workspace, with roles | In review (PR #8) | 5 |
-| API keys and a public API | In review (PR #8) | 5 |
+| Get back in without email (recovery codes) | Built, merged 2026-11-09, not deployed yet | 5 |
+| Invite people to a workspace, with roles | Built, merged 2026-11-09, not deployed yet | 5 |
+| API keys and a public API | Built, merged 2026-11-09, not deployed yet | 5 |
 
 ### Running it
 | Capability | Status | Phase |
@@ -148,7 +148,7 @@ CI lives in `.github/workflows/ci.yml` and `live-check.yml`; scenarios in the re
 - Recovery codes for a forgotten password.
 - API keys and a documented public API.
 - **Done when:** two accounts work in one workspace and a viewer can't change anything.
-- **Status (2026-11-09):** built in [PR #8](https://github.com/GigiBeridzeAxal/knotwork/pull/8), in review. See [[ADR-0012 Knotwork teams join by invite link and roles are read on every request]], [[ADR-0013 Knotwork uses recovery codes instead of email resets]] and [[ADR-0014 Knotwork API keys work in one workspace and never outrank their maker]].
+- **Status (2026-11-09):** built in [PR #8](https://github.com/GigiBeridzeAxal/knotwork/pull/8), merged into `main` on 2026-11-09; live from the next deploy. See [[ADR-0012 Knotwork teams join by invite link and roles are read on every request]], [[ADR-0013 Knotwork uses recovery codes instead of email resets]] and [[ADR-0014 Knotwork API keys work in one workspace and never outrank their maker]].
 
 ### Phase 6: show it off
 - Case study in the Work section of [[gigiberidze.com]]; docs page in the app; README screenshots and a demo clip.
