@@ -23,13 +23,13 @@ A Worker can't keep a socket between requests. A Durable Object can.
 3. **Go back to D1.** Fast and free, but Gigi asked for MongoDB.
 
 ## Decision
-The Worker forwards `/api/`, `/hooks/` and the cron tick to one Durable Object, class `Hub` in `worker/hub.ts`, placed in western Europe next to the Atlas cluster (Frankfurt). The hub keeps one connection open (two pooled sockets). If a request ends in a 500, it starts a fresh connection.
+The Worker forwards `/api/`, `/hooks/` and the cron tick to one Durable Object, class `Hub` in `worker/hub.ts`, placed in western Europe next to the Atlas cluster (Frankfurt). The hub keeps one connection open (two pooled sockets). If a request fails with a connection error, it starts a fresh connection and closes the old one when the work still using it has finished. The Worker checks the per-IP rate limit before forwarding, and answers 503 when the hub can't be reached.
 
 ## Consequences
 - Measured over an hour in production (version `b4f019c1`): Worker CPU p99 2 ms for requests and 6 ms for the cron; `/api/overview` about 50 ms in total instead of about 2 s. No errors.
 - The cron wakes the hub every minute, so it stays in memory all day. That is about 11,060 GB-s of the free plan's 13,000 GB-s of Durable Object duration a day, and 100,000 requests a day. There is only one hub, so it can't use more duration than that. Check Workers & Pages > Durable Objects after a normal day.
 - Everything goes through one object in one region. Visitors far from Europe get a longer round trip.
-- `wrangler.jsonc` has the `HUB` binding and a `v1` migration for the class. Rolling back to a version from before the hub works (done once, to `90721a08`).
+- `wrangler.jsonc` has the `HUB` binding and a `v1` migration for the class. Cloudflare refuses `wrangler rollback` to a version from before a Durable Object migration, so `90721a08` and `681fc677` can no longer be rolled back to. The way back if the hub is the problem: deploy with `--var HUB_OFF:1`, which runs without it ([[Deploy Knotwork]]).
 - Tests run without the binding and open a connection per request.
 
 Related: [[Knotwork]], [[MongoDB Atlas]], [[Cloudflare]], [[ADR-0003 Knotwork runs on the Cloudflare free plan]], [[Deploy Knotwork]]

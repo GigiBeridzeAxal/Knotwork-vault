@@ -28,7 +28,9 @@ For a normal code change, one line is enough: `cd C:\Users\PC\Downloads\knotwork
 
 ## Watch and roll back
 - After a risky deploy, watch for an hour: `npx wrangler tail --format json` into a file outside the repo, then compare CPU per event with the limits (Worker 10 ms; the hub Durable Object 30 s).
-- Roll back when the Worker goes over its CPU limit, 5xx responses pass 1%, or runs stop moving: `npx wrangler rollback <version-id>`. The last version from before accounts is `90721a08`.
+- Roll back when the Worker goes over its CPU limit, 5xx responses pass 1%, or runs stop moving: `npx wrangler rollback <version-id>`. This only works between versions that both have the hub, so `b4f019c1` (2026-11-09) is the oldest version you can roll back to. Cloudflare refuses a rollback across a Durable Object migration, so the versions from before accounts (`90721a08`) are out of reach.
+- If the hub itself is the problem: `npm run build`, then `npx wrangler deploy --var HUB_OFF:1`. The site then runs without the hub (about 2 s slower per request) until a fix is deployed.
+- If the hub's free daily limit runs out (100,000 requests or 13,000 GB-s), `/api/` and `/hooks/` answer 503 until 00:00 UTC. Usage is under Workers & Pages > Durable Objects.
 - Send Gigi one command per message. Two commands in one message got the wrong one run on 2026-11-09.
 - Claude's auto mode on Gigi's PC also blocks `wrangler deploy` and `wrangler rollback` ("Production Deploy"), so Gigi runs them.
 - Traffic to preview URLs doesn't show up in `wrangler tail`, so CPU can only be measured on the deployed version.
