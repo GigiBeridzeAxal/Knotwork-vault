@@ -1,12 +1,12 @@
 ---
 type: decision
-status: accepted
+status: superseded
 created: 2026-11-07
 updated: 2026-11-09
 date: 2026-11-07
 tags: [decision]
 supersedes:
-superseded-by:
+superseded-by: "[[ADR-0008 Knotwork has accounts and stores data in MongoDB Atlas]]"
 ---
 # ADR-0004 Knotwork is public with per-browser workspaces
 
