@@ -34,6 +34,7 @@ Ink and lime, chosen 2026-11-08 after Gigi rejected orange and blue. See [[Knotw
 Not connected to Workers Builds yet, so merges do **not** auto-deploy. Deploy by hand from Gigi's PC: [[Deploy Knotwork]].
 
 ## Next
+The full roadmap, in phases, is in [[Knotwork system plan]]. The short list:
 - [ ] Connect the repo to Workers Builds so merges deploy themselves (Workers & Pages > knotwork > Settings > Builds)
 - [ ] Add Knotwork to the Work section on [[gigiberidze.com]]
 - [x] CPU per request measured in production 2026-11-09: Worker p99 2 ms (requests) and 6 ms (cron), limit 10 ms
