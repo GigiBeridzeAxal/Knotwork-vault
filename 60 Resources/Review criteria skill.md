@@ -24,7 +24,7 @@ A Claude skill that reviews finished work (a PR, a diff, a feature, a whole proj
 ## Files
 - Source (master copy): `60 Resources/Skills/review-criteria/`: one `SKILL.md` (about 44 KB: modes, scoring, the four criteria with their checks and severity examples, and the report template) plus `scripts/web-perf.cjs` (page-load and click speed under phone throttling, base vs head with `--compare`).
 - The skill fetches `web-perf.cjs` from this vault's raw GitHub URL when it wasn't installed from the zip, so keep that path stable.
-- To install or update it: [[Install a Claude skill]]. Offered to Gigi on a save card in the project on 2026-11-09. A ready zip is also in the project's shared files (`review-criteria/review-criteria.zip`) and in Gigi's Downloads.
+- To install or update it: [[Install a Claude skill]]. Installed in Gigi's claude.ai skills from a save card on 2026-11-09. A ready zip is also in the project's shared files (`review-criteria/review-criteria.zip`) and in Gigi's Downloads.
 
 ## What we learned building it
 - Skills added from a save card must be a single `SKILL.md` under 48 KB. The first version (a 16 KB core plus four reference files, 71 KB merged) was refused, so it was condensed into one file.

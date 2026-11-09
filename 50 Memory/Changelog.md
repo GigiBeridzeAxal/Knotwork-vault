@@ -10,7 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
-- **2026-11-09** Review criteria skill condensed to one 44 KB `SKILL.md` (plus `web-perf.cjs`) so it fits the 48 KB save-card limit; offered to Gigi on a save card. [[Review criteria skill]]
+- **2026-11-09** Review criteria skill condensed to one 44 KB `SKILL.md` (plus `web-perf.cjs`) so it fits the 48 KB save-card limit; Gigi saved it to their claude.ai skills. [[Review criteria skill]]
 - **2026-11-09** Added the review criteria skill (security, performance, logic, documentation; scored 0-10 with an APPROVE/WARN/BLOCK verdict). Test runs: site PR #6 APPROVE; Knotwork backend audit found issues to fix (report in project files). [[Review criteria skill]]
 - **2026-11-09** Added the browser scenario testers skill; first run on Knotwork passed 6 of 6 scenarios on Chromium. [[Browser scenario testers skill]]
 - **2026-11-09** Added the professional UI design skill. [[Professional UI design skill]]
