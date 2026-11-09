@@ -43,3 +43,5 @@ Gigi's portfolio project: the site at **gigiberidze.com** and the systems built 
 - [[Links]]: dashboards and URLs
 - [[Professional UI design skill]]: how agents should design screens
 - [[Browser scenario testers skill]]: multi-account, multi-browser Playwright testing
+- [[Review criteria skill]]: how agents review and score finished work
+- [[Install a Claude skill]]: add or update a skill in claude.ai

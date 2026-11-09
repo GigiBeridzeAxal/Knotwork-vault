@@ -32,6 +32,7 @@ Not connected to Workers Builds yet, so merges do **not** auto-deploy. Deploy by
 - [ ] Connect the repo to Workers Builds so merges deploy themselves (Workers & Pages > knotwork > Settings > Builds)
 - [ ] Add Knotwork to the Work section on [[gigiberidze.com]]
 - [ ] Decide whether concurrent saves should warn: today the last save wins silently (found 2026-11-09 by the [[Browser scenario testers skill]])
+- [ ] Fix the findings of the 2026-11-09 backend audit (report in the project's shared files under `review-criteria/test-reviews/`, kept out of this public vault) ([[Review criteria skill]])
 
 ## Testing
 Multi-user browser scenarios live in the vault kit (`60 Resources/Skills/browser-scenario-testers/kit/examples/knotwork/`). Run them against `npx vite` locally or the live site with `BST_BASE_URL`.
