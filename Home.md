@@ -41,3 +41,4 @@ Gigi's portfolio project: the site at **gigiberidze.com** and the systems built 
 ## Help
 - [[How this vault works]]: the method and the rules
 - [[Links]]: dashboards and URLs
+- [[Professional UI design skill]]: how agents should design screens

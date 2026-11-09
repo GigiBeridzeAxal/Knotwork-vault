@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-09** Added the professional UI design skill. [[Professional UI design skill]]
 - **2026-11-09** Vault published to the public repo GigiBeridzeAxal/Knotwork-vault.
 - **2026-11-09** Obsidian vault created ([[ADR-0001 Use an Obsidian vault as project memory]]).
 - **2026-11-08** Knotwork landing page at `/`, app moved to `/workflows`, lime recolor deployed (version `90721a08`, from `main` `478d8009`). [[Knotwork]]
