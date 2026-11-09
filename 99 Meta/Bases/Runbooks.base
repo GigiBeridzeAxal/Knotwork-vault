@@ -1,0 +1,14 @@
+filters:
+  and:
+    - 'type == "runbook"'
+    - '!file.inFolder("99 Meta")'
+views:
+  - type: table
+    name: Runbooks
+    order:
+      - file.name
+      - system
+      - updated
+    sort:
+      - property: updated
+        direction: DESC

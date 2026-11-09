@@ -1,0 +1,42 @@
+{
+  "colorGroups": [
+    {
+      "query": "path:\"10 Projects\"",
+      "color": {
+        "a": 1,
+        "rgb": 13038642
+      }
+    },
+    {
+      "query": "path:\"20 Systems\"",
+      "color": {
+        "a": 1,
+        "rgb": 4052620
+      }
+    },
+    {
+      "query": "path:\"30 Decisions\"",
+      "color": {
+        "a": 1,
+        "rgb": 16105546
+      }
+    },
+    {
+      "query": "path:\"40 Runbooks\"",
+      "color": {
+        "a": 1,
+        "rgb": 7124735
+      }
+    },
+    {
+      "query": "path:\"50 Memory\"",
+      "color": {
+        "a": 1,
+        "rgb": 15884124
+      }
+    }
+  ],
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false
+}

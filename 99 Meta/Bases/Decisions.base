@@ -1,0 +1,14 @@
+filters:
+  and:
+    - 'type == "decision"'
+    - '!file.inFolder("99 Meta")'
+views:
+  - type: table
+    name: Decisions
+    order:
+      - file.name
+      - status
+      - date
+    sort:
+      - property: file.name
+        direction: DESC

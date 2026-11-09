@@ -1,0 +1,14 @@
+filters:
+  and:
+    - 'type == "project"'
+    - '!file.inFolder("99 Meta")'
+views:
+  - type: table
+    name: Projects
+    order:
+      - file.name
+      - status
+      - updated
+    sort:
+      - property: updated
+        direction: DESC

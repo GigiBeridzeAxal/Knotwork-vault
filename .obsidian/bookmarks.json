@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "type": "file",
+      "ctime": 1762686000000,
+      "path": "Home.md",
+      "title": "Home"
+    },
+    {
+      "type": "file",
+      "ctime": 1762686000001,
+      "path": "CLAUDE.md",
+      "title": "Agent instructions"
+    },
+    {
+      "type": "file",
+      "ctime": 1762686000002,
+      "path": "50 Memory/Changelog.md",
+      "title": "Changelog"
+    },
+    {
+      "type": "file",
+      "ctime": 1762686000003,
+      "path": "50 Memory/Open questions.md",
+      "title": "Open questions"
+    }
+  ]
+}

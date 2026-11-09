@@ -1,0 +1,12 @@
+{
+  "newFileLocation": "folder",
+  "newFileFolderPath": "00 Inbox",
+  "attachmentFolderPath": "99 Meta/Attachments",
+  "useMarkdownLinks": false,
+  "newLinkFormat": "shortest",
+  "alwaysUpdateLinks": true,
+  "showLineNumber": true,
+  "promptDelete": true,
+  "showUnsupportedFiles": false,
+  "propertiesInDocument": "visible"
+}

@@ -1,0 +1,29 @@
+---
+type: memory
+status: active
+created: 2026-11-09
+updated: 2026-11-09
+tags: [memory, log]
+---
+# Changelog
+
+Newest first. One line per event: what changed, and a link.
+
+## 2026-11
+- **2026-11-09** Vault published to the public repo GigiBeridzeAxal/Knotwork-vault.
+- **2026-11-09** Obsidian vault created ([[ADR-0001 Use an Obsidian vault as project memory]]).
+- **2026-11-08** Knotwork landing page at `/`, app moved to `/workflows`, lime recolor deployed (version `90721a08`, from `main` `478d8009`). [[Knotwork]]
+- **2026-11-08** Knotwork PR #1 squash-merged to `main`. Design system measured at 0 off-token values. [[Knotwork design system]]
+- **2026-11-08** Brand switched to ink and lime. [[ADR-0005 Ink and lime brand for Knotwork]]
+- **2026-11-08** iPhone OBS Cam built (Safari + WebRTC + Node). [[iPhone OBS Cam]]
+- **2026-11-07** Knotwork live at knotwork.gigiberidze.com, made public with per-browser workspaces. [[ADR-0004 Knotwork is public with per-browser workspaces]]
+- **2026-11-07** Gigi picked the workflow engine as the first portfolio project and named it Knotwork.
+- **2026-11-04** US company options discussed (Stripe Atlas vs Bizee, Mercury). [[US LLC for Stripe]]
+
+## 2026-10
+- **2026-10-31** Checked traffic: Web Analytics already on; LCP issue found. [[Traffic analytics]]
+- **2026-10-30** Contact email confirmed working through Email Routing. [[Contact email]]
+- **2026-10-30** Removed "Hire me" buttons and Freelancer reviews; added Freelancer and Upwork links in the hero.
+- **2026-10-30** Preview builds fixed with the `previews` block (PR #4). [[Fix red preview build]]
+- **2026-10-29** Work section switched to 3 mock projects.
+- **2026-10-29** PR #2 merged; Workers Builds connected; auto-deploy from `main` on. Process section rewritten to Gigi's four steps. [[gigiberidze.com]]
