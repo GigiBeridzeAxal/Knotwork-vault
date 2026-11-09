@@ -59,7 +59,7 @@ A run moves through `queued → running → (waiting →) succeeded | failed | s
 | Secrets per workspace (API keys kept out of the workflow) | Built, PR #10 | 2 |
 | If / else branches | Built, PR #10 | 2 |
 | Loop over a list | Built, PR #10 | 2 |
-| Ready-made steps: Slack, Discord, Telegram, GitHub | In review ([PR #7](https://github.com/GigiBeridzeAxal/knotwork/pull/7)) | 4 |
+| Ready-made steps: Slack, Discord, Telegram, GitHub | Merged ([PR #7](https://github.com/GigiBeridzeAxal/knotwork/pull/7)), live from the next deploy | 4 |
 
 ### Engine
 | Capability | Status | Phase |
