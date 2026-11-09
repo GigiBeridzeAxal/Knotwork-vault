@@ -77,10 +77,10 @@ A run moves through `queued → running → (waiting →) succeeded | failed | s
 | Step-by-step editor | Done |  |
 | Home dashboard, run history and run log | Done |  |
 | Two people saving at once: nothing lost | Done |  |
-| Starter templates | Partly | 3 |
-| Visual canvas editor | To build | 3 |
-| Test one step without running everything | To build | 3 |
-| Version history, import and export | To build | 3 |
+| Starter templates | Built, in PR #9 (9 templates, gallery at `/templates`) | 3 |
+| Visual canvas editor | Built, in PR #9 | 3 |
+| Test one step without running everything | Built, in PR #9 | 3 |
+| Version history, import and export | Built, in PR #9 | 3 |
 
 ### Accounts and teams
 | Capability | Status | Phase |
@@ -134,6 +134,7 @@ CI lives in `.github/workflows/ci.yml` and `live-check.yml`; scenarios in the re
 - Test a single step with sample data.
 - Template gallery, version history, import and export.
 - **Done when:** a new visitor builds a branching workflow in the demo without instructions, on desktop and phone.
+- **State 2026-11-09:** built in knotwork [PR #9](https://github.com/GigiBeridzeAxal/knotwork/pull/9). The canvas draws "if" and "loop" blocks as soon as phase 2 adds those step types; until then the step picker has no branching step to add.
 
 ### Phase 4: ready-made steps
 - Slack, Discord, Telegram and GitHub steps with proper forms.
@@ -162,7 +163,7 @@ CI lives in `.github/workflows/ci.yml` and `live-check.yml`; scenarios in the re
 
 ## Proposed choices (not decided yet)
 Recommendations given to Gigi on 2026-11-09. Write an ADR for each once Gigi confirms or the phase starts.
-1. **Canvas model:** nested blocks (an "if" holds its steps) and not a free graph. No endless loops, fits the engine as it is.
+1. **Canvas model:** nested blocks (an "if" holds its steps) and not a free graph. No endless loops, fits the engine as it is. Decided by building phase 3: [[ADR-0010 Knotwork canvas is nested blocks drawn from the steps]].
 2. **AI step:** leave out for now; later maybe a Workers AI step capped at a few calls per account per day.
 3. **Order of phases 4 and 5:** connectors before teams, because they demo better.
 

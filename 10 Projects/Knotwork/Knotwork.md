@@ -21,6 +21,8 @@ Live and public at https://knotwork.gigiberidze.com since 2026-11-07. **With acc
 
 **Old data:** the per-browser workspaces from before accounts lived in D1 and did not carry over.
 
+**Canvas editor (phase 3):** [PR #9](https://github.com/GigiBeridzeAxal/knotwork/pull/9) adds the canvas as the default editor view, testing one step, version history, a template gallery and import and export. Open as of 2026-11-09. See [[ADR-0010 Knotwork canvas is nested blocks drawn from the steps]].
+
 ## How it works
 - **Worker**: Hono API on Cloudflare Workers, with a cron trigger every minute that runs scheduled workflows. It hands `/api/`, `/hooks/` and the cron tick to one Durable Object, the hub, which keeps the database connection open ([[ADR-0009 Knotwork keeps one database connection in a Durable Object]]).
 - **Dashboard**: React + Tailwind, built with the Cloudflare Vite plugin and served by the same Worker.
