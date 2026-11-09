@@ -36,7 +36,8 @@ Not connected to Workers Builds yet, so merges do **not** auto-deploy. Deploy by
 ## Next
 The full roadmap, in phases, is in [[Knotwork system plan]]. The short list:
 - [ ] Connect the repo to Workers Builds so merges deploy themselves (Workers & Pages > knotwork > Settings > Builds)
-- [ ] Add Knotwork to the Work section on [[gigiberidze.com]]
+- [ ] Knotwork in the Work section and a case study at `/work/knotwork` on [[gigiberidze.com]]: [PR #7](https://github.com/GigiBeridzeAxal/gigiberidze.com/pull/7), opened 2026-11-09
+- [ ] User guide at `/docs` and one-click demo at `/demo`: [PR #6](https://github.com/GigiBeridzeAxal/knotwork/pull/6), opened 2026-11-09. How to keep both current: [[Update the Knotwork case study and docs]]
 - [x] CPU per request measured in production 2026-11-09: Worker p99 2 ms (requests) and 6 ms (cron), limit 10 ms
 - [x] PR #2 and #3 merged 2026-11-09
 - [ ] Merge PR #5, then deploy `main` ([[Deploy Knotwork]])
