@@ -23,6 +23,8 @@ Live and public at https://knotwork.gigiberidze.com since 2026-11-07. **With acc
 
 **Canvas editor (phase 3):** [PR #9](https://github.com/GigiBeridzeAxal/knotwork/pull/9) adds the canvas as the default editor view, testing one step, version history, a template gallery and import and export. Open as of 2026-11-09. See [[ADR-0010 Knotwork canvas is nested blocks drawn from the steps]].
 
+**Ready-made steps (phase 4):** [PR #7](https://github.com/GigiBeridzeAxal/knotwork/pull/7) adds Slack, Discord, Telegram and GitHub steps with their own forms and the example "New GitHub star to Discord". Credentials default to `{{ secrets.NAME }}`, so it should merge after the secrets PR (phase 2). Reviewed with the [[Review criteria skill]]: WARN, then APPROVE in round 2. CI green. The "watch a feed" trigger is not built yet. See [[ADR-0011 Knotwork ready-made steps call only their own service]].
+
 ## How it works
 - **Worker**: Hono API on Cloudflare Workers, with a cron trigger every minute that runs scheduled workflows. It hands `/api/`, `/hooks/` and the cron tick to one Durable Object, the hub, which keeps the database connection open ([[ADR-0009 Knotwork keeps one database connection in a Durable Object]]).
 - **Dashboard**: React + Tailwind, built with the Cloudflare Vite plugin and served by the same Worker.
