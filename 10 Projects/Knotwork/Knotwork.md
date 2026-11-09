@@ -15,9 +15,9 @@ A workflow automation engine (a small n8n), and Gigi's first portfolio project f
 ## Status
 Live and public at https://knotwork.gigiberidze.com since 2026-11-07. **With accounts since 2026-11-09 19:36 UTC** (version `b4f019c1`, from PR #3 at `304c751`). Sign-in is at `/login` and `/signup`.
 
-**Accounts and workspaces:** [PR #3](https://github.com/GigiBeridzeAxal/knotwork/pull/3) adds sign-up, log-in, a demo account, a Personal workspace plus a + box in the sidebar, and moves the data to [[MongoDB Atlas]]. It is stacked on PR #2 (home dashboard), so #2 merges first. Both are still open; production was deployed from the PR branch. Reviewed in 14 rounds with the [[Review criteria skill]]. See [[ADR-0008 Knotwork has accounts and stores data in MongoDB Atlas]] and [[ADR-0009 Knotwork keeps one database connection in a Durable Object]].
+**Accounts and workspaces:** [PR #3](https://github.com/GigiBeridzeAxal/knotwork/pull/3) adds sign-up, log-in, a demo account, a Personal workspace plus a + box in the sidebar, and moves the data to [[MongoDB Atlas]]. PR #2 (home dashboard) and PR #3 were merged to `main` on 2026-11-09 (`c7cba02`); production was deployed from the PR branch before that. Reviewed in 14 rounds with the [[Review criteria skill]]. See [[ADR-0008 Knotwork has accounts and stores data in MongoDB Atlas]] and [[ADR-0009 Knotwork keeps one database connection in a Durable Object]].
 
-**Not deployed yet (on the PR #3 branch):** `1b5a0e5` adds Log in and Sign up links to the front page, and `ee4c9c6` fixes the editor replacing an edit typed while it loads.
+**Not deployed yet:** on `main`, `1b5a0e5` adds Log in and Sign up links to the front page and `ee4c9c6` fixes the editor replacing an edit typed while it loads. [PR #5](https://github.com/GigiBeridzeAxal/knotwork/pull/5) (open) makes the hub's reconnects safer, lets someone in the demo reach the sign-up form, and answers 503 when the hub can't be reached.
 
 **Old data:** the per-browser workspaces from before accounts lived in D1 and did not carry over.
 
@@ -38,7 +38,8 @@ The full roadmap, in phases, is in [[Knotwork system plan]]. The short list:
 - [ ] Connect the repo to Workers Builds so merges deploy themselves (Workers & Pages > knotwork > Settings > Builds)
 - [ ] Add Knotwork to the Work section on [[gigiberidze.com]]
 - [x] CPU per request measured in production 2026-11-09: Worker p99 2 ms (requests) and 6 ms (cron), limit 10 ms
-- [ ] Deploy `1b5a0e5` and `ee4c9c6`, then merge #2 and #3 ([[Deploy Knotwork]])
+- [x] PR #2 and #3 merged 2026-11-09
+- [ ] Merge PR #5, then deploy `main` ([[Deploy Knotwork]])
 - [ ] Check the Durable Object usage after a normal day (Workers & Pages > Durable Objects)
 - [ ] Run the browser scenarios on Firefox, and on WebKit again after `ee4c9c6`
 - [ ] The demo workflow "Retry and recover" calls an address that always answers 503, so it never recovers; its title promises it does

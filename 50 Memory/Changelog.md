@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-09** Knotwork PR #2 and PR #3 merged to `main` by Gigi (merge commits, `main` at `c7cba02`). Follow-up [PR #5](https://github.com/GigiBeridzeAxal/knotwork/pull/5) opened from review round 15: safer hub reconnects, sign up from the demo, 503 when the hub is unreachable, hub operations in the README. Production still `b4f019c1`. [[Knotwork]]
 - **2026-11-09** Knotwork: full system plan written (38 capabilities, 17 built; six phases, phase 0 is automatic deploys and merging PR #2 and #3). [[Knotwork system plan]]
 - **2026-11-09** Knotwork: browser scenarios found the editor replacing an edit typed while it loads (dev build only); fixed in `ee4c9c6`. Front page got Log in and Sign up links (`1b5a0e5`). Both pushed to PR #3, not deployed yet. [[Knotwork]]
 - **2026-11-09** Knotwork with accounts is live: version `b4f019c1` deployed 19:36 UTC from PR #3 at `304c751`, with the database connection held in a Durable Object. Watched for an hour: no errors, Worker CPU p99 6 ms. [[ADR-0009 Knotwork keeps one database connection in a Durable Object]]
