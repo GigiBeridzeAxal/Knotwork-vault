@@ -40,7 +40,7 @@ Phase 2 of the [[Knotwork system plan]] lets a workspace store API keys and use 
 ## Added in review (2026-11-09, same decision, more detail)
 - **In a team.** The owner and editors add, replace and delete secrets; viewers see names only; an API key can't list or change them. A secret is stored under the workspace's owner whoever saved it, so it goes with the workspace or the owner's account, not with the member.
 - **Editing rights are reading rights.** Anyone who can edit a workflow (an editor, a write API key) can send a secret's value to an address of their own. After removing an editor or revoking a write key, replace the secrets they could use.
-- **More shapes are hidden.** For a secret that is a web address, its path, its query and each query value, user name or password of 8 characters or more are hidden too, in the forms a URL parser writes them.
+- **More shapes are hidden.** For a secret that is a web address, its path, its query and each query value, user name or password of 8 characters or more are hidden too, in the forms a URL parser writes them. Also hidden: query values as written, path pieces of 8 characters or more, JSON text with `\/`, and a value whose `+` came back as a space.
 - **Redirects, exactly.** On a redirect to another site, headers filled in from a secret are dropped, and a request whose body holds a secret fails instead of being sent on.
 - **A secret that can't be opened** (the pepper changed) fails the step with "is saved but can't be read any more", and a signed webhook answers 401 until the secret is saved again.
 

@@ -41,6 +41,7 @@ Phase 2 of the [[Knotwork system plan]] adds "if / else" and "loop" steps that h
 ## Added in review (2026-11-09, same decision, more detail)
 - A run that parks because requests ran out carries on at the next minute's turn, usually within a minute and later when many runs are making requests at once. Every redirect followed counts as a request.
 - A loop's move to the next item is saved in the same write as the request before it, so a loop of requests costs one save per pass.
+- Each request, redirects too, is taken from the allowance before it is made. If the requests run out between a redirect's hops, the step starts over at the next turn, so its first request is sent again.
 - The canvas offers no blocks at the third level and no place below it; a drop that would go deeper is refused.
 
 Related: [[Knotwork]], [[Knotwork system plan]]
