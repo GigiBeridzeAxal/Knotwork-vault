@@ -21,7 +21,7 @@ tags: [links]
 
 ## Design
 - Knotwork brand canvas: https://claude.ai/artifact/GZjwgU9VuEnVrC1kAEqzQ1
-- AI phone alert brand directions: https://claude.ai/artifact/T5TacpuwMciwf4QaJjdzN6
+- Rouse brand directions: https://claude.ai/artifact/T5TacpuwMciwf4QaJjdzN6
 
 ## Profiles
 - Upwork: https://www.upwork.com/freelancers/~0177fc3504bde9ab62

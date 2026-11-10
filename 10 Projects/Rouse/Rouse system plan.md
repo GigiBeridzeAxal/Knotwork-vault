@@ -5,9 +5,9 @@ created: 2026-11-10
 updated: 2026-11-10
 tags: [project, plan, mcp]
 ---
-# AI phone alert system plan
+# Rouse system plan
 
-The plan for [[AI phone alert]], written 2026-11-10 at Gigi's request. Reading version: https://claude.ai/artifact/5w5RtsHstt8PmzdjcBR1w2 (private to Gigi). Nothing here is built yet.
+The plan for [[Rouse]], written 2026-11-10 at Gigi's request. Reading version: https://claude.ai/artifact/5w5RtsHstt8PmzdjcBR1w2 (private to Gigi). Nothing here is built yet.
 
 ## Flow
 ```mermaid

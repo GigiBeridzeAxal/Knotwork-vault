@@ -8,7 +8,7 @@ tags: [decision]
 supersedes:
 superseded-by:
 ---
-# ADR-0019 AI phone alert uses free channels first
+# ADR-0019 Rouse uses free channels first
 
 ## Context
 Gigi asked for calls, texts and loud messages. Real phone calls and SMS cost money everywhere; Twilio's trial only reaches verified numbers in the sign-up country and cannot send custom SMS text. Everything must run for free unless Gigi decides otherwise.
@@ -27,4 +27,4 @@ Option 3, proposed. Every channel is an adapter behind one interface, so Pushove
 - "Text" means a push or a Telegram message, and "call" means a Telegram call, until Gigi approves a paid channel.
 - CallMeBot is a shared outside service: best effort, never the only loud step, and it only ever gets a generic sentence.
 
-Related: [[AI phone alert system plan]]
+Related: [[Rouse system plan]]
