@@ -15,7 +15,7 @@ When to use this: a Knotwork feature lands (secrets, branches, canvas, connector
 - **Work card**: `src/components/site/work.tsx`, first entry of `PROJECTS`; its inside is `knotwork-showcase.tsx` (description, the three numbers in `STATS`, tabs).
 - **Agents and vault**: `src/components/site/crew.tsx` (`AGENTS`, `VAULT` counts and notes). When an agent's number or the vault's folder counts change (new ADR, new runbook), update them there; the card and case study chapter 07 both read it.
 - **User guide**: knotwork repo, `src/pages/DocsPage.tsx`, served at https://knotwork.gigiberidze.com/docs. Limit numbers come from `shared/limits.ts` on their own; anything else is plain text.
-- **One-click demo**: https://knotwork.gigiberidze.com/demo (`src/pages/DemoPage.tsx`). The portfolio, README and docs link to it.
+- **One-click demo**: https://knotwork.gigiberidze.com/demo (`src/pages/DemoPage.tsx`). The Knotwork README and docs link to it. The portfolio's live demo links go to the main domain https://knotwork.gigiberidze.com instead (Gigi, 2026-11-10); keep it that way.
 
 ## Steps
 1. New feature: add a section to `DocsPage.tsx` (and its entry in `SECTIONS`) using the exact button labels from the UI. Move the item out of "What's next" in the case study.
