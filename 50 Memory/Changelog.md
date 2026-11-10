@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-10** New project planned at Gigi's request: an MCP server that lets Claude reach Gigi by phone (working name Rouse). Plan, three brand directions and three proposed decisions written; nothing built, no repo or account yet. [[AI phone alert]]
 - **2026-11-10** gigiberidze.com [PR #10](https://github.com/GigiBeridzeAxal/gigiberidze.com/pull/10) merged (`fa1c493`, deploys on merge): every Knotwork live demo link now opens https://knotwork.gigiberidze.com instead of a demo workflow, at Gigi's request. [[gigiberidze.com]]
 - **2026-11-10** gigiberidze.com [PR #8](https://github.com/GigiBeridzeAxal/gigiberidze.com/pull/8) merged (`da67d15`, deploys on merge; #9 `4f152da` bumped the vault counts to 17 decisions and 11 runbooks): Knotwork card shows its crew of agents with their own marks, an agent map and an animated vault crystal; case study chapter 07 "Built by a crew of agents". Self-review APPROVE (`review-gigiberidze-agents-card-2026-11-10.md` in the project files). [[gigiberidze.com]]
 - **2026-11-10** Knotwork [PR #17](https://github.com/GigiBeridzeAxal/knotwork/pull/17) merged into `main` (`410c3bb`) with Gigi's OK and deployed by Workers Builds: version 1.0.1, the 429 fix. `/api/health` answered the old build for about 10 minutes after the build check went green, then 1.0.1 and `410c3bb71df8`. [[Find out why Knotwork answers 429]]

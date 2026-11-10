@@ -1,7 +1,7 @@
 ---
 type: resource
 created: 2026-11-09
-updated: 2026-11-09
+updated: 2026-11-10
 tags: [links]
 ---
 # Links
@@ -21,6 +21,7 @@ tags: [links]
 
 ## Design
 - Knotwork brand canvas: https://claude.ai/artifact/GZjwgU9VuEnVrC1kAEqzQ1
+- AI phone alert brand directions: https://claude.ai/artifact/T5TacpuwMciwf4QaJjdzN6
 
 ## Profiles
 - Upwork: https://www.upwork.com/freelancers/~0177fc3504bde9ab62
