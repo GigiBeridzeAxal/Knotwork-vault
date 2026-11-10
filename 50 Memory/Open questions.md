@@ -2,7 +2,7 @@
 type: memory
 status: active
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-11
 tags: [memory, questions]
 ---
 # Open questions
@@ -16,4 +16,4 @@ tags: [memory, questions]
 - [ ] Create the `iphone-obs-cam` repo? [[iPhone OBS Cam]]
 - [ ] Fix the slow cover image (LCP) on the site? [[Traffic analytics]]
 - [ ] Knotwork plan: an AI step or not, connectors before teams? (The canvas question is settled: nested blocks, [[ADR-0010 Knotwork canvas is nested blocks drawn from the steps]].) [[Knotwork system plan]]
-- [ ] Rouse: Gigi creates the empty `rouse` repo. Which phone should it wake, and is Telegram on it? Any paid channel (Pushover 4.99 USD once, Twilio per use)? Only for Gigi, or open to others from phase 4? [[Rouse]]
+- [ ] Rouse: which mark and palette from the new set (2026-11-11)? Then ADR-0022 replaces [[ADR-0021 Violet night and dawn brand for Rouse]]. Gigi creates the empty `rouse` repo. Which phone should it wake, and is Telegram on it? Any paid channel (Pushover 4.99 USD once, Twilio per use)? Only for Gigi, or open to others from phase 4? [[Rouse]]
