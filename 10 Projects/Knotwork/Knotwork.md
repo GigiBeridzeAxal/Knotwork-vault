@@ -31,6 +31,8 @@ Live and public at https://knotwork.gigiberidze.com since 2026-11-07. **With acc
 
 **Teams and access (phase 5):** [PR #8](https://github.com/GigiBeridzeAxal/knotwork/pull/8) adds invite links with owner, editor and viewer roles, recovery codes for a forgotten password, and API keys with a documented API (`docs/api.md` in the repo). Merged into `main` on 2026-11-09. Reviewed with the [[Review criteria skill]]. See [[ADR-0012 Knotwork teams join by invite link and roles are read on every request]], [[ADR-0013 Knotwork uses recovery codes instead of email resets]], [[ADR-0014 Knotwork API keys work in one workspace and never outrank their maker]] and the runbook [[Handle a Knotwork access problem]].
 
+**429 answers (2026-11-10):** the dashboard used to pass Cloudflare's 10 requests in 10 seconds with ordinary clicking, and then everything answered 429 for 10 seconds. [PR #17](https://github.com/GigiBeridzeAxal/knotwork/pull/17) (version 1.0.1, open, waiting for Gigi's OK to merge) makes the dashboard pace its own requests, send a refused one again by itself, and ask for less. See [[ADR-0017 Knotwork dashboard paces its own requests]] and [[Find out why Knotwork answers 429]].
+
 ## How it works
 - **Worker**: Hono API on Cloudflare Workers, with a cron trigger every minute that runs scheduled workflows. It hands `/api/`, `/hooks/` and the cron tick to one Durable Object, the hub, which keeps the database connection open ([[ADR-0009 Knotwork keeps one database connection in a Durable Object]]).
 - **Dashboard**: React + Tailwind, built with the Cloudflare Vite plugin and served by the same Worker.
