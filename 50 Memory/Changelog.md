@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-10** Knotwork [PR #16](https://github.com/GigiBeridzeAxal/knotwork/pull/16) merged into `main` (`3c1ea06`) with Gigi's OK and deployed by Workers Builds: `/docs` now covers teams, API keys and recovery codes. Cloudflare changed the Worker 34 seconds after the merge; the commit in `/api/health` was not read from a browser. [[Update the Knotwork case study and docs]]
 - **2026-11-10** gigiberidze.com PR #7 merged (deploys on merge): Knotwork case study at https://gigiberidze.com/work/knotwork, updated for Knotwork 1.0, and Knotwork first in Work. Knotwork PR #16 opened: `/docs` sections for teams, API keys and recovery codes. [[Update the Knotwork case study and docs]]
 - **2026-11-10** Knotwork connected to Workers Builds; merges into `main` now deploy themselves. First automatic deploy: `ea05146` (PR #15), version 1.0.0, Cloudflare version `275aa5ae`, replacing `b4f019c1`. Live checks passed: health, `/demo`, canvas editor, a made-up webhook URL answers 404. Also merged that day: #13 (1.0.0) and #14 (health shows version and commit). [[Deploy Knotwork]]
 - **2026-11-09** Knotwork [PR #7](https://github.com/GigiBeridzeAxal/knotwork/pull/7) merged into `main`: ready-made Slack, Discord, Telegram and GitHub steps and the "New GitHub star to Discord" template. Live from the next deploy. [[ADR-0011 Knotwork ready-made steps call only their own service]]
