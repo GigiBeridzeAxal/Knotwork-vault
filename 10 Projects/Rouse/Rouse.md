@@ -27,7 +27,12 @@ The full design is in [[Rouse system plan]]. In short:
 - Links sent through outside services cannot answer an alert: [[ADR-0020 Rouse links from outside services cannot answer]].
 
 ## Brand
-Gigi chose **Rouse** on 2026-11-10 from three directions, then on 2026-11-11 turned down its colors and logo. **New set to choose from:** https://claude.ai/artifact/8U8zWScNqjJLWKJadjqg6F (five marks, five palettes, source `rouse/rouse-logo-colors.html` in the project files). The first pick was (Rouse, Holler, Beckon; private artifact https://claude.ai/artifact/T5TacpuwMciwf4QaJjdzN6). Violet night, one dawn color, soft serif, a sunrise that reads as a bell, and the ladder as the signature. See [[ADR-0021 Violet night and dawn brand for Rouse]]; the token table is `docs/brand.md` in the repo (copy: `rouse/brand.md` in the project files).
+Gigi chose **Rouse** on 2026-11-10 from three directions, then on 2026-11-11 turned down its colors and logo. **New set to choose from:** https://claude.ai/artifact/8U8zWScNqjJLWKJadjqg6F (three directions, four marks, five palettes, source `rouse/rouse-logo-colors.html` in the project files). The first pick was (Rouse, Holler, Beckon; private artifact https://claude.ai/artifact/T5TacpuwMciwf4QaJjdzN6). Violet night, one dawn color, soft serif, a sunrise that reads as a bell, and the ladder as the signature. See [[ADR-0021 Violet night and dawn brand for Rouse]]; the token table is `docs/brand.md` in the repo (copy: `rouse/brand.md` in the project files).
+
+## Design rules
+- 2026-11-11: Gigi turned down violet with amber ("dawn") and the sunrise-bell mark. Don't bring back violet or a sun shape.
+- Show logos and palettes as separate choices that mix on real screens (app icon, phone alert, home page), with two or three curated directions on top.
+- Every mark is checked at 16, 24 and 32 px and in gray before it is shown. The "Wake" eye mark was dropped on 2026-11-11 because it turned to mush at 16 px and read as a "hide password" icon.
 
 ## Next
 - [x] Gigi picked Rouse, 2026-11-10
