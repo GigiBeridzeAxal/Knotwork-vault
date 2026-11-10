@@ -1,14 +1,16 @@
 ---
 type: decision
-status: accepted
+status: superseded
 created: 2026-11-10
-updated: 2026-11-10
+updated: 2026-11-11
 date: 2026-11-10
 tags: [decision, brand]
 supersedes:
-superseded-by:
+superseded-by: "[[ADR-0022 Klein blue and the waking eye for Rouse]]"
 ---
 # ADR-0021 Violet night and dawn brand for Rouse
+
+> Superseded on 2026-11-11 by [[ADR-0022 Klein blue and the waking eye for Rouse]]: Gigi turned down these colors and the sunrise-bell mark.
 
 ## Context
 [[Rouse]] needed a name and a look clearly different from [[Knotwork]]'s ink and lime ([[ADR-0005 Ink and lime brand for Knotwork]]). Gigi has a high bar for design and rejected Knotwork's first palette, so three directions were shown as real renders of the same 03:14 alert.
