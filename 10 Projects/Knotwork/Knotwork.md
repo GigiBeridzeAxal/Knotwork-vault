@@ -2,7 +2,7 @@
 type: project
 status: active
 created: 2026-11-07
-updated: 2026-11-09
+updated: 2026-11-10
 tags: [project, cloudflare, portfolio]
 repo: https://github.com/GigiBeridzeAxal/knotwork
 url: https://knotwork.gigiberidze.com
@@ -17,7 +17,7 @@ Live and public at https://knotwork.gigiberidze.com since 2026-11-07. **With acc
 
 **Accounts and workspaces:** [PR #3](https://github.com/GigiBeridzeAxal/knotwork/pull/3) adds sign-up, log-in, a demo account, a Personal workspace plus a + box in the sidebar, and moves the data to [[MongoDB Atlas]]. PR #2 (home dashboard) and PR #3 were merged to `main` on 2026-11-09 (`c7cba02`); production was deployed from the PR branch before that. Reviewed in 17 rounds with the [[Review criteria skill]] (round 17: security 8, performance 8, logic 8, documentation 9; the report is `review-knotwork-accounts-2026-11-09-round17.md` in the project files). See [[ADR-0008 Knotwork has accounts and stores data in MongoDB Atlas]] and [[ADR-0009 Knotwork keeps one database connection in a Durable Object]].
 
-**Not deployed yet:** on `main`, `1b5a0e5` adds Log in and Sign up links to the front page and `ee4c9c6` fixes the editor replacing an edit typed while it loads. [PR #5](https://github.com/GigiBeridzeAxal/knotwork/pull/5) and [PR #11](https://github.com/GigiBeridzeAxal/knotwork/pull/11) (both merged 2026-11-09) change how the hub treats its connection, let someone in the demo reach the sign-up form, and answer 503 when the hub or the database can't be reached. [PR #12](https://github.com/GigiBeridzeAxal/knotwork/pull/12) (merged 2026-11-09) has the last small fixes from review round 17. Until `main` is deployed, production (`b4f019c1`) still replaces the hub's connection after any 500.
+**Live:** `main` (`ea05146`, version 1.0.0) was deployed on 2026-11-10 by the first automatic build, Cloudflare version `275aa5ae`. That shipped every phase merged on 2026-11-09 and 2026-11-10, including the hub fixes from PR #5, #11 and #12. `/api/health` shows the live version and commit.
 
 **The hub's connection rules (on `main`):** a database outage answers 503 with `retry-after`. A network error on a connection that has worked is left to the driver. The hub opens a new connection only when the old client is finished (closed, or it never connected): at most one every 30 seconds, or after 5 seconds for one that never got through. PR #12 adds a last resort: a connection with nothing but connection errors for three minutes is replaced. The old connection is closed after two minutes at the latest.
 
@@ -41,17 +41,17 @@ Live and public at https://knotwork.gigiberidze.com since 2026-11-07. **With acc
 Ink and lime, chosen 2026-11-08 after Gigi rejected orange and blue. See [[Knotwork design system]] and [[ADR-0005 Ink and lime brand for Knotwork]].
 
 ## Deploying
-Not connected to Workers Builds yet, so merges do **not** auto-deploy. Deploy by hand from Gigi's PC: [[Deploy Knotwork]].
+Connected to Workers Builds since 2026-11-10: every push to `main` builds and deploys itself, and other branches get a preview version. Details and the by-hand fallback: [[Deploy Knotwork]].
 
 ## Next
 The full roadmap, in phases, is in [[Knotwork system plan]]. The short list:
-- [ ] Connect the repo to Workers Builds so merges deploy themselves (Workers & Pages > knotwork > Settings > Builds)
+- [x] Repo connected to Workers Builds 2026-11-10, merges deploy themselves
 - [ ] Knotwork in the Work section and a case study at `/work/knotwork` on [[gigiberidze.com]]: [PR #7](https://github.com/GigiBeridzeAxal/gigiberidze.com/pull/7), opened 2026-11-09
-- [ ] User guide at `/docs` and one-click demo at `/demo`: [PR #6](https://github.com/GigiBeridzeAxal/knotwork/pull/6), merged 2026-11-09, waiting to be deployed. How to keep both current: [[Update the Knotwork case study and docs]]
+- [ ] User guide at `/docs` and one-click demo at `/demo`: [PR #6](https://github.com/GigiBeridzeAxal/knotwork/pull/6), merged 2026-11-09, live since 2026-11-10. How to keep both current: [[Update the Knotwork case study and docs]]
 - [x] CPU per request measured in production 2026-11-09: Worker p99 2 ms (requests) and 6 ms (cron), limit 10 ms
 - [x] PR #2 and #3 merged 2026-11-09
 - [x] PR #5, #11 and #12 merged 2026-11-09
-- [ ] Deploy `main` ([[Deploy Knotwork]])
+- [x] `main` deployed 2026-11-10 by the first automatic build (`275aa5ae`)
 - [ ] Check the Durable Object usage after a normal day (Workers & Pages > Durable Objects)
 - [x] Browser scenarios run on Chromium, Firefox and WebKit in CI on every PR (green on PR #11)
 - [ ] The demo workflow "Retry and recover" calls an address that always answers 503, so it never recovers; its title promises it does

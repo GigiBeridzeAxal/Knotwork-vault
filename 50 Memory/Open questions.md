@@ -2,14 +2,12 @@
 type: memory
 status: active
 created: 2026-11-09
-updated: 2026-11-09
+updated: 2026-11-10
 tags: [memory, questions]
 ---
 # Open questions
 
 - [ ] Stripe Atlas or Bizee for the US company? [[US LLC for Stripe]]
-- [ ] Connect Knotwork to Workers Builds? [[Knotwork]]
-- [ ] Knotwork: deploy `main` (front page links, editor fix, hub fixes; PR #5, #11 and #12 are merged)? [[Deploy Knotwork]]
 - [ ] Knotwork: check on the live site that requests from one address are refused after the rate limit (needs Gigi's OK, it touches production)? [[Knotwork]]
 - [ ] Knotwork: does the hub's Durable Object usage stay under the free daily allowance after a normal day? [[ADR-0009 Knotwork keeps one database connection in a Durable Object]]
 - [ ] Narrow the Atlas database user from `readWriteAnyDatabase` to `readWrite` on `knotwork`? [[MongoDB Atlas]]

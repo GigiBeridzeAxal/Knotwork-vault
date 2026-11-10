@@ -2,13 +2,24 @@
 type: runbook
 status: active
 created: 2026-11-09
-updated: 2026-11-09
+updated: 2026-11-10
 tags: [runbook]
 system: "[[Knotwork]]"
 ---
 # Deploy Knotwork
 
-Knotwork is **not** on Workers Builds yet, so deploy by hand from Gigi's PC. Deploying to production always needs Gigi's go-ahead ([[Working agreements]]).
+Since 2026-11-10 Knotwork deploys itself: merging a PR into `main` is the deploy. Deploying to production always needs Gigi's go-ahead ([[Working agreements]]), so a merge into `main` needs it too.
+
+## Automatic (the normal way)
+- Set up under Workers & Pages > knotwork > Settings > Builds: repository `GigiBeridzeAxal/knotwork`, production branch `main`, build `npm run build`, deploy `npx wrangler deploy`, non-production branches `npx wrangler versions upload`, root `/`, no build variables, build caching off. It uses the "Workers Builds" API token Cloudflare made; the Worker's secrets stay as they are.
+- A PR gets a "Workers Builds: knotwork" check with a preview version that takes no traffic. Merge only when that and both CI jobs are green.
+- After the merge the build takes about 35 seconds. Confirm with https://knotwork.gigiberidze.com/api/health: `commit` is the first 12 characters of the merged commit, `version` is the one in `package.json`.
+- Cloudflare starts a build only on a push; the dashboard has no "run now" button for a connected repo.
+- Cloud sessions can't open the live site. Check it through Gigi's browser, or read the "API answers" line in the Live check workflow's log.
+- First automatic deploy: 2026-11-10, commit `ea05146`, version `275aa5ae`.
+
+## By hand (fallback)
+Only when Builds is broken or for an emergency, from Gigi's PC.
 
 > [!warning] Claude's auto mode on Gigi's PC blocks npm and npx ("Code from External"), writing secrets ("Secret-Store Writes") and switching on settings that open access ("Security Weaken"). Switch that session to **Ask permissions**, or Gigi runs those steps themselves.
 

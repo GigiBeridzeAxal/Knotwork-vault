@@ -2,7 +2,7 @@
 type: memory
 status: active
 created: 2026-11-09
-updated: 2026-11-09
+updated: 2026-11-10
 tags: [memory, log]
 ---
 # Changelog
@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-10** Knotwork connected to Workers Builds; merges into `main` now deploy themselves. First automatic deploy: `ea05146` (PR #15), version 1.0.0, Cloudflare version `275aa5ae`, replacing `b4f019c1`. Live checks passed: health, `/demo`, canvas editor, a made-up webhook URL answers 404. Also merged that day: #13 (1.0.0) and #14 (health shows version and commit). [[Deploy Knotwork]]
 - **2026-11-09** Knotwork [PR #7](https://github.com/GigiBeridzeAxal/knotwork/pull/7) merged into `main`: ready-made Slack, Discord, Telegram and GitHub steps and the "New GitHub star to Discord" template. Live from the next deploy. [[ADR-0011 Knotwork ready-made steps call only their own service]]
 - **2026-11-09** Knotwork: merged into `main` (now `d678446`), each with both CI jobs green: #5, #11, #12 (hub hardening), #6 (docs and `/demo`), #9 (canvas, phase 3), #8 (teams, phase 5), #10 (secrets, branches, loops, phase 2). Nothing deployed: production is still `b4f019c1` until Gigi clicks Connect for Workers Builds. [[Knotwork system plan]]
 - **2026-11-09** Knotwork phase 2 ([PR #10](https://github.com/GigiBeridzeAxal/knotwork/pull/10)): `main` with the canvas editor and teams merged in; review rounds 2 and 3 done. Fixed along the way: a step's own text could imitate the platform's request limit and pause other accounts' runs; secrets an editor saved were kept under the editor, now under the workspace's owner; requests are taken from the allowance before each hop. In a team, anyone who can edit can send a secret's value out, so replace secrets after removing an editor. Still open, not merged, not deployed. [[ADR-0015 Knotwork runs nested steps as a flat program]], [[ADR-0016 Knotwork secrets are encrypted with a key made from the pepper]]

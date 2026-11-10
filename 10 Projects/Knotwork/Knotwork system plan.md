@@ -2,7 +2,7 @@
 type: project
 status: active
 created: 2026-11-09
-updated: 2026-11-09
+updated: 2026-11-10
 tags: [project, knotwork, plan]
 ---
 # Knotwork system plan
@@ -106,9 +106,9 @@ A run moves through `queued → running → (waiting →) succeeded | failed | s
 ## Phases
 Each phase ends with something that can be opened and clicked.
 
-### Phase 0: land what is built, stop deploying by hand (next)
+### Phase 0: land what is built, stop deploying by hand (done 2026-11-10, Atlas role still open)
 - Connect the repo to Workers Builds so a merge into `main` deploys itself (the same setup as [[gigiberidze.com]]). The Worker keeps its secrets across deploys.
-- Done 2026-11-09: PR #2 and #3 merged. Still open: connect Builds (waits for a click by Gigi).
+- Done 2026-11-09: PR #2 and #3 merged. Done 2026-11-10: Builds connected; the first automatic deploy (`ea05146`, version 1.0.0) shipped phases 1 to 6.
 - Merge PR #2, then PR #3. The first automatic deploy also ships `1b5a0e5` and `ee4c9c6`.
 - Narrow the Atlas user to `readWrite` on `knotwork` ([[MongoDB Atlas]]). Check a full day of Durable Object usage.
 - **Done when:** `main` matches the live site and a merged PR is live minutes later with nobody typing.
