@@ -21,7 +21,7 @@ Gigi's portfolio site.
 
 ## Site content
 - Process section with Gigi's four steps (setup agents and vaults, infrastructure, automated agents, ship).
-- Work section: 3 slots in `src/components/site/work.tsx`. The first is [[Knotwork]] (PR #7, merged 2026-11-10), linking to its case study page `/work/knotwork` and the live demo; the other two are placeholders.
+- Work section: `src/components/site/work.tsx` lists only finished projects (the two empty placeholder slots were removed on 2026-11-10, PR #11, because they read as unfinished work). Today that is [[Knotwork]], linking to its case study page `/work/knotwork` and the live demo. With one project the card scrolls with the page; the stacked-pile animation starts again from two projects. Add a project by adding an entry to `PROJECTS`.
 - **Live demo links go to https://knotwork.gigiberidze.com, the main domain**, never to a workflow page or `/demo?next=...` (Gigi, 2026-11-10, PR #10). The front page has sign-up and "try the demo account".
 - The Knotwork book has its own inside (PR #8, 2026-11-10): pitch, three numbers, the seven agents that built it (lead, designer, builder, reviewer, browser testers, operator, archivist) and a plate with Product, Agents and Vault tabs. Agent marks and the animated vault crystal are in `src/components/site/crew.tsx`, reused by the case study's chapter 07. Their numbers come from the case study and this vault; update them together.
 - Case study pages live under `src/app/work/<name>/page.tsx`, with screenshots in `public/media/<name>/`. See [[Update the Knotwork case study and docs]].
