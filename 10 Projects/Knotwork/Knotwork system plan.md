@@ -9,7 +9,7 @@ tags: [project, knotwork, plan]
 
 The plan for taking [[Knotwork]] from a working engine to a full product, written 2026-11-09 at Gigi's request. Visual version: https://claude.ai/artifact/1A7TYNCUNb9LL2yK1hLHKe (private to Gigi)
 
-**Where it stands:** 17 of 38 capabilities are built and live, 3 are half done, 18 are still to build. Every phase stays on free plans ([[ADR-0003 Knotwork runs on the Cloudflare free plan]]).
+**Where it stands (2026-11-10):** version 1.0.0 is live. 35 of 38 capabilities are built and live, 1 is half done (the case study waits in gigiberidze.com PR #7), 2 are left for later (an "on failure" step, a feed-watch trigger). The tables and phases below are the plan as written on 2026-11-09. Every phase stays on free plans ([[ADR-0003 Knotwork runs on the Cloudflare free plan]]).
 
 ## Architecture
 The shape stays the same from today to the finished product. New features go inside the hub and the dashboard.
