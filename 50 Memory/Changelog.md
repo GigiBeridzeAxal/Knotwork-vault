@@ -2,7 +2,7 @@
 type: memory
 status: active
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-11
 tags: [memory, log]
 ---
 # Changelog
@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-11** Gigi turned down Rouse's violet-and-dawn colors and sunrise-bell logo. Five new marks (Ring, Rungs, Wake, Prompt, Badge) and five palettes (Siren, Klein, Hi-vis, Forest, Bubblegum) shown as a mix-and-match page: https://claude.ai/artifact/8U8zWScNqjJLWKJadjqg6F (private). [[Rouse]]
 - **2026-11-10** Gigi chose the name and brand Rouse. Phase 0 starter built and tested locally (13 tests), saved to the project files as a git bundle; not pushed or deployed, the repo does not exist yet. [[ADR-0021 Violet night and dawn brand for Rouse]]
 - **2026-11-10** New project planned at Gigi's request: an MCP server that lets Claude reach Gigi by phone (working name Rouse). Plan, three brand directions and three proposed decisions written; nothing built, no repo or account yet. [[Rouse]]
 - **2026-11-10** gigiberidze.com [PR #10](https://github.com/GigiBeridzeAxal/gigiberidze.com/pull/10) merged (`fa1c493`, deploys on merge): every Knotwork live demo link now opens https://knotwork.gigiberidze.com instead of a demo workflow, at Gigi's request. [[gigiberidze.com]]

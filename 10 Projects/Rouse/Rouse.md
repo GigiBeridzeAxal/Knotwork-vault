@@ -2,7 +2,7 @@
 type: project
 status: active
 created: 2026-11-10
-updated: 2026-11-10
+updated: 2026-11-11
 tags: [project, cloudflare, portfolio, mcp]
 repo: none yet (planned name rouse)
 url:
@@ -27,7 +27,7 @@ The full design is in [[Rouse system plan]]. In short:
 - Links sent through outside services cannot answer an alert: [[ADR-0020 Rouse links from outside services cannot answer]].
 
 ## Brand
-Gigi chose **Rouse** on 2026-11-10 from three directions (Rouse, Holler, Beckon; private artifact https://claude.ai/artifact/T5TacpuwMciwf4QaJjdzN6). Violet night, one dawn color, soft serif, a sunrise that reads as a bell, and the ladder as the signature. See [[ADR-0021 Violet night and dawn brand for Rouse]]; the token table is `docs/brand.md` in the repo (copy: `rouse/brand.md` in the project files).
+Gigi chose **Rouse** on 2026-11-10 from three directions, then on 2026-11-11 turned down its colors and logo. **New set to choose from:** https://claude.ai/artifact/8U8zWScNqjJLWKJadjqg6F (five marks, five palettes, source `rouse/rouse-logo-colors.html` in the project files). The first pick was (Rouse, Holler, Beckon; private artifact https://claude.ai/artifact/T5TacpuwMciwf4QaJjdzN6). Violet night, one dawn color, soft serif, a sunrise that reads as a bell, and the ladder as the signature. See [[ADR-0021 Violet night and dawn brand for Rouse]]; the token table is `docs/brand.md` in the repo (copy: `rouse/brand.md` in the project files).
 
 ## Next
 - [x] Gigi picked Rouse, 2026-11-10
