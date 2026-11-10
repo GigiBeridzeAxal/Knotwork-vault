@@ -2,7 +2,7 @@
 type: system
 status: live
 created: 2026-10-29
-updated: 2026-11-09
+updated: 2026-11-10
 tags: [system, cloudflare, site]
 repo: https://github.com/GigiBeridzeAxal/gigiberidze.com
 url: https://gigiberidze.com
@@ -21,7 +21,7 @@ Gigi's portfolio site.
 
 ## Site content
 - Process section with Gigi's four steps (setup agents and vaults, infrastructure, automated agents, ship).
-- Work section: 3 slots in `src/components/site/work.tsx`. The first is [[Knotwork]] (PR #7, 2026-11-09), linking to its case study page `/work/knotwork` and the live demo; the other two are placeholders.
+- Work section: 3 slots in `src/components/site/work.tsx`. The first is [[Knotwork]] (PR #7, merged 2026-11-10), linking to its case study page `/work/knotwork` and the live demo; the other two are placeholders.
 - Case study pages live under `src/app/work/<name>/page.tsx`, with screenshots in `public/media/<name>/`. See [[Update the Knotwork case study and docs]].
 - Hero links: X, Freelancer, Upwork. No "Hire me" buttons and no Freelancer reviews (removed 2026-10-30 at Gigi's request).
 - Contact: mailto `hello@gigiberidze.com` only, no form. See [[Contact email]].

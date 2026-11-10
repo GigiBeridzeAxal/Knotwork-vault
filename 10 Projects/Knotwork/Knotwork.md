@@ -46,8 +46,8 @@ Connected to Workers Builds since 2026-11-10: every push to `main` builds and de
 ## Next
 The full roadmap, in phases, is in [[Knotwork system plan]]. The short list:
 - [x] Repo connected to Workers Builds 2026-11-10, merges deploy themselves
-- [ ] Knotwork in the Work section and a case study at `/work/knotwork` on [[gigiberidze.com]]: [PR #7](https://github.com/GigiBeridzeAxal/gigiberidze.com/pull/7), opened 2026-11-09
-- [ ] User guide at `/docs` and one-click demo at `/demo`: [PR #6](https://github.com/GigiBeridzeAxal/knotwork/pull/6), merged 2026-11-09, live since 2026-11-10. How to keep both current: [[Update the Knotwork case study and docs]]
+- [x] Knotwork in the Work section and a case study at `/work/knotwork` on [[gigiberidze.com]]: [PR #7](https://github.com/GigiBeridzeAxal/gigiberidze.com/pull/7), merged 2026-11-10
+- [x] User guide at `/docs` and one-click demo at `/demo`: [PR #6](https://github.com/GigiBeridzeAxal/knotwork/pull/6), merged 2026-11-09, live since 2026-11-10. How to keep both current: [[Update the Knotwork case study and docs]]
 - [x] CPU per request measured in production 2026-11-09: Worker p99 2 ms (requests) and 6 ms (cron), limit 10 ms
 - [x] PR #2 and #3 merged 2026-11-09
 - [x] PR #5, #11 and #12 merged 2026-11-09

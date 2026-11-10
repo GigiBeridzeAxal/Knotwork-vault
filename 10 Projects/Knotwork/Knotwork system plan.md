@@ -101,7 +101,7 @@ A run moves through `queued → running → (waiting →) succeeded | failed | s
 | Tests run on every change | To build | 1 |
 | Browser scenarios on Chromium, Firefox and WebKit | Partly | 1 |
 | Alert when the live site breaks | To build | 1 |
-| Docs, and a case study on gigiberidze.com | Partly (PRs open) | 6 |
+| Docs, and a case study on gigiberidze.com | Done (2026-11-10) | 6 |
 
 ## Phases
 Each phase ends with something that can be opened and clicked.
@@ -152,7 +152,7 @@ CI lives in `.github/workflows/ci.yml` and `live-check.yml`; scenarios in the re
 
 ### Phase 6: show it off
 - Case study in the Work section of [[gigiberidze.com]]; docs page in the app; README screenshots and a demo clip.
-- 2026-11-09: case study (gigiberidze.com PR #7), `/docs` and `/demo` (knotwork PR #6) and README screenshots done; a demo clip is not made yet. See [[Update the Knotwork case study and docs]].
+- 2026-11-09: case study (gigiberidze.com PR #7), `/docs` and `/demo` (knotwork PR #6) and README screenshots done; a demo clip is not made yet. Case study merged 2026-11-10. See [[Update the Knotwork case study and docs]].
 - **Done when:** a client gets from the portfolio to a running demo workflow in two clicks.
 
 ## Free plan budget (measured 2026-11-09)
