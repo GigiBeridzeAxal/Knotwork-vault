@@ -12,7 +12,8 @@ When to use this: a Knotwork feature lands (secrets, branches, canvas, connector
 
 ## Where things are
 - **Case study**: gigiberidze.com repo, `src/app/work/knotwork/page.tsx` (copy, `FACTS`, `NUMBERS`), screenshots in `public/media/knotwork/`, share image `src/app/work/knotwork/opengraph-image.jpg`. Live at https://gigiberidze.com/work/knotwork.
-- **Work card**: `src/components/site/work.tsx`, first entry of `PROJECTS`.
+- **Work card**: `src/components/site/work.tsx`, first entry of `PROJECTS`; its inside is `knotwork-showcase.tsx` (description, the three numbers in `STATS`, tabs).
+- **Agents and vault**: `src/components/site/crew.tsx` (`AGENTS`, `VAULT` counts and notes). When an agent's number or the vault's folder counts change (new ADR, new runbook), update them there; the card and case study chapter 07 both read it.
 - **User guide**: knotwork repo, `src/pages/DocsPage.tsx`, served at https://knotwork.gigiberidze.com/docs. Limit numbers come from `shared/limits.ts` on their own; anything else is plain text.
 - **One-click demo**: https://knotwork.gigiberidze.com/demo (`src/pages/DemoPage.tsx`). The portfolio, README and docs link to it.
 

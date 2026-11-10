@@ -54,6 +54,7 @@ The full roadmap, in phases, is in [[Knotwork system plan]]. The short list:
 - [x] PR #2 and #3 merged 2026-11-09
 - [x] PR #5, #11 and #12 merged 2026-11-09
 - [x] `main` deployed 2026-11-10 by the first automatic build (`275aa5ae`)
+- [x] Work card shows the agents that built Knotwork and the vault: gigiberidze.com [PR #8](https://github.com/GigiBeridzeAxal/gigiberidze.com/pull/8), 2026-11-10
 - [ ] Check the Durable Object usage after a normal day (Workers & Pages > Durable Objects)
 - [x] Browser scenarios run on Chromium, Firefox and WebKit in CI on every PR (green on PR #11)
 - [ ] The demo workflow "Retry and recover" calls an address that always answers 503, so it never recovers; its title promises it does
