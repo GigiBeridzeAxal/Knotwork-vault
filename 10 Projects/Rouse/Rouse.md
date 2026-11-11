@@ -17,7 +17,9 @@ Repo **GigiBeridzeAxal/rouse** (private) created by Gigi on 2026-11-11; `main` h
 
 Phase 0 has the Worker (`/api/health`, a rate limit, a `/mcp` placeholder that answers 501), the ladder model, the first D1 schema, 17 passing tests, CI, and the **landing page** (2026-11-11): a Klein hero with a playable 3 AM demo (a drawn phone climbs push, alarm, call; the visitor answers and the agent carries on), how it works with the six MCP tools, a ladder chart drawn from `shared/ladder.ts`, channels, safety rules and the one-line setup command. Screenshots: `rouse/screens/landing-*.png` in the project files. Self-review APPROVE: `rouse/review-rouse-landing-2026-11-11.md` in the project files.
 
-Waiting on Gigi: which phone to wake, and whether any paid channel is wanted.
+**Landing page redesign, 2026-11-11 (second pass):** Gigi turned down the first landing page ("i dont like design and colors and animations"). Rebuilt with neutral night colors, Klein only as light, lighter headlines and calmer motion, in three color directions (Midnight, Paper, Aurora) on one layout. It sits in draft [PR #1](https://github.com/GigiBeridzeAxal/rouse/pull/1) on branch `claude/project-thread-f4pya4`; Workers Builds made a preview of it (the Preview URL is in the Cloudflare dashboard under the Worker's Previews; the build does not post it on the pull request). Nothing is live until Gigi picks a direction. Screenshots `rouse/screens/redesign-*.jpg`, self-review `rouse/review-rouse-landing-redesign-2026-11-11.md` in the project files.
+
+Waiting on Gigi: the landing page's color direction, which phone to wake, and whether any paid channel is wanted.
 
 ## How it works
 The full design is in [[Rouse system plan]]. In short:
@@ -31,7 +33,7 @@ The full design is in [[Rouse system plan]]. In short:
 ## Brand
 Gigi chose the name **Rouse** on 2026-11-10. The first look (violet night, dawn accent, sunrise-bell mark) was turned down on 2026-11-11, and the same day Gigi chose **Klein blue and the Wake eye**: [[ADR-0022 Klein blue and the waking eye for Rouse]]. Brand page with every mark and palette on real screens: https://claude.ai/artifact/8U8zWScNqjJLWKJadjqg6F (private; source `rouse/rouse-logo-colors.html` in the project files).
 
-- Brand surfaces in Klein `#1534E0` with white; app screens in a dark navy at the same hue.
+- Klein `#1534E0` is the brand color, used as light: the primary button, glows, lit chart bars, the phone's alert screens. Neutrals tinted toward its hue carry every page (second pass, 2026-11-11).
 - The eye has two optical cuts: full from 32 px, small for 16 to 24 px.
 - Bricolage Grotesque, Instrument Sans, IBM Plex Mono.
 - Token tables with measured contrast: `docs/brand.md` in the repo (copy: `rouse/brand.md` in the project files). Home page screenshots: `rouse/screens/` in the project files.
@@ -41,6 +43,7 @@ Gigi chose the name **Rouse** on 2026-11-10. The first look (violet night, dawn 
 - Show logos and palettes as separate choices that mix on real screens (app icon, phone alert, home page), with two or three curated directions on top.
 - Every mark is checked at 16, 24 and 32 px and in gray before it is shown. The Wake eye first blurred at 16 px; Gigi still liked it, so it was redrawn with a small optical cut instead of being dropped.
 - Sky `#A9BAFF` is a highlight only (the eye's rays, a lit ladder bar), never a text or button color on night.
+- 2026-11-11, second pass: Gigi turned down the first landing page: full-width Klein bands, heavy 700 headlines, shaking and flickering animations. Neutrals carry the page and Klein stays under 10% of a screen, as light rather than paint. Headlines at weight 500 to 600. Motion fades, rises and un-blurs on a long ease-out, once per idea; no shake, flicker or bounce. Researched from Linear, Raycast and Stripe; rules and tokens in `docs/brand.md`.
 
 ## Next
 - [x] Gigi picked Rouse, 2026-11-10
@@ -50,6 +53,8 @@ Gigi chose the name **Rouse** on 2026-11-10. The first look (violet night, dawn 
 - [ ] Gigi says which phone to wake and whether Telegram is on it
 - [ ] Gigi decides on paid parts (none, Pushover, Twilio)
 - [x] Connected to Workers Builds and live at rouse.gigiberidze.com, 2026-11-11
+- [x] Landing page redesigned after Gigi turned the first one down; draft PR #1 with three color directions, 2026-11-11
+- [ ] Gigi picks Midnight, Paper or Aurora; then merge PR #1 to put it live
 - [ ] Create the D1 database and take the three measurements
 - [ ] Phase 1: MCP endpoint with sign-in, `alert_human`, `wait_for_reply`, web push, answer page
 

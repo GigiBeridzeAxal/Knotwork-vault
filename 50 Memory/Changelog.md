@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-11** Gigi turned down the Rouse landing page (design, colors, motion). Rebuilt after studying how Linear, Raycast and Stripe pick color and motion: neutral night palette, Klein only as light, weights 500 to 600, calmer motion, three color directions. Draft [PR #1](https://github.com/GigiBeridzeAxal/rouse/pull/1) with a Workers preview build; not merged, production unchanged. [[Rouse]]
 - **2026-11-11** Rouse is live at https://rouse.gigiberidze.com. Workers Builds connected to GigiBeridzeAxal/rouse (every push to `main` deploys); first build `334398cb`, version `3befa06b`. Done through Chrome on Gigi's PC with Gigi's go-ahead. [[Deploy Rouse]]
 - **2026-11-11** Gigi created the private repo GigiBeridzeAxal/rouse. Pushed phase 0 plus the new landing page (Klein hero with a playable 3 AM demo, ladder chart, channels, safety, setup). Not deployed yet. [[Rouse]]
 - **2026-11-11** Gigi chose Klein blue and the Wake eye for Rouse. The eye was redrawn with a small cut for 16 to 24 px, and the phase 0 starter (home page, favicon, tokens, `docs/brand.md`) was rebranded; still not pushed, no repo yet. [[ADR-0022 Klein blue and the waking eye for Rouse]]
