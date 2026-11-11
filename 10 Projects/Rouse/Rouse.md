@@ -5,7 +5,7 @@ created: 2026-11-10
 updated: 2026-11-11
 tags: [project, cloudflare, portfolio, mcp]
 repo: https://github.com/GigiBeridzeAxal/rouse (private)
-url:
+url: https://rouse.gigiberidze.com
 stack: [Cloudflare Workers, D1, Durable Objects, KV, Hono, MCP, Web Push, React, Tailwind]
 ---
 # Rouse
@@ -13,11 +13,11 @@ stack: [Cloudflare Workers, D1, Durable Objects, KV, Hono, MCP, Web Push, React,
 A pager for AI agents: an MCP server that lets Claude get Gigi's attention on the phone (quiet push, loud alarm, ringing call) when it is stuck, and carries the answer back so the work continues. Gigi's second portfolio project, asked for on 2026-11-10. Tagline: *Wake the human.*
 
 ## Status
-Repo **GigiBeridzeAxal/rouse** (private) created by Gigi on 2026-11-11; `main` holds phase 0 and the landing page. **Not deployed yet**: connecting Workers Builds and the custom domain `rouse.gigiberidze.com` needs Gigi's OK (the first deploy creates the DNS record).
+Repo **GigiBeridzeAxal/rouse** (private) created by Gigi on 2026-11-11; `main` holds phase 0 and the landing page. **Live since 2026-11-11** at https://rouse.gigiberidze.com: Workers Builds is connected, so every push to `main` deploys itself. See [[Deploy Rouse]].
 
 Phase 0 has the Worker (`/api/health`, a rate limit, a `/mcp` placeholder that answers 501), the ladder model, the first D1 schema, 17 passing tests, CI, and the **landing page** (2026-11-11): a Klein hero with a playable 3 AM demo (a drawn phone climbs push, alarm, call; the visitor answers and the agent carries on), how it works with the six MCP tools, a ladder chart drawn from `shared/ladder.ts`, channels, safety rules and the one-line setup command. Screenshots: `rouse/screens/landing-*.png` in the project files. Self-review APPROVE: `rouse/review-rouse-landing-2026-11-11.md` in the project files.
 
-Waiting on Gigi: OK to deploy, which phone to wake, and whether any paid channel is wanted.
+Waiting on Gigi: which phone to wake, and whether any paid channel is wanted.
 
 ## How it works
 The full design is in [[Rouse system plan]]. In short:
@@ -49,7 +49,7 @@ Gigi chose the name **Rouse** on 2026-11-10. The first look (violet night, dawn 
 - [x] Gigi created the private repo `rouse`; `main` pushed with the landing page, 2026-11-11
 - [ ] Gigi says which phone to wake and whether Telegram is on it
 - [ ] Gigi decides on paid parts (none, Pushover, Twilio)
-- [ ] Connect the repo to Workers Builds (the first deploy creates the DNS record for rouse.gigiberidze.com, so it needs Gigi's OK)
+- [x] Connected to Workers Builds and live at rouse.gigiberidze.com, 2026-11-11
 - [ ] Create the D1 database and take the three measurements
 - [ ] Phase 1: MCP endpoint with sign-in, `alert_human`, `wait_for_reply`, web push, answer page
 

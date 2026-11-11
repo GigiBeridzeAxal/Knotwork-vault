@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-11** Rouse is live at https://rouse.gigiberidze.com. Workers Builds connected to GigiBeridzeAxal/rouse (every push to `main` deploys); first build `334398cb`, version `3befa06b`. Done through Chrome on Gigi's PC with Gigi's go-ahead. [[Deploy Rouse]]
 - **2026-11-11** Gigi created the private repo GigiBeridzeAxal/rouse. Pushed phase 0 plus the new landing page (Klein hero with a playable 3 AM demo, ladder chart, channels, safety, setup). Not deployed yet. [[Rouse]]
 - **2026-11-11** Gigi chose Klein blue and the Wake eye for Rouse. The eye was redrawn with a small cut for 16 to 24 px, and the phase 0 starter (home page, favicon, tokens, `docs/brand.md`) was rebranded; still not pushed, no repo yet. [[ADR-0022 Klein blue and the waking eye for Rouse]]
 - **2026-11-11** Gigi turned down Rouse's violet-and-dawn colors and sunrise-bell logo. Five new marks (Ring, Rungs, Wake, Prompt, Badge) and five palettes (Siren, Klein, Hi-vis, Forest, Bubblegum) shown as a mix-and-match page: https://claude.ai/artifact/8U8zWScNqjJLWKJadjqg6F (private). [[Rouse]]
