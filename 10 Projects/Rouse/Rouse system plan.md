@@ -2,7 +2,7 @@
 type: project
 status: active
 created: 2026-11-10
-updated: 2026-11-10
+updated: 2026-11-12
 tags: [project, plan, mcp]
 ---
 # Rouse system plan
@@ -64,7 +64,7 @@ Secrets (Telegram bot token, push signing key, session pepper, any paid keys) li
 ## Safety rules
 - Hourly budget per token and urgency; over it, alerts are downgraded and Claude is told.
 - One mute switch; duplicates fold together; every ladder ends (15 minutes at most).
-- One hashed, labelled, revocable token per connected agent. Gigi signs in with a passkey.
+- One hashed, labelled, revocable token per connected agent. Gigi signs in with a passkey. (Changed 2026-11-12: people sign in with an email and a password, see [[ADR-0023 Rouse accounts use email, password and recovery codes]].)
 - Outside services get "Claude needs you" and a link, never the message text.
 - A link from an outside service only opens the alert; answering needs the signed-in app or Gigi's own Telegram chat.
 - All text is length-limited plain text. Every alert shows which agent sent it.
@@ -78,7 +78,7 @@ Secrets (Telegram bot token, push signing key, session pepper, any paid keys) li
 | 1 First ring | Alert reaches the phone, the answer returns to Claude |
 | 2 Loud ladder | Timer, ntfy, Telegram message and call, stop on answer |
 | 3 Rules | Editable ladders, quiet hours, budgets, mute, history |
-| 4 Open to others | Accounts, demo, landing page, docs |
+| 4 Open to others | Accounts, demo, landing page, docs (accounts came early, 2026-11-12) |
 | 5 Paid channels (optional) | Pushover and Twilio with the user's own keys |
 | 6 Android alarm app (stretch) | Full-screen alarm |
 | 7 Portfolio | Case study on [[gigiberidze.com]] |

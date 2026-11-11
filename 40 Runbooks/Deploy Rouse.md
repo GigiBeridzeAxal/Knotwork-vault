@@ -2,7 +2,7 @@
 type: runbook
 status: active
 created: 2026-11-11
-updated: 2026-11-11
+updated: 2026-11-12
 tags: [runbook]
 system: "[[Rouse]]"
 ---
@@ -23,5 +23,16 @@ Since 2026-11-11 Rouse deploys itself: every push to `main` of the private repo 
 ## Through Gigi's browser
 On Gigi's devices Claude's permission mode may refuse the final **Deploy** click as a production deploy. With Gigi's message in the thread as approval it went through on the second try (2026-11-11); otherwise Gigi clicks it.
 
-## Later
-Phase 1 adds the D1 database and secrets. Steps are in the repo README and in `wrangler.jsonc`.
+## Turn on accounts (once, with Gigi's OK)
+Accounts ([[ADR-0023 Rouse accounts use email, password and recovery codes]], PR #3) need the D1 database `rouse` (created 2026-11-11, empty) to have the schema, and the Worker to have the secret `AUTH_PEPPER`. Do both **before** merging; until then the account pages answer "Accounts aren't switched on here yet" (or fail, if only the schema is missing). The landing page doesn't depend on either.
+1. **Schema.** From a terminal with the repo and `npx wrangler login`: `npx wrangler d1 migrations apply rouse --remote`. Or in the dashboard: Storage & Databases > D1 > rouse > Console, paste `migrations/0001_init.sql`, then record it so Wrangler never runs it again:
+   `CREATE TABLE IF NOT EXISTS d1_migrations(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT UNIQUE, applied_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL); INSERT INTO d1_migrations (name) VALUES ('0001_init.sql');`
+   (That is the table and row Wrangler itself writes.)
+2. **Secret.** Workers & Pages > rouse > Settings > Variables and Secrets > Add, type Secret, name `AUTH_PEPPER`, value 32 or more random characters (a password manager can make one). Or `npx wrangler secret put AUTH_PEPPER`. Set it once and never change it: a new value makes every password and recovery code stop working. Never write the value anywhere else.
+3. **Merge** the PR; Workers Builds deploys it.
+4. **Check:** `/api/health` shows the new commit; make Gigi's own account first at `/signup` (addresses aren't verified, so the first to use one gets it); then look at the CPU time per request in the Worker's metrics (sign-up should stay well under the free plan's 10 ms).
+
+## New migrations later
+Apply each new file in `migrations/` with `npx wrangler d1 migrations apply rouse --remote` **before** merging the PR that needs it. The default Workers Builds token can deploy a Worker bound to D1 but can't change the database, so builds don't apply migrations. Preview builds get neither the database nor the secret (previews don't inherit production settings).
+
+In cloud sessions the Cloudflare connector listed and created D1 databases (2026-11-11) but answered 403 "not authorized" to queries (2026-11-12), so schema changes go through Wrangler on Gigi's machine or the dashboard.

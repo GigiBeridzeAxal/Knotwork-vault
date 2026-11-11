@@ -2,7 +2,7 @@
 type: project
 status: active
 created: 2026-11-10
-updated: 2026-11-11
+updated: 2026-11-12
 tags: [project, cloudflare, portfolio, mcp]
 repo: https://github.com/GigiBeridzeAxal/rouse (private)
 url: https://rouse.gigiberidze.com
@@ -19,7 +19,9 @@ Phase 0 has the Worker (`/api/health`, a rate limit, a `/mcp` placeholder that a
 
 **Landing page redesign, 2026-11-11 (second pass):** Gigi turned down the first landing page ("i dont like design and colors and animations"). It was rebuilt with neutrals carrying the page, Klein only as light, lighter headlines and calmer motion, and shown in three color directions on one layout (Midnight, Paper, Aurora). **Gigi chose Paper**: a light gallery (off-white page `#F7F7F4`, white cards, near-black text, Klein as the one color). Merged as [PR #1](https://github.com/GigiBeridzeAxal/rouse/pull/1) (squash `7cd821c`) and live the same day; a phone fix (the hero phone peeks in on the first screen) followed in [PR #2](https://github.com/GigiBeridzeAxal/rouse/pull/2) (squash `d98f6c9`). Screenshots `rouse/screens/landing-paper-1440.jpg` and `landing-paper-390.jpg`, reviews `rouse/review-rouse-landing-redesign-2026-11-11*.md` in the project files.
 
-Waiting on Gigi: which phone to wake, and whether any paid channel is wanted.
+**Accounts, 2026-11-12 (not live yet):** Gigi asked for sign-up and sign-in and chose **email and password** ([[ADR-0023 Rouse accounts use email, password and recovery codes]]). Built in [PR #3](https://github.com/GigiBeridzeAxal/rouse/pull/3): sign-up (then ten recovery codes to save), sign-in, reset with a recovery code, a setup page (phone and Claude steps marked "coming soon") and an account page (signed-in browsers, password, new codes, delete). Open to anyone, at most 100 new accounts a day. 61 unit tests and 36 browser checks pass. Going live needs Gigi's OK and three steps: apply the schema to the D1 database `rouse`, set the Worker secret `AUTH_PEPPER`, then merge ([[Deploy Rouse]]). Screenshots `rouse/screens/accounts-*.jpg`, review `rouse/review-rouse-accounts-2026-11-12.md` in the project files.
+
+Waiting on Gigi: the go-ahead for accounts, which phone to wake, and whether any paid channel is wanted.
 
 ## How it works
 The full design is in [[Rouse system plan]]. In short:
@@ -34,7 +36,7 @@ The full design is in [[Rouse system plan]]. In short:
 Gigi chose the name **Rouse** on 2026-11-10. The first look (violet night, dawn accent, sunrise-bell mark) was turned down on 2026-11-11, and the same day Gigi chose **Klein blue and the Wake eye**: [[ADR-0022 Klein blue and the waking eye for Rouse]]. Brand page with every mark and palette on real screens: https://claude.ai/artifact/8U8zWScNqjJLWKJadjqg6F (private; source `rouse/rouse-logo-colors.html` in the project files).
 
 - Klein `#1534E0` is the brand color, used as light: the primary button, glows, lit chart bars, the phone's alert screens. Neutrals tinted toward its hue carry every page (second pass, 2026-11-11).
-- The landing page uses the **Paper** palette (light gallery); the drawn phone and terminal stay dark ink. The night palette (Midnight) is kept for the app's own screens, opened at 3 AM.
+- The landing page and the account screens use the **Paper** palette (light gallery); the drawn phone and terminal stay dark ink. The night palette (Midnight) is kept for the alert screen, opened at 3 AM.
 - The eye has two optical cuts: full from 32 px, small for 16 to 24 px.
 - Bricolage Grotesque, Instrument Sans, IBM Plex Mono.
 - Token tables with measured contrast: `docs/brand.md` in the repo (copy: `rouse/brand.md` in the project files). Home page screenshots: `rouse/screens/` in the project files.
@@ -57,7 +59,10 @@ Gigi chose the name **Rouse** on 2026-11-10. The first look (violet night, dawn 
 - [x] Connected to Workers Builds and live at rouse.gigiberidze.com, 2026-11-11
 - [x] Landing page redesigned after Gigi turned the first one down; draft PR #1 with three color directions, 2026-11-11
 - [x] Gigi picked Paper; PR #1 merged and live, 2026-11-11 (phone fix in PR #2)
-- [ ] Create the D1 database and take the three measurements
+- [x] D1 database `rouse` created, 2026-11-11 (empty until accounts go live)
+- [x] Gigi asked for accounts and chose email and password; built in PR #3, 2026-11-12
+- [ ] Accounts live: schema applied, `AUTH_PEPPER` set, PR #3 merged (needs Gigi's OK)
+- [ ] Take the phase 0 measurements (web push CPU, timer object time, D1 reads while waiting, 25 s tool calls)
 - [ ] Phase 1: MCP endpoint with sign-in, `alert_human`, `wait_for_reply`, web push, answer page
 
 ## Related
