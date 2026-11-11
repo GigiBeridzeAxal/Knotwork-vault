@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-11** Gigi picked the Paper palette (light gallery, Klein as the one color) for the Rouse landing page. Redesign merged as [PR #1](https://github.com/GigiBeridzeAxal/rouse/pull/1) (squash `7cd821c`) and live at https://rouse.gigiberidze.com; `/api/health` now reports the commit hash. Phone fix (the hero phone peeks in on the first screen) merged as [PR #2](https://github.com/GigiBeridzeAxal/rouse/pull/2) (squash `d98f6c9`). [[Rouse]]
 - **2026-11-11** Gigi turned down the Rouse landing page (design, colors, motion). Rebuilt after studying how Linear, Raycast and Stripe pick color and motion: neutral night palette, Klein only as light, weights 500 to 600, calmer motion, three color directions. Draft [PR #1](https://github.com/GigiBeridzeAxal/rouse/pull/1) with a Workers preview build; not merged, production unchanged. [[Rouse]]
 - **2026-11-11** Rouse is live at https://rouse.gigiberidze.com. Workers Builds connected to GigiBeridzeAxal/rouse (every push to `main` deploys); first build `334398cb`, version `3befa06b`. Done through Chrome on Gigi's PC with Gigi's go-ahead. [[Deploy Rouse]]
 - **2026-11-11** Gigi created the private repo GigiBeridzeAxal/rouse. Pushed phase 0 plus the new landing page (Klein hero with a playable 3 AM demo, ladder chart, channels, safety, setup). Not deployed yet. [[Rouse]]
