@@ -35,4 +35,4 @@ Accounts ([[ADR-0023 Rouse accounts use email, password and recovery codes]], PR
 ## New migrations later
 Apply each new file in `migrations/` with `npx wrangler d1 migrations apply rouse --remote` **before** merging the PR that needs it. The default Workers Builds token can deploy a Worker bound to D1 but can't change the database, so builds don't apply migrations. Preview builds get neither the database nor the secret (previews don't inherit production settings).
 
-In cloud sessions the Cloudflare connector listed and created D1 databases (2026-11-11) but answered 403 "not authorized" to queries (2026-11-12), so schema changes go through Wrangler on Gigi's machine or the dashboard.
+In cloud sessions the Cloudflare connector's D1 query answered 403 on 2026-11-11 but worked on 2026-11-12; the accounts schema and its `d1_migrations` row were applied that way. If it refuses again, use Wrangler on Gigi's machine or the dashboard console. Secrets can't be set from a cloud session (no tool for it).
