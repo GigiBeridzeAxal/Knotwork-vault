@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-13** Rouse accounts still answered 503: Atlas refused the Worker's password ("bad auth"). Checked in Gigi's Chrome that the 0.0.0.0/0 rule is active and `rouse-worker` has readWrite on `rouse`; set a new password for `rouse-worker` in Atlas and left a one-click helper on the PC that saves the matching `MONGODB_URI`. Waiting for Gigi to run it. [[Deploy Rouse]]
 - **2026-11-13** Rouse sidebar dashboard merged and live: [PR #7](https://github.com/GigiBeridzeAxal/rouse/pull/7) (squash `c0aa4ee`, `/api/health` `c0aa4ee436f2`), merged on Gigi's "go implement it". Adds the landing page's "Open dashboard" for signed-in visitors. [[Rouse dashboard plan]]
 - **2026-11-13** Gigi approved the dashboard plan and asked for a sidebar dashboard. Built in [Rouse PR #7](https://github.com/GigiBeridzeAxal/rouse/pull/7): sidebar shell, Home, Alerts, Devices, Agents, Alerts and mute (mute works), `GET /api/dashboard`. Not merged; merging deploys. [[Rouse dashboard plan]]
 - **2026-11-13** Planned the signed-in Rouse dashboard (status line, open alerts, devices and iOS pairing, agents, recent alerts, mute; channels and rules later). Plan only, published as https://claude.ai/artifact/2Ac11mUhWinWV4qcgdreuL. [[Rouse dashboard plan]]
