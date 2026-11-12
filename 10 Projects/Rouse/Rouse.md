@@ -68,7 +68,7 @@ Gigi chose the name **Rouse** on 2026-11-10. The first look (violet night, dawn 
 - [ ] Phase 1: MCP endpoint with sign-in, `alert_human`, `wait_for_reply`, web push, answer page
 
 ## Related
-- Dashboard plan and the sidebar dashboard built from it (2026-11-13, PR #7): [[Rouse dashboard plan]]
+- Dashboard plan and the sidebar dashboard built from it (2026-11-13, PR #7, live): [[Rouse dashboard plan]]
 - Plan as a document (private to Gigi): https://claude.ai/artifact/5w5RtsHstt8PmzdjcBR1w2
 - Self-review of the plan: `phone-alert/review-phone-alert-plan-2026-11-10.md` in the project files
 - Precedents: [[Knotwork]], [[ADR-0003 Knotwork runs on the Cloudflare free plan]]

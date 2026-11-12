@@ -7,7 +7,7 @@ tags: [project, plan, rouse, design]
 ---
 # Rouse dashboard plan
 
-What the signed-in [[Rouse]] dashboard should hold. Asked for by Gigi on 2026-11-13 ("dashboard artifact plan what we need to have in dashboard"). Read as: the page people land on after signing in at rouse.gigiberidze.com, also wrapped by the coming iOS app. Built on 2026-11-13 as a sidebar dashboard (Gigi asked for a side panel) in [PR #7](https://github.com/GigiBeridzeAxal/rouse/pull/7), not merged yet; see Built below. Reading version with wireframes: https://claude.ai/artifact/2Ac11mUhWinWV4qcgdreuL (private to Gigi).
+What the signed-in [[Rouse]] dashboard should hold. Asked for by Gigi on 2026-11-13 ("dashboard artifact plan what we need to have in dashboard"). Read as: the page people land on after signing in at rouse.gigiberidze.com, also wrapped by the coming iOS app. Built on 2026-11-13 as a sidebar dashboard (Gigi asked for a side panel) in [PR #7](https://github.com/GigiBeridzeAxal/rouse/pull/7), merged and live on 2026-11-13 (squash `c0aa4ee`); see Built below. Reading version with wireframes: https://claude.ai/artifact/2Ac11mUhWinWV4qcgdreuL (private to Gigi).
 
 ## The job
 Answer two questions first: *can Rouse wake me right now?* and *does anything need me?* The dashboard becomes the signed-in home at `/app`; today's Setup page folds into it as a checklist until setup is done. Account stays as built, under Settings.
@@ -55,10 +55,11 @@ Wraps the same React pages. Opens on the answer screen while an alert rings. Pai
 4. Alerts: ringing card, phone answer screen, history with step log, Ring my phone.
 5. Mute.
 
-## Built (2026-11-13, PR #7)
+## Built (2026-11-13, PR #7, live as `c0aa4ee`)
 - Sidebar: status card, Home, Alerts, Devices, Agents; Settings group with "Alerts and mute" and Account; a quick mute button; email and sign out. A drawer on phones.
 - Routes: `/app`, `/app/alerts`, `/app/devices`, `/app/agents`, `/app/settings`, `/account`; `/setup` opens Home.
 - Working now: `GET /api/dashboard`, mute (`PUT /api/settings/mute`, at most 24 hours, `settings` collection, deleted with the account).
+- The landing page shows "Open dashboard" instead of Sign in when this browser is signed in; a signed-in visit to sign-in goes to `/app`; a signed-out visit to any dashboard page goes to sign-in and back.
 - Empty until phase 1: devices, agents, alerts (marked "Phase 1" on the pages).
 - Self-review APPROVE: `rouse/review-rouse-dashboard-2026-11-13.md`; screenshots `rouse/screens/dashboard-*.png` in the project files.
 

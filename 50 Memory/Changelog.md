@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-13** Rouse sidebar dashboard merged and live: [PR #7](https://github.com/GigiBeridzeAxal/rouse/pull/7) (squash `c0aa4ee`, `/api/health` `c0aa4ee436f2`), merged on Gigi's "go implement it". Adds the landing page's "Open dashboard" for signed-in visitors. [[Rouse dashboard plan]]
 - **2026-11-13** Gigi approved the dashboard plan and asked for a sidebar dashboard. Built in [Rouse PR #7](https://github.com/GigiBeridzeAxal/rouse/pull/7): sidebar shell, Home, Alerts, Devices, Agents, Alerts and mute (mute works), `GET /api/dashboard`. Not merged; merging deploys. [[Rouse dashboard plan]]
 - **2026-11-13** Planned the signed-in Rouse dashboard (status line, open alerts, devices and iOS pairing, agents, recent alerts, mute; channels and rules later). Plan only, published as https://claude.ai/artifact/2Ac11mUhWinWV4qcgdreuL. [[Rouse dashboard plan]]
 - **2026-11-12** Picked search keywords to watch for Rouse and how to check its traffic. [[Traffic analytics]]
