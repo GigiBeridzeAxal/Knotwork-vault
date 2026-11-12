@@ -1,12 +1,12 @@
 ---
 type: decision
-status: proposed
+status: superseded
 created: 2026-11-10
-updated: 2026-11-10
+updated: 2026-11-12
 date: 2026-11-10
 tags: [decision]
 supersedes:
-superseded-by:
+superseded-by: "[[ADR-0024 Rouse stores its data in MongoDB Atlas]]"
 ---
 # ADR-0018 Rouse is one Worker with D1 and a timer object
 
