@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-12** Picked search keywords to watch for Rouse and how to check its traffic. [[Traffic analytics]]
 - **2026-11-12** Gigi chose MongoDB Atlas for Rouse ([[ADR-0024 Rouse stores its data in MongoDB Atlas]]). Atlas project "Rouse" with the free M0 cluster `rouse` (Frankfurt) and the user `rouse-worker` was set up in Gigi's Chrome. [PR #4](https://github.com/GigiBeridzeAxal/rouse/pull/4) moved accounts onto it, with a hub Durable Object holding the connection. Merged (squash `aef823e`) and live (`/api/health` `aef823e6a911`). D1 unbound.
 - **2026-11-12** Rouse accounts deployed: schema applied to D1 `rouse` (with the Wrangler migration record), [PR #3](https://github.com/GigiBeridzeAxal/rouse/pull/3) merged (squash `8a02491`) and live (`/api/health` shows `8a024916fe47`). Sign-up and sign-in stay off until Gigi sets the `AUTH_PEPPER` secret. [[Deploy Rouse]]
 - **2026-11-12** Gigi asked for sign-up and sign-in on Rouse and chose email and password. Built in [PR #3](https://github.com/GigiBeridzeAxal/rouse/pull/3): sign-up with ten recovery codes, sign-in, reset with a code, setup and account pages; 61 unit tests and 36 browser checks pass. Not merged or live: it needs the schema on D1 `rouse`, the `AUTH_PEPPER` secret and Gigi's OK. [[ADR-0023 Rouse accounts use email, password and recovery codes]]
