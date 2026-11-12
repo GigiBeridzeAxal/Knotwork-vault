@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-13** Gigi approved the dashboard plan and asked for a sidebar dashboard. Built in [Rouse PR #7](https://github.com/GigiBeridzeAxal/rouse/pull/7): sidebar shell, Home, Alerts, Devices, Agents, Alerts and mute (mute works), `GET /api/dashboard`. Not merged; merging deploys. [[Rouse dashboard plan]]
 - **2026-11-13** Planned the signed-in Rouse dashboard (status line, open alerts, devices and iOS pairing, agents, recent alerts, mute; channels and rules later). Plan only, published as https://claude.ai/artifact/2Ac11mUhWinWV4qcgdreuL. [[Rouse dashboard plan]]
 - **2026-11-12** Picked search keywords to watch for Rouse and how to check its traffic. [[Traffic analytics]]
 - **2026-11-12** Gigi chose MongoDB Atlas for Rouse ([[ADR-0024 Rouse stores its data in MongoDB Atlas]]). Atlas project "Rouse" with the free M0 cluster `rouse` (Frankfurt) and the user `rouse-worker` was set up in Gigi's Chrome. [PR #4](https://github.com/GigiBeridzeAxal/rouse/pull/4) moved accounts onto it, with a hub Durable Object holding the connection. Merged (squash `aef823e`) and live (`/api/health` `aef823e6a911`). D1 unbound.
