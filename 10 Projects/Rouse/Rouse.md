@@ -2,7 +2,7 @@
 type: project
 status: active
 created: 2026-11-10
-updated: 2026-11-13
+updated: 2026-11-14
 tags: [project, cloudflare, portfolio, mcp]
 repo: https://github.com/GigiBeridzeAxal/rouse (private)
 url: https://rouse.gigiberidze.com
@@ -44,6 +44,7 @@ Gigi chose the name **Rouse** on 2026-11-10. The first look (violet night, dawn 
 - Token tables with measured contrast: `docs/brand.md` in the repo (copy: `rouse/brand.md` in the project files). Home page screenshots: `rouse/screens/` in the project files.
 
 ## Design rules
+- 2026-11-14: install steps for a phone must name the exact control and show its glyph for the browser in use. "Tap Share" alone failed for Gigi: Safari 26 keeps Share inside the ••• button, and a page can't offer an install button on an iPhone. Say plainly when something is a home-screen web app and not an App Store install.
 - 2026-11-11: Gigi turned down violet with amber ("dawn") and the sunrise-bell mark. Don't bring back violet or a sun shape.
 - Show logos and palettes as separate choices that mix on real screens (app icon, phone alert, home page), with two or three curated directions on top.
 - Every mark is checked at 16, 24 and 32 px and in gray before it is shown. The Wake eye first blurred at 16 px; Gigi still liked it, so it was redrawn with a small optical cut instead of being dropped.
