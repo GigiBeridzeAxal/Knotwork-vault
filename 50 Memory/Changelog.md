@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-13** Rouse for iPhone merged on Gigi's "go for prod": [PR #8](https://github.com/GigiBeridzeAxal/rouse/pull/8) (squash `09a0dbc`). The download page with the QR code is at https://rouse.gigiberidze.com/download; scanning opens the home-screen web app steps. [[Rouse]]
 - **2026-11-13** Gigi chose not to join the Apple Developer Program for now ("Not now, stay free"). Rouse on the iPhone is the home-screen web app; the Capacitor project stays ready and unpublished. The download page says so. [[ADR-0025 Rouse for iPhone is a Capacitor shell around the live site]]
 - **2026-11-13** Rouse for iPhone built as a Capacitor shell around the live site, with a `/download` page and a QR code, and a GitHub workflow that builds it without a Mac: [Rouse PR #8](https://github.com/GigiBeridzeAxal/rouse/pull/8). Not merged; merging deploys the page. TestFlight waits on the Apple Developer Program. [[ADR-0025 Rouse for iPhone is a Capacitor shell around the live site]], [[Build Rouse for iPhone]]
 - **2026-11-13** Rouse accounts still answered 503: Atlas refused the Worker's password ("bad auth"). Checked in Gigi's Chrome that the 0.0.0.0/0 rule is active and `rouse-worker` has readWrite on `rouse`; set a new password for `rouse-worker` in Atlas and left a one-click helper on the PC that saves the matching `MONGODB_URI`. Waiting for Gigi to run it. [[Deploy Rouse]]
