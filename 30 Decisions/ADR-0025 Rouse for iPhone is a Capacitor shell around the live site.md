@@ -33,4 +33,4 @@ Option 2, with option 3 kept as the free fallback until the beta opens.
 - App Store review may ask for more than a wrapped site (guideline 4.2). Push, alarms and the answer screen are the case for it; TestFlight is not affected.
 - GitHub's macOS minutes count ten times against a private repo's free 2,000 a month, so the workflow runs only when the app changes or by hand.
 - Breaking through silent mode needs Apple's Critical Alerts entitlement, which Apple grants on request and rarely. Not asked for yet.
-- Nothing reaches a phone through TestFlight until Gigi joins the Apple Developer Program (99 USD a year), which conflicts with "everything must run for free" ([[About Gigi]]). Open in [[Open questions]].
+- Nothing reaches a phone through TestFlight without the Apple Developer Program (99 USD a year). **Gigi chose on 2026-11-13 not to join for now** ("Not now, stay free"), in line with "everything must run for free" ([[About Gigi]]). Until that changes, Rouse on the iPhone is the home-screen web app, and the Capacitor project stays in the repo, compiled by CI and unpublished. Don't ask again unless Gigi brings it up or phase 1 needs Apple push.
