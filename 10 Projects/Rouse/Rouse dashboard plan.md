@@ -46,7 +46,7 @@ MVP: `GET /api/dashboard` (everything for the home in one round trip), `POST /ap
 - Requests stay under 10 ms CPU; lists page by 20.
 
 ## iOS app
-Wraps the same React pages. Opens on the answer screen while an alert rings. Pairs by QR from a signed-in laptop (email and password also work), with its own device session. To check before building: Apple's push service requires HTTP/2, so whether the Worker can send to it directly needs a test. TestFlight and Apple push need the paid Apple Developer Program.
+Built as a shell on 2026-11-13 ([[ADR-0025 Rouse for iPhone is a Capacitor shell around the live site]]); pairing and the answer screen are still to come. Wraps the same React pages. Opens on the answer screen while an alert rings. Pairs by QR from a signed-in laptop (email and password also work), with its own device session. To check before building: Apple's push service requires HTTP/2, so whether the Worker can send to it directly needs a test. TestFlight and Apple push need the paid Apple Developer Program.
 
 ## Build order
 1. Home shell, navigation, `/api/dashboard`, checklist moved from Setup.

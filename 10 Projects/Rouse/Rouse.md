@@ -6,7 +6,7 @@ updated: 2026-11-13
 tags: [project, cloudflare, portfolio, mcp]
 repo: https://github.com/GigiBeridzeAxal/rouse (private)
 url: https://rouse.gigiberidze.com
-stack: [Cloudflare Workers, D1, Durable Objects, KV, Hono, MCP, Web Push, React, Tailwind]
+stack: [Cloudflare Workers, MongoDB Atlas, Durable Objects, Hono, MCP, Web Push, React, Tailwind, Capacitor]
 ---
 # Rouse
 
@@ -20,6 +20,8 @@ Phase 0 has the Worker (`/api/health`, a rate limit, a `/mcp` placeholder that a
 **Landing page redesign, 2026-11-11 (second pass):** Gigi turned down the first landing page ("i dont like design and colors and animations"). It was rebuilt with neutrals carrying the page, Klein only as light, lighter headlines and calmer motion, and shown in three color directions on one layout (Midnight, Paper, Aurora). **Gigi chose Paper**: a light gallery (off-white page `#F7F7F4`, white cards, near-black text, Klein as the one color). Merged as [PR #1](https://github.com/GigiBeridzeAxal/rouse/pull/1) (squash `7cd821c`) and live the same day; a phone fix (the hero phone peeks in on the first screen) followed in [PR #2](https://github.com/GigiBeridzeAxal/rouse/pull/2) (squash `d98f6c9`). Screenshots `rouse/screens/landing-paper-1440.jpg` and `landing-paper-390.jpg`, reviews `rouse/review-rouse-landing-redesign-2026-11-11*.md` in the project files.
 
 **Accounts, 2026-11-12 (live on MongoDB Atlas; on once the secrets are set):** Gigi asked for sign-up and sign-in and chose **email and password** ([[ADR-0023 Rouse accounts use email, password and recovery codes]]). Built in [PR #3](https://github.com/GigiBeridzeAxal/rouse/pull/3): sign-up (then ten recovery codes to save), sign-in, reset with a recovery code, a setup page (phone and Claude steps marked "coming soon") and an account page (signed-in browsers, password, new codes, delete). Open to anyone, at most 100 new accounts a day. 61 unit tests and 36 browser checks pass. PR #3 merged on 2026-11-12. The same day Gigi moved storage to MongoDB Atlas ([[ADR-0024 Rouse stores its data in MongoDB Atlas]], PR #4, live as `aef823e`): cluster `rouse`, database `rouse`, run through a hub Durable Object capped at 2 hours of connection a UTC day. Needs the Worker secrets `MONGODB_URI` and `AUTH_PEPPER`; their values are kept on Gigi's laptop, never in a repo ([[Deploy Rouse]]). Screenshots `rouse/screens/accounts-*.jpg`, review `rouse/review-rouse-accounts-2026-11-12.md` in the project files.
+
+**iPhone app, 2026-11-13 (open as PR #8, not merged):** Gigi asked for a Capacitor app, iPhone first, installed by scanning a QR code on the site. Built in [PR #8](https://github.com/GigiBeridzeAxal/rouse/pull/8): a Capacitor 8 shell around the live site ([[ADR-0025 Rouse for iPhone is a Capacitor shell around the live site]]) with Apple push and local notifications built in, an icon and launch screen drawn from the Wake eye, and "This iPhone" on the Devices page (allow notifications, ring once). The site gets `/download` with one QR code that always says `rouse.gigiberidze.com/ios`; the Worker sends that to TestFlight once a link is set, and to the download page (add to home screen) until then. GitHub's macOS runners build it, so no Mac is needed: [[Build Rouse for iPhone]]. Nothing is on TestFlight yet: that needs the paid Apple Developer Program. Screenshots `rouse/screens/download-*.png`, `app-*.png`; review `rouse/review-rouse-ios-app-2026-11-13.md` in the project files.
 
 Waiting on Gigi: the `AUTH_PEPPER` secret (then making their own account first), which phone to wake, and whether any paid channel is wanted.
 
@@ -64,6 +66,7 @@ Gigi chose the name **Rouse** on 2026-11-10. The first look (violet night, dawn 
 - [x] Schema applied and PR #3 merged and deployed, 2026-11-12
 - [x] Moved to MongoDB Atlas, PR #4 merged and deployed, 2026-11-12
 - [ ] `MONGODB_URI` and `AUTH_PEPPER` set, Atlas network rule confirmed, Gigi's own account made
+- [ ] Gigi decides on the Apple Developer Program (99 USD a year); then the four GitHub secrets, a first TestFlight build and the public link ([[Build Rouse for iPhone]])
 - [ ] Take the phase 0 measurements (web push CPU, timer object time, D1 reads while waiting, 25 s tool calls)
 - [ ] Phase 1: MCP endpoint with sign-in, `alert_human`, `wait_for_reply`, web push, answer page
 
