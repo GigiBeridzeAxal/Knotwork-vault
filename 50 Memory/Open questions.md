@@ -2,7 +2,7 @@
 type: memory
 status: active
 created: 2026-11-09
-updated: 2026-11-13
+updated: 2026-11-14
 tags: [memory, questions]
 ---
 # Open questions
@@ -20,3 +20,4 @@ tags: [memory, questions]
 - [ ] Rouse: which phone should it wake, and is Telegram on it? Any paid channel (Pushover 4.99 USD once, Twilio per use)? (Open to others: yes, since Gigi asked for sign-up on 2026-11-12.) [[Rouse]]
 - [ ] Rouse accounts (MongoDB, live 2026-11-12): Atlas network rule and user checked 2026-11-13. Gigi to run `Rouse - connect database.cmd` on the PC so `MONGODB_URI` matches the new Atlas password, then make their own account first ([[Deploy Rouse]]). Delete the unused D1 database `rouse`? [[ADR-0024 Rouse stores its data in MongoDB Atlas]]
 - [ ] Rouse dashboard: is the signed-in Rouse page the dashboard Gigi meant? Should it replace Setup as the page after sign-in? [[Rouse dashboard plan]]
+- [ ] Rouse calls: free Telegram call first with Twilio built but off (recommended), Twilio now, or no calls yet? Is Telegram on the iPhone? Go-ahead to build step 1 (pair and push)? [[Rouse pairing and calls plan]]
