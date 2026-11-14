@@ -2,7 +2,7 @@
 type: memory
 status: active
 created: 2026-11-09
-updated: 2026-11-14
+updated: 2026-11-15
 tags: [memory, questions]
 ---
 # Open questions
@@ -21,4 +21,4 @@ tags: [memory, questions]
 - [ ] Rouse accounts (MongoDB, live 2026-11-12): Atlas network rule and user checked 2026-11-13. Gigi to run `Rouse - connect database.cmd` on the PC so `MONGODB_URI` matches the new Atlas password, then make their own account first ([[Deploy Rouse]]). Delete the unused D1 database `rouse`? [[ADR-0024 Rouse stores its data in MongoDB Atlas]]
 - [ ] Rouse dashboard: is the signed-in Rouse page the dashboard Gigi meant? Should it replace Setup as the page after sign-in? [[Rouse dashboard plan]]
 - [ ] Rouse notifications (live since 2026-11-14): Gigi to pair the iPhone from the home-screen app and ring it once; that is the first real test. Calls stay undecided (Telegram free, Twilio paid, or none): [[Rouse pairing and calls plan]]
-- [ ] Rouse MCP: OK to merge [PR #11](https://github.com/GigiBeridzeAxal/rouse/pull/11) (merging deploys)? Then connect a real Claude once: [[Connect Claude to Rouse]]. [[Rouse]]
+- [ ] Rouse MCP: PR #11 merged 2026-11-15. Still to do: Gigi connects a real Claude once and gets a first alert on the iPhone: [[Connect Claude to Rouse]]. [[Rouse]]

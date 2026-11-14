@@ -2,7 +2,7 @@
 type: project
 status: active
 created: 2026-11-10
-updated: 2026-11-14
+updated: 2026-11-15
 tags: [project, cloudflare, portfolio, mcp]
 repo: https://github.com/GigiBeridzeAxal/rouse (private)
 url: https://rouse.gigiberidze.com
@@ -25,7 +25,7 @@ Phase 0 has the Worker (`/api/health`, a rate limit, a `/mcp` placeholder that a
 
 **Pairing and notifications, 2026-11-14 (PR #10, merged as `8531e9e`):** Gigi added Rouse to the iPhone home screen and asked to pair it with the account, with notifications and calls; after reading [[Rouse pairing and calls plan]] Gigi chose notifications only for now. The Devices page pairs the home-screen app with one tap, and Rouse sends real Web Push itself ([[ADR-0026 Rouse sends web push itself and the hub keeps the key]]). Not yet tried on the real phone.
 
-**Claude connects over MCP, 2026-11-14 (PR #11, waiting for Gigi's OK to merge):** Gigi asked for the MCP server between Claude and Rouse and approved the plan as drawn (https://claude.ai/artifact/M7SkDxo89cgFvjZt7FRmB4, private to Gigi). Built in [PR #11](https://github.com/GigiBeridzeAxal/rouse/pull/11): the `/mcp` endpoint with OAuth sign-in to a Rouse account, six tools around one `alert_human` with an urgency, an Allow screen, answering on the Alerts page (`/app/alerts/<id>`), and an Agents page with Disconnect ([[ADR-0027 Claude signs in to Rouse with OAuth and one alert tool]]). 134 unit tests and a 30-check browser test pass. How to connect: [[Connect Claude to Rouse]]. It reaches a phone only together with pairing and web push ([[Rouse pairing and calls plan]], PR #10). Review, three rounds, APPROVE: `rouse/review-rouse-mcp-oauth-2026-11-14.md` in the project files; screenshots `rouse/screens/mcp-*.png`.
+**Claude connects over MCP, 2026-11-14 (PR #11, merged 2026-11-15, squash `4a8a3fa`):** Gigi asked for the MCP server between Claude and Rouse and approved the plan as drawn (https://claude.ai/artifact/M7SkDxo89cgFvjZt7FRmB4, private to Gigi). Built in [PR #11](https://github.com/GigiBeridzeAxal/rouse/pull/11): the `/mcp` endpoint with OAuth sign-in to a Rouse account, six tools around one `alert_human` with an urgency, an Allow screen, answering on the Alerts page (`/app/alerts/<id>`), and an Agents page with Disconnect ([[ADR-0027 Claude signs in to Rouse with OAuth and one alert tool]]). 134 unit tests and a 30-check browser test pass. How to connect: [[Connect Claude to Rouse]]. It reaches a phone only together with pairing and web push ([[Rouse pairing and calls plan]], PR #10). Review, three rounds, APPROVE: `rouse/review-rouse-mcp-oauth-2026-11-14.md` in the project files; screenshots `rouse/screens/mcp-*.png`.
 
 Waiting on Gigi: the `AUTH_PEPPER` secret (then making their own account first), which phone to wake, and whether any paid channel is wanted.
 
@@ -79,7 +79,8 @@ Gigi chose the name **Rouse** on 2026-11-10. The first look (violet night, dawn 
 - [ ] Calls: Telegram, Twilio or none (Gigi chose "notifications only for now" on 2026-11-14)
 - [ ] Take the phase 0 measurements (web push CPU, timer object time, D1 reads while waiting, 25 s tool calls)
 - [x] Phase 1, the agent's half: MCP endpoint with sign-in, the six tools, answer page, Agents page; PR #11, 2026-11-14
-- [ ] Gigi's OK to merge PR #11, then connect a real Claude once ([[Connect Claude to Rouse]])
+- [x] PR #11 merged on Gigi's OK, 2026-11-15 (with pairing from PR #10 merged in: alerts reach paired devices)
+- [ ] Connect a real Claude once and ring the iPhone from it ([[Connect Claude to Rouse]])
 - [ ] Phase 1, the phone's half: pairing and web push (PR #10)
 
 ## Related
