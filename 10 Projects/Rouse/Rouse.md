@@ -23,6 +23,8 @@ Phase 0 has the Worker (`/api/health`, a rate limit, a `/mcp` placeholder that a
 
 **iPhone app, 2026-11-13 (merged as `09a0dbc`, download page live):** Gigi asked for a Capacitor app, iPhone first, installed by scanning a QR code on the site. Built in [PR #8](https://github.com/GigiBeridzeAxal/rouse/pull/8): a Capacitor 8 shell around the live site ([[ADR-0025 Rouse for iPhone is a Capacitor shell around the live site]]) with Apple push and local notifications built in, an icon and launch screen drawn from the Wake eye, and "This iPhone" on the Devices page (allow notifications, ring once). The site gets `/download` with one QR code that always says `rouse.gigiberidze.com/ios`; the Worker sends that to TestFlight once a link is set, and to the download page (add to home screen) until then. GitHub's macOS runners build it, so no Mac is needed: [[Build Rouse for iPhone]]. Nothing is on TestFlight: that needs the paid Apple Developer Program, and Gigi chose on 2026-11-13 to stay free for now, so the iPhone uses the home-screen web app. Screenshots `rouse/screens/download-*.png`, `app-*.png`; review `rouse/review-rouse-ios-app-2026-11-13.md` in the project files.
 
+**Pairing and notifications, 2026-11-14 (built, PR #10, waiting for Gigi's OK):** Gigi added Rouse to the iPhone home screen and asked to pair it with the account, with notifications and calls; after reading [[Rouse pairing and calls plan]] Gigi chose notifications only for now. The Devices page pairs the home-screen app with one tap, and Rouse sends real Web Push itself ([[ADR-0026 Rouse sends web push itself and the hub keeps the key]]). Not yet tried on the real phone.
+
 Waiting on Gigi: the `AUTH_PEPPER` secret (then making their own account first), which phone to wake, and whether any paid channel is wanted.
 
 ## How it works
@@ -68,6 +70,9 @@ Gigi chose the name **Rouse** on 2026-11-10. The first look (violet night, dawn 
 - [x] Moved to MongoDB Atlas, PR #4 merged and deployed, 2026-11-12
 - [ ] `MONGODB_URI` and `AUTH_PEPPER` set, Atlas network rule confirmed, Gigi's own account made
 - [x] Gigi decided on 2026-11-13 not to join the Apple Developer Program for now; the iPhone uses the home-screen web app. If that changes: [[Build Rouse for iPhone]]
+- [x] Pairing and web push built, PR #10, 2026-11-14
+- [ ] PR #10 merged, Gigi's iPhone paired and rung once
+- [ ] Calls: Telegram, Twilio or none (Gigi chose "notifications only for now" on 2026-11-14)
 - [ ] Take the phase 0 measurements (web push CPU, timer object time, D1 reads while waiting, 25 s tool calls)
 - [ ] Phase 1: MCP endpoint with sign-in, `alert_human`, `wait_for_reply`, web push, answer page
 

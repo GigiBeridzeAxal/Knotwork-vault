@@ -2,7 +2,7 @@
 type: runbook
 status: active
 created: 2026-11-11
-updated: 2026-11-13
+updated: 2026-11-14
 tags: [runbook]
 system: "[[Rouse]]"
 ---
@@ -35,6 +35,12 @@ Since 2026-11-12, accounts live in MongoDB Atlas ([[ADR-0024 Rouse stores its da
 3. **Check.** `/api/health` shows the commit. Then make Gigi's account first at `/signup`. Afterwards, look at the `rouse` Worker's Durable Objects metrics: Rouse's hub must stay well under 920 GB-s a day, because Knotwork's hub needs about 11,000 of the account's free 13,000.
 4. **If accounts answer 503 "resting":** the hub used its 2 hours of connection time for the UTC day. It starts again after midnight UTC.
 5. **Rollback.** Cloudflare can't roll back past the deploy that added the hub (`aef823e`).
+
+## Notifications (from PR #10, once merged)
+- Nothing to set. The hub makes the Web Push key pair on its first request and keeps it sealed in its own storage ([[ADR-0026 Rouse sends web push itself and the hub keeps the key]]). `GET /api/devices` (signed in) answers `pushKey`; `null` there means the key couldn't be made (no `AUTH_PEPPER`).
+- Check on a phone: open Rouse from the home screen, sign in, Devices, "Turn on notifications on this iPhone", Allow, "Ring this iPhone", lock the phone. If nothing arrives, the device row says "Last push failed" with the push service's status code.
+- If every device suddenly shows as failing or gone, the key pair changed (hub storage lost, or the pepper changed): each device taps "Turn on notifications" again.
+- The service worker is `/sw.js`, served `no-cache`, so a new version is picked up on the next visit.
 
 ## If the log says "bad auth"
 Seen 2026-11-12 and 13: the `rouse` Worker's log (Observability) showed `MongoPoolClearedError ... "bad auth : authentication failed"` and account routes answered 503. It means the password inside `MONGODB_URI` is not the one Atlas has for `rouse-worker`. The network rule and the user's role were fine. The fix is to set a new password in both places:

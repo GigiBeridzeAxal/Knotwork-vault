@@ -1,13 +1,13 @@
 ---
 type: project
-status: proposed
+status: active
 created: 2026-11-14
 updated: 2026-11-14
 tags: [project, plan, rouse, push, calls]
 ---
 # Rouse pairing and calls plan
 
-How the [[Rouse]] home-screen app on Gigi's iPhone becomes a device the account can wake: real notifications, then calls. Gigi asked on 2026-11-14 ("we need to pair it to my device and account should have my device notifications + call as well"), then asked for a plan before any build. Reading version: https://claude.ai/artifact/FwG4b82Hos1vwqn9gHhAhp (private to Gigi; source `rouse/rouse-pairing-plan.html` in the project files). **Nothing is built yet; waiting on Gigi's go-ahead and choice of call route.**
+How the [[Rouse]] home-screen app on Gigi's iPhone becomes a device the account can wake: real notifications, then calls. Gigi asked on 2026-11-14 ("we need to pair it to my device and account should have my device notifications + call as well"), then asked for a plan before any build. Reading version: https://claude.ai/artifact/FwG4b82Hos1vwqn9gHhAhp (private to Gigi; source `rouse/rouse-pairing-plan.html` in the project files). **2026-11-14: Gigi chose "Notifications only for now". Step 1 (pair and push) is built in [PR #10](https://github.com/GigiBeridzeAxal/rouse/pull/10), waiting for Gigi's OK to merge; see Built below. Calls are not built.**
 
 ## Pairing
 - An iPhone home-screen web app keeps its own sign-in, separate from Safari. A QR code scanned with the camera opens Safari, so QR pairing would pair the wrong place. This replaces the "QR plus 6-digit code" idea in [[Rouse dashboard plan]] for the web app.
@@ -33,11 +33,10 @@ All routes behind one adapter.
 - On a call the voice says a generic sentence only. Press 1 stops the ringing, 2 snoozes 10 minutes; neither answers the alert ([[ADR-0020 Rouse links from outside services cannot answer]]).
 - Twilio needs the account's phone number, proven by a call that reads a 6-digit code.
 
-## Entry point for the MCP thread
-`raiseAlert(account, {title, message, urgency, options, agent})`, `getAlert`, `cancelAlert`, `listAlerts` as plain functions; the dashboard's test ring uses the same path.
-
-## Ladder timer
-The existing hub Durable Object sets an alarm for the next step. About 2.5 of its 120 daily connection minutes per critical alert ([[ADR-0024 Rouse stores its data in MongoDB Atlas]]).
+## Who builds what (agreed 2026-11-14 between the two Claude threads)
+- Thread *Connect Claude to Rouse with MCP*: `/mcp`, sign-in for Claude, agents, the `alerts` collection, the answer screen and API, limits, mute, and the ladder clock.
+- Thread *Pair iPhone for Rouse alerts and calls*: devices, pairing, the service worker, web push, the Devices page, and later the call routes.
+- The seam is one function, `deliver(db, env, { userId, alertId, kind: "push" | "alarm" | "call", title, body?, url })` in `worker/deliver.ts`, returning `{ ok, channel, detail, sent }`. The clock calls it once per due step; an "alarm" step is three pushes 20 seconds apart, scheduled by the clock.
 
 ## Build order
 1. Pair and push (Gigi: one double-click on the PC to set the push secret, four taps on the iPhone).
@@ -46,5 +45,11 @@ The existing hub Durable Object sets an alarm for the next step. About 2.5 of it
 4. Calls (the chosen route, the other ready behind the switch).
 
 One pull request per step; nothing goes live without Gigi's OK.
+
+## Built (2026-11-14, PR #10, not merged yet)
+- `worker/push.ts` (encrypt, sign, send), `worker/deliver.ts`, `worker/devices.ts` (`/api/devices`: list with the public key, pair, rename, remove, test ring), `public/sw.js`, `src/push.ts`, the Devices page. Decision: [[ADR-0026 Rouse sends web push itself and the hub keeps the key]].
+- No PC step after all: the hub makes the push key itself.
+- A device row goes when its session ends, when the push service calls it gone, or when it is removed. At most 10 per account. One test ring per device per 10 seconds; the test leaves 5 seconds after the tap.
+- 111 unit tests and 22 browser checks pass. **Not yet seen: a notification landing on a real iPhone**; that needs the deploy and Gigi's phone. Review (WARN for that reason only): `rouse/review-rouse-pairing-push-2026-11-14.md`; screenshots `rouse/screens/devices-*.png` in the project files.
 
 Related: [[Rouse system plan]], [[Rouse dashboard plan]], [[ADR-0019 Rouse uses free channels first]]

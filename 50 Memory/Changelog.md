@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-14** Rouse: Gigi chose "Notifications only for now". Pairing and Web Push built in [PR #10](https://github.com/GigiBeridzeAxal/rouse/pull/10) (not merged): the home-screen app pairs with one tap, Rouse sends pushes itself, the hub keeps the key. [[ADR-0026 Rouse sends web push itself and the hub keeps the key]]
 - **2026-11-14** Rouse: plan written for pairing the iPhone home-screen app, web push and calls; nothing built, waiting on Gigi's choice of call route. [[Rouse pairing and calls plan]]
 - **2026-11-14** Gigi couldn't install Rouse on the iPhone after scanning. The phone page only said "Tap Share"; in Safari 26 Share is inside the ••• button, and in-app browsers can't add to the home screen. [Rouse PR #9](https://github.com/GigiBeridzeAxal/rouse/pull/9) shows the taps for the phone's own browser. Merged on Gigi's "merge" (squash `3b1c330`). [[Rouse]]
 - **2026-11-13** Rouse for iPhone merged on Gigi's "go for prod": [PR #8](https://github.com/GigiBeridzeAxal/rouse/pull/8) (squash `09a0dbc`). The download page with the QR code is at https://rouse.gigiberidze.com/download; scanning opens the home-screen web app steps. [[Rouse]]
