@@ -2,7 +2,7 @@
 type: system
 status: live
 created: 2026-10-29
-updated: 2026-11-10
+updated: 2026-11-15
 tags: [system, cloudflare, site]
 repo: https://github.com/GigiBeridzeAxal/gigiberidze.com
 url: https://gigiberidze.com
@@ -21,10 +21,12 @@ Gigi's portfolio site.
 
 ## Site content
 - Process section with Gigi's four steps (setup agents and vaults, infrastructure, automated agents, ship).
-- Work section: `src/components/site/work.tsx` lists only finished projects (the two empty placeholder slots were removed on 2026-11-10, PR #11, because they read as unfinished work). Today that is [[Knotwork]], linking to its case study page `/work/knotwork` and the live demo. With one project the card scrolls with the page; the stacked-pile animation starts again from two projects. Add a project by adding an entry to `PROJECTS`.
+- Work section: `src/components/site/work.tsx` lists only finished projects (the two empty placeholder slots were removed on 2026-11-10, PR #11, because they read as unfinished work). Today that is [[Knotwork]] and [[Rouse]] (added 2026-11-15, PR #12), each linking to its case study (`/work/knotwork`, `/work/rouse`) and its live site. With two projects the stacked-pile animation runs. Add a project by adding an entry to `PROJECTS`.
+- **Rouse's book** (`src/components/site/rouse-showcase.tsx`): pitch, three numbers ($0 a month, 6 MCP tools, 15 min longest ladder), the alert ladder (push, alarm, call shown as "next up" because calls aren't built), and tabs with the alert, Claude's Allow screen and the paired iPhone. The Wake eye is redrawn for dark pages in `rouse-mark.tsx`. The Rouse repo is private: never link to its code. Live links go to https://rouse.gigiberidze.com. When calls ship or the tool count or test count changes, update the book and the case study's `NUMBERS` and chapter 08 together.
+- Rouse screenshots (`public/media/rouse/`) come from a local Rouse build on its in-memory test database (`E2E_FAKE_DB=1`, then `SHOTS=... node e2e/mcp.mjs` and `e2e/devices.mjs` in the Rouse repo), so no real account shows.
 - **Live demo links go to https://knotwork.gigiberidze.com, the main domain**, never to a workflow page or `/demo?next=...` (Gigi, 2026-11-10, PR #10). The front page has sign-up and "try the demo account".
 - The Knotwork book has its own inside (PR #8, 2026-11-10): pitch, three numbers, the seven agents that built it (lead, designer, builder, reviewer, browser testers, operator, archivist) and a plate with Product, Agents and Vault tabs. Agent marks and the animated vault crystal are in `src/components/site/crew.tsx`, reused by the case study's chapter 07. Their numbers come from the case study and this vault; update them together.
-- Case study pages live under `src/app/work/<name>/page.tsx`, with screenshots in `public/media/<name>/`. See [[Update the Knotwork case study and docs]].
+- Case study pages live under `src/app/work/<name>/page.tsx`, with screenshots in `public/media/<name>/`; their shared `Chapter` and `Shot` parts are in `src/components/site/case-study.tsx`. See [[Update the Knotwork case study and docs]].
 - Hero links: X, Freelancer, Upwork. No "Hire me" buttons and no Freelancer reviews (removed 2026-10-30 at Gigi's request).
 - Contact: mailto `hello@gigiberidze.com` only, no form. See [[Contact email]].
 

@@ -27,6 +27,8 @@ Phase 0 has the Worker (`/api/health`, a rate limit, a `/mcp` placeholder that a
 
 **Claude connects over MCP, 2026-11-14 (PR #11, merged 2026-11-15, squash `4a8a3fa`):** Gigi asked for the MCP server between Claude and Rouse and approved the plan as drawn (https://claude.ai/artifact/M7SkDxo89cgFvjZt7FRmB4, private to Gigi). Built in [PR #11](https://github.com/GigiBeridzeAxal/rouse/pull/11): the `/mcp` endpoint with OAuth sign-in to a Rouse account, six tools around one `alert_human` with an urgency, an Allow screen, answering on the Alerts page (`/app/alerts/<id>`), and an Agents page with Disconnect ([[ADR-0027 Claude signs in to Rouse with OAuth and one alert tool]]). 134 unit tests and a 30-check browser test pass. How to connect: [[Connect Claude to Rouse]]. It reaches a phone only together with pairing and web push ([[Rouse pairing and calls plan]], PR #10). Review, three rounds, APPROVE: `rouse/review-rouse-mcp-oauth-2026-11-14.md` in the project files; screenshots `rouse/screens/mcp-*.png`.
 
+**On the portfolio, 2026-11-15:** Gigi asked to add Rouse to gigiberidze.com. Built in [gigiberidze.com PR #12](https://github.com/GigiBeridzeAxal/gigiberidze.com/pull/12): a second Work book and a case study at `/work/rouse` ([[gigiberidze.com]]). Review APPROVE: `rouse/review-gigiberidze-rouse-portfolio-2026-11-15.md`, screenshots `rouse/screens/portfolio/` in the project files.
+
 Waiting on Gigi: the `AUTH_PEPPER` secret (then making their own account first), which phone to wake, and whether any paid channel is wanted.
 
 ## How it works
