@@ -33,7 +33,7 @@ On 2026-11-14 Gigi asked for the MCP server between Claude and [[Rouse]], and wa
 ## Consequences
 - The handshake, the tool list and registering never wake the hub. A tool call costs one short hub visit; a 5 minute wait costs about 13.
 - The ladder's alarm may run 10 minutes past the hub's daily budget, so a busy day can't stop a ringing alert from climbing.
-- Changing `AUTH_PEPPER` would also end every agent's access key (they sign in again with their refresh key; passwords would break first, see [[Deploy Rouse]]).
+- Changing `AUTH_PEPPER` would also end every agent's keys and every registration, so each Claude would have to be connected again (passwords would break first, see [[Deploy Rouse]]).
 - An app's name on the Allow screen is its own claim. The screen says "calls itself" and shows where the approval returns.
 - Apps identify themselves only by registering. Client ID Metadata Documents (the newer way) are not supported yet; add them if a Claude client stops registering.
 - Reaching the phone is one function, `deliver()` in `worker/deliver.ts`, built separately: [[Rouse pairing and calls plan]]. Until it lands an alert shows in the open app and nothing rings.
