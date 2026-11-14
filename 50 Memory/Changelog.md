@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-14** Rouse: PR #10 (pairing and Web Push) merged on Gigi's "Merge and go live", squash `8531e9e`. Next: pair Gigi's iPhone and ring it once. [[Rouse pairing and calls plan]]
 - **2026-11-14** Rouse: MCP server with sign-in built after Gigi approved the plan as drawn. Claude connects at `/mcp`, raises alerts, reads the answer; Alerts and Agents pages are real. [Rouse PR #11](https://github.com/GigiBeridzeAxal/rouse/pull/11), waiting for Gigi's OK to merge. [[ADR-0027 Claude signs in to Rouse with OAuth and one alert tool]], [[Connect Claude to Rouse]]
 - **2026-11-14** Rouse: Gigi chose "Notifications only for now". Pairing and Web Push built in [PR #10](https://github.com/GigiBeridzeAxal/rouse/pull/10) (not merged): the home-screen app pairs with one tap, Rouse sends pushes itself, the hub keeps the key. [[ADR-0026 Rouse sends web push itself and the hub keeps the key]]
 - **2026-11-14** Rouse: plan written for pairing the iPhone home-screen app, web push and calls; nothing built, waiting on Gigi's choice of call route. [[Rouse pairing and calls plan]]

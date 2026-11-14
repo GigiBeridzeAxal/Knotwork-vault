@@ -36,7 +36,7 @@ Since 2026-11-12, accounts live in MongoDB Atlas ([[ADR-0024 Rouse stores its da
 4. **If accounts answer 503 "resting":** the hub used its 2 hours of connection time for the UTC day. It starts again after midnight UTC.
 5. **Rollback.** Cloudflare can't roll back past the deploy that added the hub (`aef823e`).
 
-## Notifications (from PR #10, once merged)
+## Notifications (since PR #10, `8531e9e`, 2026-11-14)
 - Nothing to set. The hub makes the Web Push key pair on its first request and keeps it sealed in its own storage ([[ADR-0026 Rouse sends web push itself and the hub keeps the key]]). `GET /api/devices` (signed in) answers `pushKey`; `null` there means the key couldn't be made (no `AUTH_PEPPER`).
 - Check on a phone: open Rouse from the home screen, sign in, Devices, "Turn on notifications on this iPhone", Allow, "Ring this iPhone", lock the phone. If nothing arrives, the device row says "Last push failed" with the push service's status code.
 - If every device suddenly shows as failing or gone, the key pair changed (hub storage lost, or the pepper changed): each device taps "Turn on notifications" again.

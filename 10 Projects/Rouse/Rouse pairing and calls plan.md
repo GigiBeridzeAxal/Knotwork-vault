@@ -7,7 +7,7 @@ tags: [project, plan, rouse, push, calls]
 ---
 # Rouse pairing and calls plan
 
-How the [[Rouse]] home-screen app on Gigi's iPhone becomes a device the account can wake: real notifications, then calls. Gigi asked on 2026-11-14 ("we need to pair it to my device and account should have my device notifications + call as well"), then asked for a plan before any build. Reading version: https://claude.ai/artifact/FwG4b82Hos1vwqn9gHhAhp (private to Gigi; source `rouse/rouse-pairing-plan.html` in the project files). **2026-11-14: Gigi chose "Notifications only for now". Step 1 (pair and push) is built in [PR #10](https://github.com/GigiBeridzeAxal/rouse/pull/10), waiting for Gigi's OK to merge; see Built below. Calls are not built.**
+How the [[Rouse]] home-screen app on Gigi's iPhone becomes a device the account can wake: real notifications, then calls. Gigi asked on 2026-11-14 ("we need to pair it to my device and account should have my device notifications + call as well"), then asked for a plan before any build. Reading version: https://claude.ai/artifact/FwG4b82Hos1vwqn9gHhAhp (private to Gigi; source `rouse/rouse-pairing-plan.html` in the project files). **2026-11-14: Gigi chose "Notifications only for now". Step 1 (pair and push) is built in [PR #10](https://github.com/GigiBeridzeAxal/rouse/pull/10), merged on Gigi's "Merge and go live" on 2026-11-14 (squash `8531e9e`); see Built below. Calls are not built.**
 
 ## Pairing
 - An iPhone home-screen web app keeps its own sign-in, separate from Safari. A QR code scanned with the camera opens Safari, so QR pairing would pair the wrong place. This replaces the "QR plus 6-digit code" idea in [[Rouse dashboard plan]] for the web app.
@@ -46,7 +46,7 @@ All routes behind one adapter.
 
 One pull request per step; nothing goes live without Gigi's OK.
 
-## Built (2026-11-14, PR #10, not merged yet)
+## Built (2026-11-14, PR #10, merged as `8531e9e`)
 - `worker/push.ts` (encrypt, sign, send), `worker/deliver.ts`, `worker/devices.ts` (`/api/devices`: list with the public key, pair, rename, remove, test ring), `public/sw.js`, `src/push.ts`, the Devices page. Decision: [[ADR-0026 Rouse sends web push itself and the hub keeps the key]].
 - No PC step after all: the hub makes the push key itself.
 - A device row goes when its session ends, when the push service calls it gone, or when it is removed. At most 10 per account. One test ring per device per 10 seconds; the test leaves 5 seconds after the tap.
