@@ -25,6 +25,8 @@ Phase 0 has the Worker (`/api/health`, a rate limit, a `/mcp` placeholder that a
 
 **Pairing and notifications, 2026-11-14 (built, PR #10, waiting for Gigi's OK):** Gigi added Rouse to the iPhone home screen and asked to pair it with the account, with notifications and calls; after reading [[Rouse pairing and calls plan]] Gigi chose notifications only for now. The Devices page pairs the home-screen app with one tap, and Rouse sends real Web Push itself ([[ADR-0026 Rouse sends web push itself and the hub keeps the key]]). Not yet tried on the real phone.
 
+**Claude connects over MCP, 2026-11-14 (PR #11, waiting for Gigi's OK to merge):** Gigi asked for the MCP server between Claude and Rouse and approved the plan as drawn (https://claude.ai/artifact/M7SkDxo89cgFvjZt7FRmB4, private to Gigi). Built in [PR #11](https://github.com/GigiBeridzeAxal/rouse/pull/11): the `/mcp` endpoint with OAuth sign-in to a Rouse account, six tools around one `alert_human` with an urgency, an Allow screen, answering on the Alerts page (`/app/alerts/<id>`), and an Agents page with Disconnect ([[ADR-0027 Claude signs in to Rouse with OAuth and one alert tool]]). 134 unit tests and a 30-check browser test pass. How to connect: [[Connect Claude to Rouse]]. It reaches a phone only together with pairing and web push ([[Rouse pairing and calls plan]], PR #10). Review, three rounds, APPROVE: `rouse/review-rouse-mcp-oauth-2026-11-14.md` in the project files; screenshots `rouse/screens/mcp-*.png`.
+
 Waiting on Gigi: the `AUTH_PEPPER` secret (then making their own account first), which phone to wake, and whether any paid channel is wanted.
 
 ## How it works
@@ -35,6 +37,7 @@ The full design is in [[Rouse system plan]]. In short:
 - One Cloudflare Worker on the free plan: [[ADR-0018 Rouse is one Worker with D1 and a timer object]].
 - Free channels first, paid ones optional: [[ADR-0019 Rouse uses free channels first]].
 - Links sent through outside services cannot answer an alert: [[ADR-0020 Rouse links from outside services cannot answer]].
+- Claude signs in with OAuth and has one alert tool: [[ADR-0027 Claude signs in to Rouse with OAuth and one alert tool]].
 
 ## Brand
 Gigi chose the name **Rouse** on 2026-11-10. The first look (violet night, dawn accent, sunrise-bell mark) was turned down on 2026-11-11, and the same day Gigi chose **Klein blue and the Wake eye**: [[ADR-0022 Klein blue and the waking eye for Rouse]]. Brand page with every mark and palette on real screens: https://claude.ai/artifact/8U8zWScNqjJLWKJadjqg6F (private; source `rouse/rouse-logo-colors.html` in the project files).
@@ -74,9 +77,12 @@ Gigi chose the name **Rouse** on 2026-11-10. The first look (violet night, dawn 
 - [ ] PR #10 merged, Gigi's iPhone paired and rung once
 - [ ] Calls: Telegram, Twilio or none (Gigi chose "notifications only for now" on 2026-11-14)
 - [ ] Take the phase 0 measurements (web push CPU, timer object time, D1 reads while waiting, 25 s tool calls)
-- [ ] Phase 1: MCP endpoint with sign-in, `alert_human`, `wait_for_reply`, web push, answer page
+- [x] Phase 1, the agent's half: MCP endpoint with sign-in, the six tools, answer page, Agents page; PR #11, 2026-11-14
+- [ ] Gigi's OK to merge PR #11, then connect a real Claude once ([[Connect Claude to Rouse]])
+- [ ] Phase 1, the phone's half: pairing and web push (PR #10)
 
 ## Related
+- Connecting a Claude, checking it, cutting it off: [[Connect Claude to Rouse]]
 - Pairing the iPhone, notifications and calls (plan, 2026-11-14, not built): [[Rouse pairing and calls plan]]
 - Dashboard plan and the sidebar dashboard built from it (2026-11-13, PR #7, live): [[Rouse dashboard plan]]
 - Plan as a document (private to Gigi): https://claude.ai/artifact/5w5RtsHstt8PmzdjcBR1w2
