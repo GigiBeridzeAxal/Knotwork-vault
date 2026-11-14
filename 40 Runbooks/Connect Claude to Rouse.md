@@ -2,7 +2,7 @@
 type: runbook
 status: active
 created: 2026-11-14
-updated: 2026-11-14
+updated: 2026-11-15
 tags: [runbook, rouse, mcp]
 system: "[[Rouse]]"
 ---
@@ -34,4 +34,4 @@ Rouse > Agents > Disconnect. Its keys stop on the next call and anything it is r
 - **Claude says it needs to sign in again after a long break**: the refresh key lasts 90 days from last use. Connect again.
 - **Tools answer "resting"**: the hub used its 2 hours of database time for the UTC day ([[ADR-0024 Rouse stores its data in MongoDB Atlas]]). It returns at midnight UTC.
 - **Claude says an alert was not sent**: that Claude raised 30 alerts in an hour, or the account got 100 in a day. It says when to try again.
-- **An alert shows in the app but the phone stays silent**: the phone isn't paired, or pairing isn't built yet ([[Rouse pairing and calls plan]]).
+- **An alert shows in the app but the phone stays silent**: the phone isn't paired, or its notifications are off: Rouse > Devices shows it ([[Rouse pairing and calls plan]]).
