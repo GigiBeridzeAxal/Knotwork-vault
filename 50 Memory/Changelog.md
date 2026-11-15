@@ -2,7 +2,7 @@
 type: memory
 status: active
 created: 2026-11-09
-updated: 2026-11-15
+updated: 2026-11-16
 tags: [memory, log]
 ---
 # Changelog
@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-16** Gigi set the client direction: AI automation on Upwork, Fiverr and direct messages; plan reworked. [[ADR-0029 Lead with AI automation on Upwork, Fiverr and direct messages]]
 - **2026-11-15** Client plan proposed: niche, offers, channels and a 30-day plan, waiting for Gigi's OK. [[Client acquisition]]
 - **2026-11-15** Rouse: showcase film built after Gigi said to use Higgsfield and coded motion together. 45.8 seconds, 1080p at 60 fps with music: three filmed shots cut with coded scenes that show real app screens; about 31 Higgsfield credits. Source in [Rouse PR #13](https://github.com/GigiBeridzeAxal/rouse/pull/13) (not merged), film in `rouse/video/` in the project files, waiting for Gigi to watch it. [[ADR-0028 The Rouse showcase film mixes filmed shots and coded motion]], [[Render the Rouse showcase film]]
 - **2026-11-15** gigiberidze.com: PR #12 merged on Gigi's "go for prod", squash `cd9bad0`. Live check: the home page lists Knotwork and Rouse, and `/work/rouse` loads. [[gigiberidze.com]]
