@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-15** Rouse: showcase film built after Gigi said to use Higgsfield and coded motion together. 45.8 seconds, 1080p at 60 fps with music: three filmed shots cut with coded scenes that show real app screens; about 31 Higgsfield credits. Source in [Rouse PR #13](https://github.com/GigiBeridzeAxal/rouse/pull/13) (not merged), film in `rouse/video/` in the project files, waiting for Gigi to watch it. [[ADR-0028 The Rouse showcase film mixes filmed shots and coded motion]], [[Render the Rouse showcase film]]
 - **2026-11-15** gigiberidze.com: PR #12 merged on Gigi's "go for prod", squash `cd9bad0`. Live check: the home page lists Knotwork and Rouse, and `/work/rouse` loads. [[gigiberidze.com]]
 - **2026-11-15** gigiberidze.com: Rouse added as the second Work book and a case study at `/work/rouse` in [PR #12](https://github.com/GigiBeridzeAxal/gigiberidze.com/pull/12), waiting for Gigi's OK to merge. [[gigiberidze.com]], [[Rouse]]
 - **2026-11-15** Rouse: [PR #11](https://github.com/GigiBeridzeAxal/rouse/pull/11) (MCP server with sign-in, with main's pairing merged in) merged on Gigi's "merge PR 11", squash `4a8a3fa`. Alerts from Claude now go to paired devices as web pushes. Live: `/api/health` shows `4a8a3fa` and both sign-in discovery documents answer. Next: connect a real Claude once. [[Connect Claude to Rouse]]

@@ -29,6 +29,8 @@ Phase 0 has the Worker (`/api/health`, a rate limit, a `/mcp` placeholder that a
 
 **On the portfolio, 2026-11-15:** Gigi asked to add Rouse to gigiberidze.com. Built in [gigiberidze.com PR #12](https://github.com/GigiBeridzeAxal/gigiberidze.com/pull/12): a second Work book and a case study at `/work/rouse` ([[gigiberidze.com]]). Merged on Gigi's OK and live the same night (squash `cd9bad0`). Review APPROVE: `rouse/review-gigiberidze-rouse-portfolio-2026-11-15.md`, screenshots `rouse/screens/portfolio/` in the project files.
 
+**Showcase film, 2026-11-15:** Gigi asked for a product showcase video and said to use Higgsfield and coded motion together. The result is a 46-second film, 1920 x 1080 at 60 fps with music: three filmed shots (the room asleep at 03:14, the phone lighting Klein blue, a hand reaching it) cut with coded scenes that use real screenshots of the app (the agent's terminal, the lock screen, the alert page, three app pages, the end card *Wake the human.*). It shows only what is live: the Call rung never lights. Why and how: [[ADR-0028 The Rouse showcase film mixes filmed shots and coded motion]], [[Render the Rouse showcase film]]. Code in `video/` in the repo ([PR #13](https://github.com/GigiBeridzeAxal/rouse/pull/13), not merged); the film, a poster frame and the source clips are in `rouse/video/` in the project files; review `rouse/review-rouse-showcase-film-2026-11-15.md`. Waiting for Gigi to watch it.
+
 Waiting on Gigi: the `AUTH_PEPPER` secret (then making their own account first), which phone to wake, and whether any paid channel is wanted.
 
 ## How it works
@@ -84,10 +86,13 @@ Gigi chose the name **Rouse** on 2026-11-10. The first look (violet night, dawn 
 - [x] PR #11 merged on Gigi's OK, 2026-11-15 (with pairing from PR #10 merged in: alerts reach paired devices)
 - [ ] Connect a real Claude once and ring the iPhone from it ([[Connect Claude to Rouse]])
 - [ ] Phase 1, the phone's half: pairing and web push (PR #10)
+- [x] Showcase film built (filmed shots and coded motion), 2026-11-15; code in PR #13
+- [ ] Gigi watches the film and says what to change or where to post it
 
 ## Related
 - Connecting a Claude, checking it, cutting it off: [[Connect Claude to Rouse]]
 - Pairing the iPhone, notifications and calls (plan, 2026-11-14, not built): [[Rouse pairing and calls plan]]
+- The showcase film and how to re-render it: [[Render the Rouse showcase film]] (Claude thread: *Build Rouse product showcase video*)
 - Dashboard plan and the sidebar dashboard built from it (2026-11-13, PR #7, live): [[Rouse dashboard plan]]
 - Plan as a document (private to Gigi): https://claude.ai/artifact/5w5RtsHstt8PmzdjcBR1w2
 - Self-review of the plan: `phone-alert/review-phone-alert-plan-2026-11-10.md` in the project files
