@@ -2,7 +2,7 @@
 type: project
 status: active
 created: 2026-11-15
-updated: 2026-11-16
+updated: 2026-11-17
 tags: [project, business, clients]
 url: https://claude.ai/artifact/CFQBSduzK7XqgQpADcr1wq
 ---
@@ -65,6 +65,7 @@ Planning guesses for 30 days: 300 messages give about 24 replies, 9 calls, 2 to 
 Briefs on single businesses live in private docs, not here: this vault is public, and a named prospect should not read our notes about them. Record only the pattern.
 
 - **2026-11-16, lead 1 (local clothing retailer, several shops, sells through Instagram DMs):** researched, first message drafted, not contacted yet. Private brief linked from the project thread for this lead.
+- **2026-11-17, lead 1:** Gigi asked for a working demo to show instead of a message alone. Built as a private repo (not named here): a store in four languages, an order form, a staff panel and a store assistant ([[ADR-0030 Lead demos are one Cloudflare Worker with a rule-based assistant]]). In a pull request, not online yet, not sent.
 
 ### Playbook: clothing and shoe shops that sell on Instagram
 - **Signs to look for:** no website, "order by DM" in the bio, free delivery, many posts and videos, many Google reviews with no owner replies, reviews in several languages (tourist areas).
@@ -72,6 +73,7 @@ Briefs on single businesses live in private docs, not here: this vault is public
 - **Follow-on offers:** comment-to-DM replies, drafted Google review replies that staff approve, a shared product sheet as the bot's memory, an order tracker with delivery updates, sale broadcasts to opted-in buyers.
 - **Demo that lands:** a 2 minute video of a test account answering about the shop's own posted items.
 - **Guardrail:** the bot never claims an item is original or answers authenticity questions; it passes those to staff.
+- **Demo store that can be reused for the next shop of this kind:** catalog with size and price filters, order form without payment, staff panel (orders, stock per shop, phone photos), assistant that answers from live stock, review reply drafts. Sample items only, a "demo, not the official site" notice on every page, hidden from search. What the checks showed: test the pages in the shop's languages with a native reader, test on an iPhone, and keep the staff passcode out of the page before sending the link.
 - **Starting price guess (local):** about $370 to $930 setup plus $55 to $110 a month for the DM assistant; a 2 week Instagram-only pilot first. Not tested.
 
 ## Next
