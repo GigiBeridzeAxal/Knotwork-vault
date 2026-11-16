@@ -64,7 +64,7 @@ Planning guesses for 30 days: 300 messages give about 24 replies, 9 calls, 2 to 
 ## Lead research
 Briefs on single businesses live in private docs, not here: this vault is public, and a named prospect should not read our notes about them. Record only the pattern.
 
-- **2026-11-16, lead 1 (local clothing retailer, several shops, sells through Instagram DMs):** researched, first message drafted, not contacted yet. Private brief linked in the project thread "Research Brandhouse for first outreach".
+- **2026-11-16, lead 1 (local clothing retailer, several shops, sells through Instagram DMs):** researched, first message drafted, not contacted yet. Private brief linked from the project thread for this lead.
 
 ### Playbook: clothing and shoe shops that sell on Instagram
 - **Signs to look for:** no website, "order by DM" in the bio, free delivery, many posts and videos, many Google reviews with no owner replies, reviews in several languages (tourist areas).
