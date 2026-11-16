@@ -72,7 +72,7 @@ Briefs on single businesses live in private docs, not here: this vault is public
 - **Follow-on offers:** comment-to-DM replies, drafted Google review replies that staff approve, a shared product sheet as the bot's memory, an order tracker with delivery updates, sale broadcasts to opted-in buyers.
 - **Demo that lands:** a 2 minute video of a test account answering about the shop's own posted items.
 - **Guardrail:** the bot never claims an item is original or answers authenticity questions; it passes those to staff.
-- **Starting price guess (local):** 1,000 to 2,500 GEL setup plus 150 to 300 GEL a month for the DM assistant; a 2 week Instagram-only pilot first. Not tested.
+- **Starting price guess (local):** about $370 to $930 setup plus $55 to $110 a month for the DM assistant; a 2 week Instagram-only pilot first. Not tested.
 
 ## Next
 - [ ] Gigi: which to prepare first: profile and gig texts, lead lists (needs a business type for each market), or the site changes ([[Open questions]])
