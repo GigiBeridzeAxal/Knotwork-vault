@@ -61,6 +61,19 @@ Planning guesses for 30 days: 300 messages give about 24 replies, 9 calls, 2 to 
 - A local-language version of the offers section.
 - Client quotes after the first two clients.
 
+## Lead research
+Briefs on single businesses live in private docs, not here: this vault is public, and a named prospect should not read our notes about them. Record only the pattern.
+
+- **2026-11-16, lead 1 (local clothing retailer, several shops, sells through Instagram DMs):** researched, first message drafted, not contacted yet. Private brief linked in the project thread "Research Brandhouse for first outreach".
+
+### Playbook: clothing and shoe shops that sell on Instagram
+- **Signs to look for:** no website, "order by DM" in the bio, free delivery, many posts and videos, many Google reviews with no owner replies, reviews in several languages (tourist areas).
+- **Lead offer:** a DM assistant on Instagram and Facebook (Meta's official messaging API) that answers price, size, stock, delivery and address in the customers' languages and hands the order to staff.
+- **Follow-on offers:** comment-to-DM replies, drafted Google review replies that staff approve, a shared product sheet as the bot's memory, an order tracker with delivery updates, sale broadcasts to opted-in buyers.
+- **Demo that lands:** a 2 minute video of a test account answering about the shop's own posted items.
+- **Guardrail:** the bot never claims an item is original or answers authenticity questions; it passes those to staff.
+- **Starting price guess (local):** 1,000 to 2,500 GEL setup plus 150 to 300 GEL a month for the DM assistant; a 2 week Instagram-only pilot first. Not tested.
+
 ## Next
 - [ ] Gigi: which to prepare first: profile and gig texts, lead lists (needs a business type for each market), or the site changes ([[Open questions]])
 
