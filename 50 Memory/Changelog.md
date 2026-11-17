@@ -10,6 +10,8 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-17** Lead 1 demo, version 2 merged and online: real catalog with photos, the shop's own branding, cart, checkout with a test card page (no real payments) or pay on delivery, stronger panel; built by Opus agents and checked in three review rounds; not sent to the prospect yet. [[Client acquisition]]
+- **2026-11-17** Lead 1 demo, version 1 merged and online (prospect and address not named here). [[Client acquisition]]
 - **2026-11-17** Lead 1: a demo store with a staff panel and a store assistant built in a private repo (prospect not named here), reviewed and opened as a pull request; not online and not sent yet. [[Client acquisition]], [[ADR-0030 Lead demos are one Cloudflare Worker with a rule-based assistant]]
 - **2026-11-16** First local direct-message lead researched (a clothing retailer selling through Instagram DMs); playbook for that kind of shop added, prospect name kept out of the public vault. [[Client acquisition]]
 - **2026-11-16** Gigi set the client direction: AI automation on Upwork, Fiverr and direct messages; plan reworked. [[ADR-0029 Lead with AI automation on Upwork, Fiverr and direct messages]]

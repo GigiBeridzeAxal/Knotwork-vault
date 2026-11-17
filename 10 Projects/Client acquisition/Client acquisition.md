@@ -65,7 +65,8 @@ Planning guesses for 30 days: 300 messages give about 24 replies, 9 calls, 2 to 
 Briefs on single businesses live in private docs, not here: this vault is public, and a named prospect should not read our notes about them. Record only the pattern.
 
 - **2026-11-16, lead 1 (local clothing retailer, several shops, sells through Instagram DMs):** researched, first message drafted, not contacted yet. Private brief linked from the project thread for this lead.
-- **2026-11-17, lead 1:** Gigi asked for a working demo to show instead of a message alone. Built as a private repo (not named here): a store in four languages, an order form, a staff panel and a store assistant ([[ADR-0030 Lead demos are one Cloudflare Worker with a rule-based assistant]]). In a pull request, not online yet, not sent.
+- **2026-11-17, lead 1:** Gigi asked for a working demo to show instead of a message alone. Built as a private repo (not named here): a store in four languages, an order form, a staff panel and a store assistant ([[ADR-0030 Lead demos are one Cloudflare Worker with a rule-based assistant]]). Version 1 went online the same day.
+- **2026-11-17, lead 1, version 2:** Gigi asked for real products, the prospect's own branding, speed, a normal checkout and a panel they can manage. Built and online the same day: items with the prospect's own public photos (items showing other companies' logos left out), cart, checkout with pay on delivery or a test card page (real payments need the shop's own bank account), stock that is reserved and released, limits that keep a public demo from being emptied, demo data restored every night. Not sent yet; next is the pitch pack (short video and message).
 
 ### Playbook: clothing and shoe shops that sell on Instagram
 - **Signs to look for:** no website, "order by DM" in the bio, free delivery, many posts and videos, many Google reviews with no owner replies, reviews in several languages (tourist areas).

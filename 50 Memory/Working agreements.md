@@ -2,7 +2,7 @@
 type: memory
 status: active
 created: 2026-11-09
-updated: 2026-11-09
+updated: 2026-11-17
 tags: [memory, rules]
 ---
 # Working agreements
@@ -20,6 +20,7 @@ What agents may do on their own, and what needs Gigi's OK first.
 
 ## Which model for which task
 - Gigi, 2026-11-09: use Fable for important or hard tasks and Opus for easy and medium ones, to keep usage under control. In practice: security work and core design on Fable; UI polish, docs, test writing and performance or docs reviews on Opus.
+- Gigi, 2026-11-17: when a thread runs on Fable, it should not do a long build itself. It hands the parts to Opus (or cheaper) agents with clear briefs and file ownership, and only coordinates and checks. Reason: Fable costs much more than Opus.
 
 ## Facts that shape how to work
 - Claude sessions can't create GitHub repos. Gigi creates them.
