@@ -2,7 +2,7 @@
 type: memory
 status: active
 created: 2026-11-09
-updated: 2026-11-18
+updated: 2026-11-19
 tags: [memory, log]
 ---
 # Changelog
@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-19** Claude Platform managed agent could not push to GitHub (403 "Resource not accessible by integration"): its vault credential signs in through the Claude Github MCP Connector app, which was authorized but never installed. Installed it on Gigi's account for the medieval-realm repo only; the agent then pushed the game starter. Workflow files still need a manual add (the app has no workflows permission). [[Claude Platform agents]]
 - **2026-11-18** Website Development and MVP Development gigs published on Fiverr, so three gigs are live, each with its own main image; Knotwork added to the Upwork portfolio. [[Client acquisition]]
 - **2026-11-18** Upwork, Freelancer.com and Fiverr profiles rewritten around agentic engineering; all old Fiverr gigs deleted on Gigi's OK and the Agentic Engineering gig published with a Higgsfield main image (Gigi in the center, agents around). [[Client acquisition]]
 - **2026-11-18** Planned automations for Upwork, Fiverr and Freelancer.com (Freelance Lead Desk); not built, waiting for Gigi's OK. [[Client acquisition]]
