@@ -82,10 +82,11 @@ Gigi asked for automations on Upwork, Fiverr and Freelancer.com. Plan (private a
 - **Sources:** Upwork's own saved-search alert emails and Fiverr notification emails, forwarded to a new Email Routing address on the site's domain; Freelancer.com through its official developer API, polled by a [[Knotwork]] workflow.
 - **Platform rules checked 2026-11-18:** Upwork switched off RSS and treats scripts or extensions that search or act faster than a human as bots (warnings, restriction or ban); its API needs a key approved for that use. Fiverr has no public seller API and bans spam, cold messages and off-platform payment. Freelancer.com offers a public API with search and bids; only single bids Gigi approves, never bulk.
 - **Runs on:** Cloudflare free plan (email Worker, D1, Workers AI free allowance), Knotwork, [[Rouse]] for phone alerts. $0 a month.
+- **Changed the same day:** Gigi chose a browser-only version instead. Claude uses Gigi's own signed-in Chrome on the laptop (the Claude extension) to read new jobs, pick the best, draft and type proposals into the form; Gigi presses Submit. No servers or APIs. On Upwork, scanning only while Gigi is at the laptop, or Gigi opens a job and asks for a draft (no bot risk); never press Submit.
 
 ## Next
 - [ ] Gigi: which to prepare first: profile and gig texts, lead lists (needs a business type for each market), or the site changes ([[Open questions]])
-- [ ] Gigi: OK the Freelance Lead Desk plan, and answer its three questions (Freelancer account, where the code lives, whether Approve sends the bid)
+- [ ] Gigi: OK the Freelance Lead Desk plan, and choose for Upwork: Gigi opens jobs and Claude drafts, or Claude scans too while Gigi is at the laptop
 
 ## Related
 - [[gigiberidze.com]], [[Rouse]], [[Knotwork]], [[About Gigi]]
