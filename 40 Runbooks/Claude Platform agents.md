@@ -18,4 +18,4 @@ The agent's GitHub access comes from a credential vault entry (MCP OAuth to GitH
 Limits: the app has read and write for code, issues and pull requests, but **no workflows permission**, so files under `.github/workflows/` are refused. Add those in the GitHub web editor or with a normal git push.
 
 ## Cost tip
-Agent sandboxes don't keep files between tool runs the agent expects; a push re-reads every file. Ask for one `push_files` commit instead of file-by-file retries.
+The agent re-reads every project file before each push attempt (about 40K tokens). Ask for one `push_files` commit instead of file-by-file retries.
