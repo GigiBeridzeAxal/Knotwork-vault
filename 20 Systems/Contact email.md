@@ -18,5 +18,6 @@ tags: [system, email, cloudflare]
 - Gmail search `in:anywhere to:hello@gigiberidze.com` in Gigi's Gmail (forwarded mail keeps the original To).
 - Cloudflare dashboard > Email Routing > **Activity log** (pick *Last 30 days*) also shows mail that was *rejected* and never reached Gmail, e.g. sender failed SPF/DKIM (`Unauthenticated`).
 - 2026-11-18 check: nothing ever delivered; one spoofed "email address verification" mail rejected as Unauthenticated (2026-11-06).
+- 2026-11-18 live test: a mail from Gigi's second Gmail reached the main Gmail within a minute, but **landed in Spam**. Search with `in:anywhere` (or `in:spam`). Fix offered: a Gmail filter `to:hello@gigiberidze.com` → *Never send it to Spam*.
 
 See [[ADR-0006 Contact email through Cloudflare Email Routing]] and [[Add a contact address]].
