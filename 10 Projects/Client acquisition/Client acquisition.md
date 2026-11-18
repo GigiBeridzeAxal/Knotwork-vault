@@ -2,7 +2,7 @@
 type: project
 status: active
 created: 2026-11-15
-updated: 2026-11-17
+updated: 2026-11-18
 tags: [project, business, clients]
 url: https://claude.ai/artifact/CFQBSduzK7XqgQpADcr1wq
 ---
@@ -77,8 +77,15 @@ Briefs on single businesses live in private docs, not here: this vault is public
 - **Demo store that can be reused for the next shop of this kind:** catalog with size and price filters, order form without payment, staff panel (orders, stock per shop, phone photos), assistant that answers from live stock, review reply drafts. Sample items only, a "demo, not the official site" notice on every page, hidden from search. What the checks showed: test the pages in the shop's languages with a native reader, test on an iPhone, and keep the staff passcode out of the page before sending the link.
 - **Starting price guess (local):** about $370 to $930 setup plus $55 to $110 a month for the DM assistant; a 2 week Instagram-only pilot first. Not tested.
 
+## Freelance platform automations (plan, 2026-11-18)
+Gigi asked for automations on Upwork, Fiverr and Freelancer.com. Plan (private artifact, not built, waiting for Gigi's OK): a "Freelance Lead Desk" that collects new jobs, scores them by rules, drafts a proposal and alerts Gigi's phone; Gigi sends every proposal by hand.
+- **Sources:** Upwork's own saved-search alert emails and Fiverr notification emails, forwarded to a new Email Routing address on the site's domain; Freelancer.com through its official developer API, polled by a [[Knotwork]] workflow.
+- **Platform rules checked 2026-11-18:** Upwork switched off RSS and treats scripts or extensions that search or act faster than a human as bots (warnings, restriction or ban); its API needs a key approved for that use. Fiverr has no public seller API and bans spam, cold messages and off-platform payment. Freelancer.com offers a public API with search and bids; only single bids Gigi approves, never bulk.
+- **Runs on:** Cloudflare free plan (email Worker, D1, Workers AI free allowance), Knotwork, [[Rouse]] for phone alerts. $0 a month.
+
 ## Next
 - [ ] Gigi: which to prepare first: profile and gig texts, lead lists (needs a business type for each market), or the site changes ([[Open questions]])
+- [ ] Gigi: OK the Freelance Lead Desk plan, and answer its three questions (Freelancer account, where the code lives, whether Approve sends the bid)
 
 ## Related
 - [[gigiberidze.com]], [[Rouse]], [[Knotwork]], [[About Gigi]]
