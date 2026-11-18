@@ -32,7 +32,7 @@ Starting points from typical market ranges, not measured. First two or three job
 
 ## Channels
 1. **Upwork**: title around AI automation; 2 to 3 proposals a day to fresh jobs with verified payment, opened with a 2 minute video. Connects cost roughly $2 a proposal (about $60 to $100 a month); Upwork keeps around 10%.
-2. **Fiverr**: three gigs (AI automation, AI customer assistant, custom agent or MCP server), three packages each, replies within an hour. Free to list; Fiverr keeps 20%.
+2. **Fiverr**: three gigs (AI automation, AI customer assistant, custom agent or MCP server), three packages each, replies within an hour. Free to list; Fiverr keeps 20%. (Gigi changed the three gigs on 2026-11-18, see Freelance profiles below.)
 3. **Messages to US businesses**: 10 a day, one business type at a time (home services, clinics, real estate agents, small marketing agencies), naming one problem visible from outside.
 4. **Messages to local businesses**: 5 a day in the local language (hotels and tour operators, clinics and salons, online shops, real estate). Lower prices, faster yes, first case studies.
 
@@ -84,8 +84,20 @@ Gigi asked for automations on Upwork, Fiverr and Freelancer.com. Plan (private a
 - **Runs on:** Cloudflare free plan (email Worker, D1, Workers AI free allowance), Knotwork, [[Rouse]] for phone alerts. $0 a month.
 - **Changed the same day:** Gigi chose a browser-only version instead. Claude uses Gigi's own signed-in Chrome on the laptop (the Claude extension) to read new jobs, pick the best, draft and type proposals into the form; Gigi presses Submit. No servers or APIs. On Upwork, scanning only while Gigi is at the laptop, or Gigi opens a job and asks for a draft (no bot risk); never press Submit.
 
+## Freelance profiles (2026-11-18)
+Gigi set the positioning: an agent developer with long programming experience who can set up and automate any kind of work with agents and AI. All three profiles were rewritten around **agentic engineering** the same day, in Gigi's own signed-in Chrome.
+- **Upwork:** new title (AI agent developer, agentic engineering, MCP and automation), new overview, 20 skills. Portfolio still empty.
+- **Freelancer.com:** new headline and summary, 5 skills added.
+- **Fiverr:** new tagline and About. Gigi asked to delete every old gig (four, confirmed by Gigi) and replace them with three: **Agentic Engineering**, **Website Development**, **MVP Development**. Agentic Engineering is published ($100 / $300 / $700); the other two are being set up.
+- **Only real work is cited:** [[Knotwork]], [[Rouse]] and production full-stack work on a live events platform.
+- **Gig image rule (Gigi):** the main image of a gig is not a portfolio screenshot. It shows Gigi in the center with several agents (small robots) around, in the look of [[gigiberidze.com]], made with Higgsfield from Gigi's real profile photo. A first version was rejected because the face and hair did not look like Gigi.
+- **Hourly rate** is still $15 on Upwork and Freelancer.com; the plan above suggests $30 to $35. Gigi's call.
+- The texts live in the project files (`client-strategy/profiles/profile-texts.md`), not in this vault.
+
 ## Next
-- [ ] Gigi: which to prepare first: profile and gig texts, lead lists (needs a business type for each market), or the site changes ([[Open questions]])
+- [x] Profile and gig texts (done 2026-11-18, see Freelance profiles)
+- [ ] Gigi: which to prepare next: lead lists (needs a business type for each market) or the site changes ([[Open questions]])
+- [ ] Finish the Website Development and MVP Development gigs; add Knotwork and Rouse as portfolio pieces on Upwork
 - [ ] Gigi: OK the Freelance Lead Desk plan, and choose for Upwork: Gigi opens jobs and Claude drafts, or Claude scans too while Gigi is at the laptop
 
 ## Related
