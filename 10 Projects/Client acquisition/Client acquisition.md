@@ -86,9 +86,9 @@ Gigi asked for automations on Upwork, Fiverr and Freelancer.com. Plan (private a
 
 ## Freelance profiles (2026-11-18)
 Gigi set the positioning: an agent developer with long programming experience who can set up and automate any kind of work with agents and AI. All three profiles were rewritten around **agentic engineering** the same day, in Gigi's own signed-in Chrome.
-- **Upwork:** new title (AI agent developer, agentic engineering, MCP and automation), new overview, 20 skills. Portfolio still empty.
+- **Upwork:** new title (AI agent developer, agentic engineering, MCP and automation), new overview, 20 skills. Portfolio: [[Knotwork]] is published (editor screenshot, link to the live site). [[Rouse]] is written and waits for Gigi to press Publish.
 - **Freelancer.com:** new headline and summary, 5 skills added.
-- **Fiverr:** new tagline and About. Gigi asked to delete every old gig (four, confirmed by Gigi) and replace them with three: **Agentic Engineering**, **Website Development**, **MVP Development**. Agentic Engineering is published ($100 / $300 / $700); the other two are being set up.
+- **Fiverr:** new tagline and About. Gigi asked to delete every old gig (four, confirmed by Gigi) and replace them with three: **Agentic Engineering**, **Website Development**, **MVP Development**. All three are published and active: Agentic Engineering ($100 / $300 / $700), Website Development ($100 / $300 / $700) and MVP Development ($300 / $700 / $1,500, the longest delivery is 30 days because Fiverr offers no 28). Each has one main image made by the gig image rule below.
 - **Only real work is cited:** [[Knotwork]], [[Rouse]] and production full-stack work on a live events platform.
 - **Gig image rule (Gigi):** the main image of a gig is not a portfolio screenshot. It shows Gigi in the center with several agents (small robots) around, in the look of [[gigiberidze.com]], made with Higgsfield from Gigi's real profile photo. A first version was rejected because the face and hair did not look like Gigi.
 - **Hourly rate** is still $15 on Upwork and Freelancer.com; the plan above suggests $30 to $35. Gigi's call.
@@ -97,7 +97,8 @@ Gigi set the positioning: an agent developer with long programming experience wh
 ## Next
 - [x] Profile and gig texts (done 2026-11-18, see Freelance profiles)
 - [ ] Gigi: which to prepare next: lead lists (needs a business type for each market) or the site changes ([[Open questions]])
-- [ ] Finish the Website Development and MVP Development gigs; add Knotwork and Rouse as portfolio pieces on Upwork
+- [x] Website Development and MVP Development gigs; Knotwork in the Upwork portfolio (done 2026-11-18)
+- [ ] Gigi: publish the Rouse portfolio piece on Upwork, and say whether the gig images look right (face and hair)
 - [ ] Gigi: OK the Freelance Lead Desk plan, and choose for Upwork: Gigi opens jobs and Claude drafts, or Claude scans too while Gigi is at the laptop
 
 ## Related

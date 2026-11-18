@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-18** Website Development and MVP Development gigs published on Fiverr, so three gigs are live, each with its own main image; Knotwork added to the Upwork portfolio. [[Client acquisition]]
 - **2026-11-18** Upwork, Freelancer.com and Fiverr profiles rewritten around agentic engineering; all old Fiverr gigs deleted on Gigi's OK and the Agentic Engineering gig published with a Higgsfield main image (Gigi in the center, agents around). [[Client acquisition]]
 - **2026-11-18** Planned automations for Upwork, Fiverr and Freelancer.com (Freelance Lead Desk); not built, waiting for Gigi's OK. [[Client acquisition]]
 - **2026-11-17** Lead 1 demo, version 2 merged and online: real catalog with photos, the shop's own branding, cart, checkout with a test card page (no real payments) or pay on delivery, stronger panel; built by Opus agents and checked in three review rounds; not sent to the prospect yet. [[Client acquisition]]
