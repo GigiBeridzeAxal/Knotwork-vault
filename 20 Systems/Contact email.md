@@ -2,7 +2,7 @@
 type: system
 status: live
 created: 2026-10-30
-updated: 2026-11-09
+updated: 2026-11-18
 tags: [system, email, cloudflare]
 ---
 # Contact email
@@ -13,5 +13,10 @@ tags: [system, email, cloudflare]
 - DNS: Cloudflare MX `route1/2/3.mx.cloudflare.net`, SPF, DKIM and DMARC. No other mail provider.
 - On the site: `EMAIL` constant in `src/components/site/contact.tsx` (mailto link, no form).
 - Receive only. Replying *as* hello@ would need a sending service (not set up).
+
+## Checking for new mail
+- Gmail search `in:anywhere to:hello@gigiberidze.com` in Gigi's Gmail (forwarded mail keeps the original To).
+- Cloudflare dashboard > Email Routing > **Activity log** (pick *Last 30 days*) also shows mail that was *rejected* and never reached Gmail, e.g. sender failed SPF/DKIM (`Unauthenticated`).
+- 2026-11-18 check: nothing ever delivered; one spoofed "email address verification" mail rejected as Unauthenticated (2026-11-06).
 
 See [[ADR-0006 Contact email through Cloudflare Email Routing]] and [[Add a contact address]].
