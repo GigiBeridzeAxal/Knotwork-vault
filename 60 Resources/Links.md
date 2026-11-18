@@ -1,7 +1,7 @@
 ---
 type: resource
 created: 2026-11-09
-updated: 2026-11-11
+updated: 2026-11-18
 tags: [links]
 ---
 # Links
@@ -26,4 +26,6 @@ tags: [links]
 - Rouse live: https://rouse.gigiberidze.com
 
 ## Profiles
+- X: https://x.com/GigiBeridze33
+- Instagram (Creator account, bio copied from X, set up 2026-11-18): https://www.instagram.com/gigiberidze433/
 - Upwork: https://www.upwork.com/freelancers/~0177fc3504bde9ab62
