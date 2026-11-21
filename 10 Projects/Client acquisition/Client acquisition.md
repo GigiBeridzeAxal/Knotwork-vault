@@ -2,7 +2,7 @@
 type: project
 status: active
 created: 2026-11-15
-updated: 2026-11-18
+updated: 2026-11-21
 tags: [project, business, clients]
 url: https://claude.ai/artifact/CFQBSduzK7XqgQpADcr1wq
 ---
@@ -103,3 +103,4 @@ Gigi set the positioning: an agent developer with long programming experience wh
 
 ## Related
 - [[gigiberidze.com]], [[Rouse]], [[Knotwork]], [[About Gigi]]
+- [[Outreach video studio]]: the fixed studio set for outreach videos ([[ADR-0031 Outreach videos are shot in one AI-built studio set]])
