@@ -2,7 +2,7 @@
 type: memory
 status: active
 created: 2026-11-09
-updated: 2026-11-21
+updated: 2026-11-22
 tags: [memory, log]
 ---
 # Changelog
@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-22** hello@ phone ping: rouse PR #14 (Email Routing → Rouse Worker → Gmail + iPhone push) opened, and a reply-assistant plan was sent to Gigi for OK. [[ADR-0032 hello@ mail goes through the Rouse Worker]], [[Contact email]]
 - **2026-11-21** Outreach video studio: one fixed studio set built for the outreach videos (dark podcast studio, seven views, Seedream 5.5 at 2K) after a cut-out-and-paste test was rejected; the person comes later through a screen test. [[Outreach video studio]], [[ADR-0031 Outreach videos are shot in one AI-built studio set]]
 - **2026-11-19** Claude Platform managed agent could not push to GitHub (403 "Resource not accessible by integration"): its vault credential signs in through the Claude Github MCP Connector app, which was authorized but never installed. Installed it on Gigi's account for the medieval-realm repo only; the agent then pushed the game starter. Workflow files still need a manual add (the app has no workflows permission). [[Claude Platform agents]]
 - **2026-11-18** Website Development and MVP Development gigs published on Fiverr, so three gigs are live, each with its own main image; Knotwork added to the Upwork portfolio. [[Client acquisition]]
