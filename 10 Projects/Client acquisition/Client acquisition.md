@@ -2,7 +2,7 @@
 type: project
 status: active
 created: 2026-11-15
-updated: 2026-11-21
+updated: 2026-11-24
 tags: [project, business, clients]
 url: https://claude.ai/artifact/CFQBSduzK7XqgQpADcr1wq
 ---
@@ -68,6 +68,9 @@ Briefs on single businesses live in private docs, not here: this vault is public
 - **2026-11-17, lead 1:** Gigi asked for a working demo to show instead of a message alone. Built as a private repo (not named here): a store in four languages, an order form, a staff panel and a store assistant ([[ADR-0030 Lead demos are one Cloudflare Worker with a rule-based assistant]]). Version 1 went online the same day.
 - **2026-11-17, lead 1, version 2:** Gigi asked for real products, the prospect's own branding, speed, a normal checkout and a panel they can manage. Built and online the same day: items with the prospect's own public photos (items showing other companies' logos left out), cart, checkout with pay on delivery or a test card page (real payments need the shop's own bank account), stock that is reserved and released, limits that keep a public demo from being emptied, demo data restored every night. Not sent yet; next is the pitch pack (short video and message).
 
+- **2026-11-24, lead 2 (local travel agency with a large video and social audience):** researched. Signs seen from outside: the website address on their own page does not open, booking links under videos lead to a social page, and the terms sit in a shared file behind a sign-in. First message drafted in the local language and English, not contacted. Private brief linked from the project thread.
+- **2026-11-24, lead 2, design first:** Gigi asked for a visual design before any build. A private design canvas with five screens (home on desktop and on phone, one tour page, the booking confirmation, the assistant) was made in the look of the prospect's own posters and videos, checked on desktop and phone in two rounds, and sent to Gigi. No demo site yet; that waits for Gigi's OK. Steps: [[Design a site concept on a canvas]].
+
 ### Playbook: clothing and shoe shops that sell on Instagram
 - **Signs to look for:** no website, "order by DM" in the bio, free delivery, many posts and videos, many Google reviews with no owner replies, reviews in several languages (tourist areas).
 - **Lead offer:** a DM assistant on Instagram and Facebook (Meta's official messaging API) that answers price, size, stock, delivery and address in the customers' languages and hands the order to staff.
@@ -76,6 +79,13 @@ Briefs on single businesses live in private docs, not here: this vault is public
 - **Guardrail:** the bot never claims an item is original or answers authenticity questions; it passes those to staff.
 - **Demo store that can be reused for the next shop of this kind:** catalog with size and price filters, order form without payment, staff panel (orders, stock per shop, phone photos), assistant that answers from live stock, review reply drafts. Sample items only, a "demo, not the official site" notice on every page, hidden from search. What the checks showed: test the pages in the shop's languages with a native reader, test on an iPhone, and keep the staff passcode out of the page before sending the link.
 - **Starting price guess (local):** about $370 to $930 setup plus $55 to $110 a month for the DM assistant; a 2 week Instagram-only pilot first. Not tested.
+
+### Playbook: travel agencies that sell through social posts
+- **Signs to look for:** no working website, tours posted as pictures with the price inside the image, "book by message or phone", the same questions under every post (price, dates, what is included, visa), terms in a shared file.
+- **Lead offer:** a website with every tour on one list (date, price, places left), a tour page that says what is and is not included, a booking request with a deposit, and an assistant that answers from the tour data.
+- **Design idea that worked for lead 2:** take the agency's own visual signals and build one strong theme from them. There it was an airport: a departures board for the tour list, boarding passes for tour cards and the booking confirmation, passport stamps for the videos, an information desk for the assistant.
+- **Guardrails:** the assistant answers only from tour data; visa, payment and changes go to a manager. Prices and dates are copied as posted and carry the date. Seat counts, waiting lists and online payment are shown as proposals until the agency confirms them. Their photos and logo are stand-ins inside a private design, never published.
+- **What to show first (not tested yet):** the design canvas; a working demo only after Gigi's OK.
 
 ## Freelance platform automations (plan, 2026-11-18)
 Gigi asked for automations on Upwork, Fiverr and Freelancer.com. Plan (private artifact, not built, waiting for Gigi's OK): a "Freelance Lead Desk" that collects new jobs, scores them by rules, drafts a proposal and alerts Gigi's phone; Gigi sends every proposal by hand.
@@ -100,6 +110,8 @@ Gigi set the positioning: an agent developer with long programming experience wh
 - [x] Website Development and MVP Development gigs; Knotwork in the Upwork portfolio (done 2026-11-18)
 - [ ] Gigi: publish the Rouse portfolio piece on Upwork, and say whether the gig images look right (face and hair)
 - [ ] Gigi: OK the Freelance Lead Desk plan, and choose for Upwork: Gigi opens jobs and Claude drafts, or Claude scans too while Gigi is at the laptop
+
+- [ ] Gigi: OK or change the lead 2 site design (private canvas, linked from the project thread); a demo site is built only after that
 
 ## Related
 - [[gigiberidze.com]], [[Rouse]], [[Knotwork]], [[About Gigi]]

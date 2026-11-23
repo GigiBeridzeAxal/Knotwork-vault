@@ -2,7 +2,7 @@
 type: memory
 status: active
 created: 2026-11-09
-updated: 2026-11-16
+updated: 2026-11-24
 tags: [memory, questions]
 ---
 # Open questions
@@ -24,3 +24,4 @@ tags: [memory, questions]
 - [ ] Rouse MCP: PR #11 merged 2026-11-15. Still to do: Gigi connects a real Claude once and gets a first alert on the iPhone: [[Connect Claude to Rouse]]. [[Rouse]]
 - [ ] Rouse showcase film (built 2026-11-15): does Gigi like the cut and the music, should PR #13 be merged, and where will the film be shown (the site, social, both)? A vertical or lighter cut is not made yet. [[Render the Rouse showcase film]]
 - [ ] Client plan (direction set 2026-11-16): what to prepare first: Upwork and Fiverr texts, lead lists (which business type in each market?), or the suggested site changes? [[Client acquisition]]
+- [ ] Lead 2 site design (sent 2026-11-24): does Gigi approve it or want changes, and should a working demo follow? [[Client acquisition]]
