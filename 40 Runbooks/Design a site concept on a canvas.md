@@ -40,6 +40,8 @@ When to use this: Gigi asks to see how a site could look before anything is buil
 - **Pictures do not show in the check:** uploaded pictures are served from the artifact's own store, which the check cannot reach. Serve local copies in the check instead; the published canvas is fine.
 - **A small artboard cannot be opened in the check:** at overview zoom its play button is one pixel wide. Click it from script by its label.
 - **A fixed-size artboard looks soft or small:** it is being scaled to fit. Make the check's window as tall as the artboard plus the viewer's own bars.
+- **A button does nothing in the check:** clicks sent by the test browser reach the artboard only sometimes. Press the control from inside the page instead (call its own click from script), and judge the look from the picture. In the real viewer the same button works.
+- **A chat screen cuts off its newest message:** make the message list a reversed column with one inner block that has an automatic bottom margin. A short chat then sits at the top and a long one stays pinned to its newest message.
 - **The publish is refused:** only one written file per call, and never one of the type's own files.
 
 Related: [[Client acquisition]], [[Professional UI design skill]], [[Review criteria skill]].
