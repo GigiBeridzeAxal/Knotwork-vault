@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-24** Lead 2 demo site online (address not named here): the approved design canvas turned into real pages in a new private repo, one static Cloudflare Worker that deploys on every push to main; demo notice on every page, hidden from search. [[Client acquisition]]
 - **2026-11-24** Lead 2 (a local travel agency, not named here) researched, and a site design made for it on a private design canvas: five screens, checked on desktop and phone; waiting for Gigi's OK before any demo is built. [[Client acquisition]], [[Design a site concept on a canvas]]
 - **2026-11-22** hello@ phone ping: rouse PR #14 (Email Routing → Rouse Worker → Gmail + iPhone push) opened, and a reply-assistant plan was sent to Gigi for OK. [[ADR-0032 hello@ mail goes through the Rouse Worker]], [[Contact email]]
 - **2026-11-21** Outreach video studio: one fixed studio set built for the outreach videos (dark podcast studio, seven views, Seedream 5.5 at 2K) after a cut-out-and-paste test was rejected; the person comes later through a screen test. [[Outreach video studio]], [[ADR-0031 Outreach videos are shot in one AI-built studio set]]
