@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-24** Lead 2: showcase film made in code (65 s, vertical, silent, nothing paid), set in the real look of the assistant app; it opens with the assistant's real answer of the day and then shows the booking through the agency's own app, labelled as a concept. Delivered to Gigi for review. [[Client acquisition]]
 - **2026-11-24** Lead 2: plan for a one-minute showcase film of the MCP offer (the assistant knows the agency, offers the connection, books in the chat) with the GEO work behind it and its limits. Plan only, waiting for Gigi; nothing built. [[Client acquisition]]
 - **2026-11-24** Lead 2: a second private design canvas, seven phone screens showing a customer booking a tour fully inside an assistant app (three apps) through the agency's own MCP server: add once, one sentence, two taps, pay on the bank's page. Design only; nothing built. [[Client acquisition]], [[Design a site concept on a canvas]]
 - **2026-11-24** Lead 2 demo site online (address not named here): the approved design canvas turned into real pages in a new private repo, one static Cloudflare Worker that deploys on every push to main; demo notice on every page, hidden from search. [[Client acquisition]]
