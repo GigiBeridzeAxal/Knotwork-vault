@@ -47,7 +47,7 @@ Stage 1 of the plan (https://claude.ai/artifact/XfkUkmfsM57RH45qQ29eZW) is live:
 
 ## Site assistant (Onyx)
 A chat on every page that answers visitors about Gigi, the services, the projects and how to hire, on a free Workers AI model. See [[ADR-0034 The site assistant answers from the site's facts on a free model]].
-- **Status:** PR #15 open, not merged, waiting for Gigi's OK.
+- **Status:** live since 2026-11-25. PR #15 merged on Gigi's OK (`8a5d251`).
 - **Code:** `worker/` is the server, `POST /api/chat`. `src/components/assistant/` is the chat window: the corner button and the character load with every page, and the window loads on first open.
 - **Facts:** `src/lib/site.ts`, `src/lib/faqs.ts` and `public/llms-full.txt`, read when the Worker starts. Change a fact on the site and the assistant changes on the next deploy.
 - **Model:** `@cf/google/gemma-4-26b-a4b-it`, thinking off. When it fails, or the free allowance (10,000 neurons a day) is spent, the chat gives the closest FAQ answer until 00:00 UTC.
