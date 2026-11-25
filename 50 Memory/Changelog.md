@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-25** gigiberidze.com verified in Bing Webmaster Tools (CNAME record) and as a Domain property in Google Search Console (TXT record); sitemap submitted to both. Cloudflare checked: no AI crawler is blocked. [[gigiberidze.com]]
 - **2026-11-25** FAQ page (35 questions), IndexNow script and the Google Search Console ownership file merged and deployed (gigiberidze.com PR #14). [[gigiberidze.com]]
 - **2026-11-25** SEO and GEO plan approved; stage 1 (new title, structured data, sitemap, robots.txt, llms.txt, About, three service pages, Georgian page) built in gigiberidze.com PR #13, merged on Gigi's OK and live the same day. [[gigiberidze.com]], [[ADR-0033 Be findable by search and AI assistants with plain facts]]
 - **2026-11-24** Lead 2: showcase film made in code (65 s, vertical, silent, nothing paid), set in the real look of the assistant app; it opens with the assistant's real answer of the day and then shows the booking through the agency's own app, labelled as a concept. Delivered to Gigi for review. [[Client acquisition]]
