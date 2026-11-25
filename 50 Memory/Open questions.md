@@ -2,7 +2,7 @@
 type: memory
 status: active
 created: 2026-11-09
-updated: 2026-11-25
+updated: 2026-11-26
 tags: [memory, questions]
 ---
 # Open questions
@@ -29,4 +29,4 @@ tags: [memory, questions]
 - [ ] Onyx script (PR #16 merged 2026-11-25): Gigi's proofread of the 126 Georgian lines; a try on a real iPhone, Safari, Firefox and a screen reader. [[ADR-0035 Onyx speaks first from a script kept in the visitor's browser]]
 - [ ] Lead 2 demo site: "My tickets" is live since 2026-11-25. Gigi to proofread its Georgian wording; corrections go in a new pull request. [[Client acquisition]]
 - [ ] One rate-limiting rule on the gigiberidze.com zone for the paths that run a Worker (all demos and apps share the free plan's 100,000 Worker requests a day, and every limiter today sits inside a Worker)? It is a Cloudflare dashboard setting and needs Gigi's OK. [[ADR-0036 Travellers follow a booking with a code, not an account]]
-- [ ] Onyx on Claude (built 2026-11-25, not merged): Gigi to review and merge the branch `claude/project-thread-mjpny3`; set prepaid credit with auto-reload off and a workspace spend limit in the Anthropic console; then add the Worker secret `ANTHROPIC_API_KEY` and check that answers say `engine: "claude"`. On merge, mark the decision accepted and ADR-0034's engine choice superseded. [[ADR-0037 Onyx answers first with Claude Haiku 5.5, paid per use]], [[Test the site assistant]]
+- [ ] Onyx on Claude (PR #19 merged 2026-11-26): the live chat still answers with `engine: workers-ai`. Gigi to check the Worker secret `ANTHROPIC_API_KEY` (type Secret, exact name; a Text variable is removed by every deploy) and the Anthropic console credit (prepaid, auto-reload off, spend limit). Then a live test and the real cost per answer. [[ADR-0037 Onyx answers first with Claude Haiku 5.5, paid per use]]

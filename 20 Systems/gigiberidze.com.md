@@ -2,7 +2,7 @@
 type: system
 status: live
 created: 2026-10-29
-updated: 2026-11-25
+updated: 2026-11-26
 tags: [system, cloudflare, site]
 repo: https://github.com/GigiBeridzeAxal/gigiberidze.com
 url: https://gigiberidze.com
@@ -51,7 +51,7 @@ A chat on every page that answers visitors about Gigi, the services, the project
 - **Code:** `worker/` is the server, `POST /api/chat`. `src/components/assistant/` is the chat window: the corner button and the character load with every page, and the window loads on first open.
 - **Facts:** `src/lib/site.ts`, `src/lib/faqs.ts` and `public/llms-full.txt`, read when the Worker starts. Change a fact on the site and the assistant changes on the next deploy.
 - **Model:** `@cf/google/gemma-4-26b-a4b-it`, thinking off. When it fails, or the free allowance (10,000 neurons a day) is spent, the chat gives the closest FAQ answer until 00:00 UTC.
-- **Claude first (built 2026-11-25, not merged):** on branch `claude/project-thread-mjpny3`, Claude Haiku 5.5 (`claude-haiku-5-5`, effort `medium`, vars `CHAT_CLAUDE_MODEL` and `CHAT_CLAUDE_EFFORT`) answers first, then Gemma, then the FAQ. It runs only once the Worker secret `ANTHROPIC_API_KEY` is set (dashboard: Worker `gigiberidze`, Settings, Variables and Secrets, type Secret); delete the secret to turn it off. Paid per use ($0.10 / $0.50 per million input / output tokens). Extra limit `CLAUDE_LIMITER`: 30 Claude calls a minute for the whole site, then Gemma. The money cap is the Anthropic credit and workspace spend limit. Each reply's `engine` field says `claude` or `workers-ai`; usage lines in the Worker logs start `chat claude usage`. See [[ADR-0037 Onyx answers first with Claude Haiku 5.5, paid per use]].
+- **Claude first (merged 2026-11-26, PR #19, `c2b3941`, on Gigi's OK):** the code is live. On the first live check the `engine` field said `workers-ai`, so the key was not yet seen or accepted by the Worker (see [[Open questions]]). In the code, Claude Haiku 5.5 (`claude-haiku-5-5`, effort `medium`, vars `CHAT_CLAUDE_MODEL` and `CHAT_CLAUDE_EFFORT`) answers first, then Gemma, then the FAQ. It runs only once the Worker secret `ANTHROPIC_API_KEY` is set (dashboard: Worker `gigiberidze`, Settings, Variables and Secrets, type Secret); delete the secret to turn it off. Paid per use ($0.10 / $0.50 per million input / output tokens). Extra limit `CLAUDE_LIMITER`: 30 Claude calls a minute for the whole site, then Gemma. The money cap is the Anthropic credit and workspace spend limit. Each reply's `engine` field says `claude` or `workers-ai`; usage lines in the Worker logs start `chat claude usage`. See [[ADR-0037 Onyx answers first with Claude Haiku 5.5, paid per use]].
 - **Name:** change `ASSISTANT_NAME` in `src/lib/site.ts` and `CHAT_NAME` in `wrangler.jsonc` together. A test keeps them equal.
 - **Limits:** same-site requests only, 8 KB body, 500 characters a message, 20 questions a chat (the window enforces it; the server checks it as a backstop), 8 messages a minute per address. Previews use the same rate limit. Replies naming a price or rate are replaced by a fixed line. No chat text is stored or logged.
 - **Commands:** `npm test` (unit tests), `npm run e2e` (browser tests against a running Worker). See [[Test the site assistant]].
