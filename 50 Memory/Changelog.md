@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-25** gigiberidze.com: Claude Haiku 5.5 (effort medium) as Onyx's first engine, then Workers AI, then the FAQ; used only once the `ANTHROPIC_API_KEY` secret is set; site-wide limit of 30 Claude calls a minute. Built on branch `claude/project-thread-mjpny3`, not merged. [[gigiberidze.com]], [[ADR-0037 Onyx answers first with Claude Haiku 5.5, paid per use]]
 - **2026-11-25** gigiberidze.com PR #18 merged (`f004fa2`) at Gigi's request and deployed: Onyx's bubble and glow use one grey for every mood instead of a colour per mood. Checked on the live site. [[gigiberidze.com]]
 - **2026-11-25** gigiberidze.com PR #17 merged into `main` (`883024b`) on Gigi's OK and deployed: Onyx's speech bubble is bigger and brighter, coloured by his mood, and its text types itself in; Onyx is 76 px. Checked on the live site through the built-in browser. [[gigiberidze.com]]
 - **2026-11-25** Lead 2 demo site: pull request #1 merged into `main` (`fcb53d9`) on Gigi's OK and deployed by Workers Builds; "My tickets" is live. It was the first deploy with a Worker and a Durable Object in front of that site. Checked on the live site through Gigi's Chrome: the seat count comes from the store, a made-up booking went through the TEST bank page to its boarding pass and showed on My tickets, then it was cancelled and the seat came back. [[Client acquisition]], [[ADR-0036 Travellers follow a booking with a code, not an account]]
