@@ -2,7 +2,7 @@
 type: system
 status: live
 created: 2026-10-29
-updated: 2026-11-15
+updated: 2026-11-25
 tags: [system, cloudflare, site]
 repo: https://github.com/GigiBeridzeAxal/gigiberidze.com
 url: https://gigiberidze.com
@@ -30,6 +30,16 @@ Gigi's portfolio site.
 - Hero links: X, Freelancer, Upwork. No "Hire me" buttons and no Freelancer reviews (removed 2026-10-30 at Gigi's request).
 - Contact: mailto `hello@gigiberidze.com` only, no form. See [[Contact email]].
 
+## SEO and AI discoverability
+Stage 1 of the plan (https://claude.ai/artifact/XfkUkmfsM57RH45qQ29eZW) is built in PR #13 (2026-11-25, waiting for Gigi's OK to merge). See [[ADR-0033 Be findable by search and AI assistants with plain facts]].
+- Shared facts (name, role "Agentic Engineer & AI Architect", profile links, services, sitemap pages) live in `src/lib/site.ts`. Change them there first, then `public/llms.txt` and `public/llms-full.txt`, which are plain files.
+- Structured data (schema.org JSON-LD) is built in `src/lib/schema.ts`: Person on a ProfilePage (home, `/about`), WebSite, SoftwareApplication for each case study, Service and FAQPage on the service pages. Rule: everything in it is also visible on the page.
+- `src/app/sitemap.ts` and `src/app/robots.ts` build `sitemap.xml` and `robots.txt` (all crawlers allowed, AI crawlers named). Cloudflare adds its own "content signals" comment text to `robots.txt`.
+- Pages added: `/about`, `/services/agentic-engineering`, `/services/ai-architecture`, `/services/mcp-servers`, `/ka` (Georgian summary, Noto Sans Georgian), and a `noindex` 404.
+- No prices on the site, no city (country only), no invented clients or reviews.
+- Before this (audit 2026-11-25): 3 pages, no sitemap, no llms.txt, no structured data, and a web search for the name returned other people.
+- Next stages: Google Search Console and Bing Webmaster Tools, one identity across profiles, mentions outside the site, a monthly check with fixed questions to the assistants.
+
 ## Gotchas
 - Cloud sessions can't reach gigiberidze.com or Cloudflare (egress proxy). Check the live site and dashboard through Gigi's Chrome with Claude in Chrome.
 - Largest Contentful Paint was "poor" on half of loads (2026-10-31), caused by the first cover image in the work strip (`web-1-cover.webp`). See [[Traffic analytics]].
@@ -42,3 +52,4 @@ Gigi's portfolio site.
 - [[Deploy gigiberidze.com]]
 - [[Fix red preview build]]
 - [[ADR-0002 Host the site on Cloudflare Workers with Builds]]
+- [[ADR-0033 Be findable by search and AI assistants with plain facts]]
