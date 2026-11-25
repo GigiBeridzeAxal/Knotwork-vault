@@ -13,7 +13,7 @@ stack: [Next.js static export, Cloudflare Workers static assets]
 Gigi's portfolio site.
 
 ## How it runs
-- A **Cloudflare Worker named `gigiberidze`** serving static assets (`output: "export"`, assets from `./out`, config in `wrangler.jsonc`). It is not Cloudflare Pages, even though that was the first guess.
+- A **Cloudflare Worker named `gigiberidze`** serving static assets (`output: "export"`, assets from `./out`, config in `wrangler.jsonc`). It is not Cloudflare Pages, even though that was the first guess. Pages are static files and run no Worker code. Only `/api/*` runs the Worker's code (`worker/`, `run_worker_first`), for the site assistant below, once PR #15 is merged.
 - **Workers Builds** is connected to GitHub (Cloudflare GitHub App, scoped to this repo only), since 2026-10-29.
   - Push to `main`: `npm run build` then `npx wrangler deploy`. **Merging to main is a production deploy.**
   - Other branches: `npx wrangler preview`, which needs a `"previews": {}` block in `wrangler.jsonc` (added in PR #4). See [[Fix red preview build]].
@@ -45,7 +45,19 @@ Stage 1 of the plan (https://claude.ai/artifact/XfkUkmfsM57RH45qQ29eZW) is live:
 - **Cloudflare and AI crawlers** (checked 2026-11-25): AI Crawl Control blocks no crawler (33 listed, none blocked, no failed requests), and Bot fight mode and AI Labyrinth are off. Keep it that way, or the assistants cannot read the site.
 - Next stages: one identity across profiles, mentions outside the site, a monthly check with fixed questions to the assistants.
 
+## Site assistant (Onyx)
+A chat on every page that answers visitors about Gigi, the services, the projects and how to hire, on a free Workers AI model. See [[ADR-0034 The site assistant answers from the site's facts on a free model]].
+- **Status:** PR #15 open, not merged, waiting for Gigi's OK.
+- **Code:** `worker/` is the server, `POST /api/chat`. `src/components/assistant/` is the chat window: the corner button and the character load with every page, and the window loads on first open.
+- **Facts:** `src/lib/site.ts`, `src/lib/faqs.ts` and `public/llms-full.txt`, read when the Worker starts. Change a fact on the site and the assistant changes on the next deploy.
+- **Model:** `@cf/google/gemma-4-26b-a4b-it`, thinking off. When it fails, or the free allowance (10,000 neurons a day) is spent, the chat gives the closest FAQ answer until 00:00 UTC.
+- **Name:** change `ASSISTANT_NAME` in `src/lib/site.ts` and `CHAT_NAME` in `wrangler.jsonc` together. A test keeps them equal.
+- **Limits:** same-site requests only, 8 KB body, 500 characters a message, 20 questions a chat (the window enforces it; the server checks it as a backstop), 8 messages a minute per address. Previews use the same rate limit. Replies naming a price or rate are replaced by a fixed line. No chat text is stored or logged.
+- **Commands:** `npm test` (unit tests), `npm run e2e` (browser tests against a running Worker). See [[Test the site assistant]].
+- Plan: https://claude.ai/artifact/A4SioXA9jUbV6Ludh7Dnu9. Character sheet: https://claude.ai/artifact/Ab6CepTiUzmQfngA4evcLU.
+
 ## Gotchas
+- `npm run build` stops every other run with a Next.js security advisory notice. Run it again and it continues. The advisories need the Next server runtime, which a static export does not use, so they do not apply. Upgrading Next to 16.4.5 or later would silence the notice.
 - Cloud sessions can't reach gigiberidze.com or Cloudflare (egress proxy). Check the live site and dashboard through Gigi's Chrome with Claude in Chrome.
 - Largest Contentful Paint was "poor" on half of loads (2026-10-31), caused by the first cover image in the work strip (`web-1-cover.webp`). See [[Traffic analytics]].
 - Old Vercel projects `my-portfolio` and `my-portfoliofrontend` are unrelated and stale.
@@ -58,3 +70,5 @@ Stage 1 of the plan (https://claude.ai/artifact/XfkUkmfsM57RH45qQ29eZW) is live:
 - [[Fix red preview build]]
 - [[ADR-0002 Host the site on Cloudflare Workers with Builds]]
 - [[ADR-0033 Be findable by search and AI assistants with plain facts]]
+- [[ADR-0034 The site assistant answers from the site's facts on a free model]]
+- [[Test the site assistant]]

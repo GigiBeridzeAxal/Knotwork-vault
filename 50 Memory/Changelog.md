@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-25** Site assistant Onyx (a chat on every page, free Workers AI model with FAQ fallback) built in gigiberidze.com PR #15, review findings fixed on the branch; not merged, waiting for Gigi's OK. [[gigiberidze.com]], [[ADR-0034 The site assistant answers from the site's facts on a free model]]
 - **2026-11-25** gigiberidze.com verified in Bing Webmaster Tools (CNAME record) and as a Domain property in Google Search Console (TXT record); sitemap submitted to both. Cloudflare checked: no AI crawler is blocked. [[gigiberidze.com]]
 - **2026-11-25** FAQ page (35 questions), IndexNow script and the Google Search Console ownership file merged and deployed (gigiberidze.com PR #14). [[gigiberidze.com]]
 - **2026-11-25** SEO and GEO plan approved; stage 1 (new title, structured data, sitemap, robots.txt, llms.txt, About, three service pages, Georgian page) built in gigiberidze.com PR #13, merged on Gigi's OK and live the same day. [[gigiberidze.com]], [[ADR-0033 Be findable by search and AI assistants with plain facts]]

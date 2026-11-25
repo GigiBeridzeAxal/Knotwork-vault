@@ -2,7 +2,7 @@
 type: memory
 status: active
 created: 2026-11-09
-updated: 2026-11-24
+updated: 2026-11-25
 tags: [memory, questions]
 ---
 # Open questions
@@ -25,3 +25,4 @@ tags: [memory, questions]
 - [ ] Rouse showcase film (built 2026-11-15): does Gigi like the cut and the music, should PR #13 be merged, and where will the film be shown (the site, social, both)? A vertical or lighter cut is not made yet. [[Render the Rouse showcase film]]
 - [ ] Client plan (direction set 2026-11-16): what to prepare first: Upwork and Fiverr texts, lead lists (which business type in each market?), or the suggested site changes? [[Client acquisition]]
 - [ ] Lead 2 demo site (online 2026-11-24): Georgian proofread, an English version, and when Gigi sends it to the prospect. [[Client acquisition]]
+- [ ] Onyx: merge PR #15? And the final name (Onyx in use; Tvali, Nox offered). [[gigiberidze.com]], [[ADR-0034 The site assistant answers from the site's facts on a free model]]
