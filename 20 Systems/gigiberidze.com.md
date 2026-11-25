@@ -40,7 +40,7 @@ Stage 1 of the plan (https://claude.ai/artifact/XfkUkmfsM57RH45qQ29eZW) is live:
 - Before this (audit 2026-11-25): 3 pages, no sitemap, no llms.txt, no structured data, and a web search for the name returned other people.
 - **FAQ** (PR #14, live 2026-11-25): `/faq` has 35 questions in six groups. Every question and answer lives in `src/lib/faqs.ts`; `/about`, the service pages and `/ka` (eight in Georgian) show subsets, so one question has one answer everywhere. Where Gigi has stated no policy (code ownership, NDA, support, data terms) the answer says it is agreed per project. Change those answers when Gigi states a policy.
 - **IndexNow**: `npm run indexnow` (script `scripts/indexnow.mjs`) tells Bing and other engines which pages changed. Run it by hand after a deploy that adds or changes pages. Its key file in `public/` is public by design.
-- **Google Search Console**: property `https://gigiberidze.com` (URL prefix) under Gigi's Google account, verified by the file `public/google3a1a9b0fc032fa53.html`. Never delete that file. A Domain property for all subdomains was added too and still needs a DNS TXT record in Cloudflare.
+- **Google Search Console**: property `https://gigiberidze.com` (URL prefix) under Gigi's Google account, verified by the file `public/google3a1a9b0fc032fa53.html` on 2026-11-25; `sitemap.xml` submitted the same day (9 pages found). IndexNow was also sent for all 9 pages that day. Never delete that file. A Domain property for all subdomains was added too and still needs a DNS TXT record in Cloudflare.
 - Next stages: Google Search Console and Bing Webmaster Tools, one identity across profiles, mentions outside the site, a monthly check with fixed questions to the assistants.
 
 ## Gotchas
