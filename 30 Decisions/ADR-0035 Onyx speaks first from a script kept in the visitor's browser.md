@@ -1,6 +1,6 @@
 ---
 type: decision
-status: proposed
+status: accepted
 created: 2026-11-25
 updated: 2026-11-25
 date: 2026-11-25
@@ -19,7 +19,7 @@ On 2026-11-25, hours after Onyx went live ([[ADR-0034 The site assistant answers
 3. Both: scripted lines, with the model filling in where no line fits.
 
 ## Decision
-Option 2, built in gigiberidze.com PR #16. Status stays `proposed` until Gigi merges it.
+Option 2, built in gigiberidze.com PR #16. Gigi approved the merge on 2026-11-25; squash-merged as `7903a8d` the same day.
 - A script of 581 lines (455 English, 126 Georgian; 575 at first, 6 added after the review), picked in the browser by what the visitor does: arriving, coming back, opening a page, a section reaching the middle of the screen, hovering or clicking a link, idling, reading long, rushing, reaching the end, coming back to the tab, selecting text, copying the email, poking him, the chat.
 - Pacing limits so he stays charming and not a nuisance, a mute, and nothing while the visitor types or the chat is open.
 - Memory in the visitor's own `localStorage` only: visits, pages seen, lines already said, whether he is muted; the chat for 30 days from the last message; everything expires after 180 days without a visit. "Forget me" clears it. Nothing is sent anywhere.

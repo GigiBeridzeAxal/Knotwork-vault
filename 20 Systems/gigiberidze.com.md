@@ -58,7 +58,7 @@ A chat on every page that answers visitors about Gigi, the services, the project
 
 ### Onyx speaks first (the script)
 He greets every visitor and comments on his own from about 580 prewritten lines, picked in the browser, with no model and no network. See [[ADR-0035 Onyx speaks first from a script kept in the visitor's browser]].
-- **Status:** PR #16 (branch `claude/project-thread-mjpny3`), open, review findings fixed on 2026-11-25, waiting for Gigi's OK. Not live yet.
+- **Status:** PR #16 squash-merged as `7903a8d` on Gigi's OK on 2026-11-25 (deploys on merge). Still open: Gigi's proofread of the Georgian lines; not tried on real phones, Safari, Firefox or a screen reader.
 - **Where:** lines in `src/components/assistant/script/lines/` (`english.ts` joins the English files, `georgian.ts` is all Georgian). Engine `script/engine.ts`, choice `script/pick.ts`, pacing `script/pace.ts`, memory `script/memory.ts`, bubble `bubble.tsx`.
 - **Add or change a line:** edit the object in the matching file (`id`, `on`, `text`, `mood`, optional `anim`, `target`, `when`, `repeat`, `weight`, `chip`, `lang`; shape in `script/types.ts`), then `npm test`. A line that quotes a number from a page must change when the page does; the test checks the form, not the facts.
 - **Triggers:** arrive, return, page, section, hover, click, idle, long read, fast scroll, bottom, tab back, leaving, selected text, copied email, pokes, pointer near, the chat, 404, mute and unmute.
