@@ -8,7 +8,7 @@ system: "[[gigiberidze.com]]"
 ---
 # Test the site assistant
 
-When to use this: before merging a change to Onyx, the chat on [[gigiberidze.com]], or to check that the real model answers ([[ADR-0034 The site assistant answers from the site's facts on a free model]]).
+When to use this: before merging a change to Onyx, the chat on [[gigiberidze.com]], or to check that the real model answers ([[ADR-0034 The site assistant answers from the site's facts on a free model]]), or to try his scripted lines ([[ADR-0035 Onyx speaks first from a script kept in the visitor's browser]]).
 
 ## Local, FAQ mode (no model, no cost)
 1. In the site repo: `npm test` (unit tests, no network) and `npm run build`. If the build stops once with the Next.js security notice, run it again.
@@ -17,6 +17,15 @@ When to use this: before merging a change to Onyx, the chat on [[gigiberidze.com
 
 ## End-to-end
 4. With the Worker from step 2 running: `npm run e2e`. Playwright is not a dependency. The script uses the global install (`NODE_PATH=$(npm root -g)` in a cloud session). All steps should pass.
+
+## His own lines (the script)
+Works locally (step 2) and on any preview or the live site; it changes only your own tab.
+1. Add `?onyx=debug` to a page address, for example `http://localhost:3100/?onyx=debug`. Open the browser console: every event, the line chosen, or why nothing was said (`held back: ...`) is logged with `[onyx]`.
+2. Make him say something now: `window.__onyx.fire("idle")`, or with a target, `window.__onyx.fire("section", "home.work.knotwork")`. `fire` follows the pacing rules; `window.__onyx.skip(60000)` moves his clock a minute on so the next line is not held back. `window.__onyx.show("section-knotwork-book-1")` shows one line by its id, past every rule.
+3. `window.__onyx.state()` shows the page, the last line, how many lines loaded and the stored memory.
+4. Pretend to be a returning visitor: `window.__onyx.skip(2*24*60*60*1000)`, then click a link to another page of the site (not a reload: the open tab keeps writing "last seen", and a reload starts his clock again). He greets with a return line for two days away. To try other return lines, first change the stored record in the console, for example `m = JSON.parse(localStorage.getItem("onyx-memory-v1")); m.visits = 9; m.chatted = true; localStorage.setItem("onyx-memory-v1", JSON.stringify(m))`, then skip and click as above. Afterwards the record's "last seen" is in the future; the next real page load reads it as now.
+5. Pretend to be Georgian: open `/ka?onyx=debug`, or set the browser language to Georgian.
+6. Start over as a new visitor: "Forget me" in the chat window, or `window.__onyx.reset()`, or delete `onyx-memory-v1` and `onyx-chat-v1` in the browser's storage.
 
 ## The real model, on a preview build
 5. Push the branch. Workers Builds makes a preview at `https://<branch-with-dashes>-gigiberidze.gigiberidze-com.workers.dev`: the branch name with `/` and other symbols turned into dashes.

@@ -56,6 +56,17 @@ A chat on every page that answers visitors about Gigi, the services, the project
 - **Commands:** `npm test` (unit tests), `npm run e2e` (browser tests against a running Worker). See [[Test the site assistant]].
 - Plan: https://claude.ai/artifact/A4SioXA9jUbV6Ludh7Dnu9. Character sheet: https://claude.ai/artifact/Ab6CepTiUzmQfngA4evcLU.
 
+### Onyx speaks first (the script)
+He greets every visitor and comments on his own from about 580 prewritten lines, picked in the browser, with no model and no network. See [[ADR-0035 Onyx speaks first from a script kept in the visitor's browser]].
+- **Status:** PR #16 (branch `claude/project-thread-mjpny3`), open, review findings fixed on 2026-11-25, waiting for Gigi's OK. Not live yet.
+- **Where:** lines in `src/components/assistant/script/lines/` (`english.ts` joins the English files, `georgian.ts` is all Georgian). Engine `script/engine.ts`, choice `script/pick.ts`, pacing `script/pace.ts`, memory `script/memory.ts`, bubble `bubble.tsx`.
+- **Add or change a line:** edit the object in the matching file (`id`, `on`, `text`, `mood`, optional `anim`, `target`, `when`, `repeat`, `weight`, `chip`, `lang`; shape in `script/types.ts`), then `npm test`. A line that quotes a number from a page must change when the page does; the test checks the form, not the facts.
+- **Triggers:** arrive, return, page, section, hover, click, idle, long read, fast scroll, bottom, tab back, leaving, selected text, copied email, pokes, pointer near, the chat, 404, mute and unmute.
+- **Pacing:** 25 s between lines he offers, at most 6 a page; hovers at most 2 a page and 6 a visit; clicks at most 3 a page; 20 a visit for all of these together. Nothing while typing or with the chat open.
+- **Language:** Georgian on `/ka` (no English fallback there) and for browsers set to Georgian.
+- **Remembered,** in the visitor's `localStorage` only: visits, pages seen, lines said, mute (`onyx-memory-v1`), cleared after 180 days without a visit; the chat (`onyx-chat-v1`) for 30 days from the last message. "Forget me" in the chat window clears both.
+- **Debug:** `?onyx=debug` on any page logs every event and choice in the console and opens `window.__onyx` (`fire`, `show`, `skip`, `state`, `reset`). It works on the live site on purpose: it changes only your own tab. See [[Test the site assistant]].
+
 ## Gotchas
 - `npm run build` stops every other run with a Next.js security advisory notice. Run it again and it continues. The advisories need the Next server runtime, which a static export does not use, so they do not apply. Upgrading Next to 16.4.5 or later would silence the notice.
 - Cloud sessions can't reach gigiberidze.com or Cloudflare (egress proxy). Check the live site and dashboard through Gigi's Chrome with Claude in Chrome.
@@ -71,4 +82,5 @@ A chat on every page that answers visitors about Gigi, the services, the project
 - [[ADR-0002 Host the site on Cloudflare Workers with Builds]]
 - [[ADR-0033 Be findable by search and AI assistants with plain facts]]
 - [[ADR-0034 The site assistant answers from the site's facts on a free model]]
+- [[ADR-0035 Onyx speaks first from a script kept in the visitor's browser]]
 - [[Test the site assistant]]
