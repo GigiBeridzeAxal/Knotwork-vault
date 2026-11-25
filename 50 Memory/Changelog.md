@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-25** Research: booking a tour inside ChatGPT, Claude and Gemini (MCP server + GEO; pay by link). [[Booking inside AI apps]]
 - **2026-11-25** Onyx speaks first: a script of 581 lines (English and Georgian) picked in the visitor's browser, with pacing, mute and local memory, built in gigiberidze.com PR #16; review findings fixed on the branch; not merged, waiting for Gigi's OK. [[gigiberidze.com]], [[ADR-0035 Onyx speaks first from a script kept in the visitor's browser]]
 - **2026-11-25** Site assistant Onyx merged on Gigi's OK and deployed: gigiberidze.com PR #15 (`8a5d251`). [[gigiberidze.com]]
 - **2026-11-25** Site assistant Onyx (a chat on every page, free Workers AI model with FAQ fallback) built in gigiberidze.com PR #15, review findings fixed on the branch; not merged, waiting for Gigi's OK. [[gigiberidze.com]], [[ADR-0034 The site assistant answers from the site's facts on a free model]]
