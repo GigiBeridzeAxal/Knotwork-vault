@@ -10,6 +10,7 @@ tags: [memory, log]
 Newest first. One line per event: what changed, and a link.
 
 ## 2026-11
+- **2026-11-25** FAQ page (35 questions), IndexNow script and the Google Search Console ownership file merged and deployed (gigiberidze.com PR #14). [[gigiberidze.com]]
 - **2026-11-25** SEO and GEO plan approved; stage 1 (new title, structured data, sitemap, robots.txt, llms.txt, About, three service pages, Georgian page) built in gigiberidze.com PR #13, merged on Gigi's OK and live the same day. [[gigiberidze.com]], [[ADR-0033 Be findable by search and AI assistants with plain facts]]
 - **2026-11-24** Lead 2: showcase film made in code (65 s, vertical, silent, nothing paid), set in the real look of the assistant app; it opens with the assistant's real answer of the day and then shows the booking through the agency's own app, labelled as a concept. Delivered to Gigi for review. [[Client acquisition]]
 - **2026-11-24** Lead 2: plan for a one-minute showcase film of the MCP offer (the assistant knows the agency, offers the connection, books in the chat) with the GEO work behind it and its limits. Plan only, waiting for Gigi; nothing built. [[Client acquisition]]
