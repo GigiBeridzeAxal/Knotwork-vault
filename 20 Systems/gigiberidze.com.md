@@ -31,7 +31,7 @@ Gigi's portfolio site.
 - Contact: mailto `hello@gigiberidze.com` only, no form. See [[Contact email]].
 
 ## SEO and AI discoverability
-Stage 1 of the plan (https://claude.ai/artifact/XfkUkmfsM57RH45qQ29eZW) is built in PR #13 (2026-11-25, waiting for Gigi's OK to merge). See [[ADR-0033 Be findable by search and AI assistants with plain facts]].
+Stage 1 of the plan (https://claude.ai/artifact/XfkUkmfsM57RH45qQ29eZW) is live: PR #13, merged on Gigi's OK on 2026-11-25 (`3ff015b`). See [[ADR-0033 Be findable by search and AI assistants with plain facts]].
 - Shared facts (name, role "Agentic Engineer & AI Architect", profile links, services, sitemap pages) live in `src/lib/site.ts`. Change them there first, then `public/llms.txt` and `public/llms-full.txt`, which are plain files.
 - Structured data (schema.org JSON-LD) is built in `src/lib/schema.ts`: Person on a ProfilePage (home, `/about`), WebSite, SoftwareApplication for each case study, Service and FAQPage on the service pages. Rule: everything in it is also visible on the page.
 - `src/app/sitemap.ts` and `src/app/robots.ts` build `sitemap.xml` and `robots.txt` (all crawlers allowed, AI crawlers named). Cloudflare adds its own "content signals" comment text to `robots.txt`.
