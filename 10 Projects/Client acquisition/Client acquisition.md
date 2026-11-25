@@ -2,7 +2,7 @@
 type: project
 status: active
 created: 2026-11-15
-updated: 2026-11-24
+updated: 2026-11-25
 tags: [project, business, clients]
 url: https://claude.ai/artifact/CFQBSduzK7XqgQpADcr1wq
 ---
@@ -73,6 +73,7 @@ Briefs on single businesses live in private docs, not here: this vault is public
 - **2026-11-24, lead 2, booking inside an assistant app:** Gigi asked for a design of how a customer would use the agency's MCP server from the three big assistant apps and book without opening a website. A private canvas with seven phone screens: add the agency once, ask in one sentence, a departures board and a boarding pass drawn inside the chat (the pass is the booking form), the deposit paid on the bank's page, the pass kept in the chat; one app is shown in words and links only because card support there could not be confirmed. Rule kept in the design: the assistant only prepares, seats are held only by the person's own tap, and it never sees a card. Design only; the server is not built.
 - **2026-11-24, lead 2, showcase film plan:** Gigi corrected the direction: the goal is a short film that shows the offer to the agency, not one more design. A plan was made (private page, linked from the project thread): about one minute, vertical, eleven scenes in three steps. The assistant knows the agency (GEO), offers the agency's connection (listings in the assistants' own directories), and books in the chat (the MCP server). The film is marked as a concept, and one scene is a real recording of what an assistant answers today. Waiting for Gigi's choice of how to make it; nothing built.
 - **2026-11-24, lead 2, showcase film made:** Gigi chose the concept film in code and asked that the interface be the real one of the most used assistant app. The film is 65 seconds, vertical, silent, nothing paid. It opens with that assistant's real answer to the customer's question, asked the same day: it sends the traveller to the agency's social pages, drafts the message for them, and says it could not check the price or free seats and that the agency's website did not open. Then the same question with the agency's own app: the assistant offers it, shows the tour, fills the booking from one sentence, two taps (hold the seats, pay the deposit on a test bank page), and the booking lands in the staff panel. The made-up part carries a visible concept label. Delivered to Gigi for review; Gigi sends it.
+- **2026-11-25, lead 2, research on booking inside assistant apps:** Gigi asked whether an MCP server is needed. Answer: yes, one server is the only route all three big assistant apps understand, paired with free structured data on the real site; payment stays one link out to the bank's page, because in-chat payment protocols are not open to tour services in this country today. Details and sources: [[Booking inside AI apps]].
 
 ### Playbook: clothing and shoe shops that sell on Instagram
 - **Signs to look for:** no website, "order by DM" in the bio, free delivery, many posts and videos, many Google reviews with no owner replies, reviews in several languages (tourist areas).
