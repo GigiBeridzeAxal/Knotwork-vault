@@ -2,7 +2,7 @@
 type: runbook
 status: active
 created: 2026-11-25
-updated: 2026-11-25
+updated: 2026-11-26
 tags: [runbook, site, assistant]
 system: "[[gigiberidze.com]]"
 ---
@@ -41,3 +41,6 @@ If it fails:
 - Claude never answers in a preview: previews may not have the secret; check the preview's Variables and Secrets.
 - 429: wait a minute.
 - 403: the page and `/api/chat` are on different hosts.
+
+## Why Claude did not answer
+When `engine` is not `claude`, read the response header `X-Onyx-Claude` of `/api/chat` (browser DevTools, Network, the `chat` request, Response Headers). `no_key`: the Worker sees no `ANTHROPIC_API_KEY` secret (check the exact name, type Secret, and that it was deployed). `auth`: the key was rejected. `billing`: no credit in the Anthropic console. `limit`: the site-wide limit of 30 a minute. `rate`, `overloaded`, `server`, `timeout`, `connection`, `empty`: a passing failure, try again. No header means Claude answered.
