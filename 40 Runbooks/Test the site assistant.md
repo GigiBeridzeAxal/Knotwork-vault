@@ -2,7 +2,7 @@
 type: runbook
 status: active
 created: 2026-11-25
-updated: 2026-11-26
+updated: 2026-11-27
 tags: [runbook, site, assistant]
 system: "[[gigiberidze.com]]"
 ---
@@ -44,3 +44,9 @@ If it fails:
 
 ## Why Claude did not answer
 When `engine` is not `claude`, read the response header `X-Onyx-Claude` of `/api/chat` (browser DevTools, Network, the `chat` request, Response Headers). `no_key`: the Worker sees no `ANTHROPIC_API_KEY` secret (check the exact name, type Secret, and that it was deployed). `auth`: the key was rejected. `billing`: no credit in the Anthropic console. `limit`: the site-wide limit of 30 a minute. `rate`, `overloaded`, `server`, `timeout`, `connection`, `empty`: a passing failure, try again. No header means Claude answered.
+
+## Showing and pointing (Onyx 2)
+1. Open any page with `?onyx=debug`.
+2. `window.__onyx.act({do:"show",target:"work.rouse"})` scrolls to the Rouse book, rings it and points. `window.__onyx.tour()` starts the home tour; `window.__onyx.stop()` ends any show; `window.__onyx.showing()` says whether one runs.
+3. Chat moves: `POST /api/chat` with "Show me the Rouse project" should answer with `act: {do:"show", target:"work.rouse"}`; "Tell me about Knotwork" should carry a button and no `act`; a message with a URL or its own marker must carry neither.
+4. Local browser tests: `npm run e2e` runs `assistant.e2e.cjs`, `show.e2e.cjs` and `chat-moves.e2e.cjs`.

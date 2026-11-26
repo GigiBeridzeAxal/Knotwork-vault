@@ -2,7 +2,7 @@
 type: system
 status: live
 created: 2026-10-29
-updated: 2026-11-26
+updated: 2026-11-27
 tags: [system, cloudflare, site]
 repo: https://github.com/GigiBeridzeAxal/gigiberidze.com
 url: https://gigiberidze.com
@@ -69,6 +69,14 @@ He greets every visitor and comments on his own from about 580 prewritten lines,
 - **Remembered,** in the visitor's `localStorage` only: visits, pages seen, lines said, mute (`onyx-memory-v1`), cleared after 180 days without a visit; the chat (`onyx-chat-v1`) for 30 days from the last message. "Forget me" in the chat window clears both.
 - **Debug:** `?onyx=debug` on any page logs every event and choice in the console and opens `window.__onyx` (`fire`, `show`, `skip`, `state`, `reset`). It works on the live site on purpose: it changes only your own tab. See [[Test the site assistant]].
 
+### Onyx 2: the host (voice, every section, showing things)
+Since 2026-11-27 (PR #21, `ecb0804`, on Gigi's OK). See [[ADR-0038 Onyx hosts the site in a confident voice and moves it only from allow-listed actions]].
+- **Voice and label:** confident, short, dry jokes; label "Onyx · Gigi's AI"; text and emoji only, no audio. About 750 lines (English and Georgian, Georgian in the formal form).
+- **Every section:** each section carries `data-onyx-section` (77 keys on 9 pages, list in `script/sections.ts`). Most section lines are small "asides": pacing in `ASIDE` in `script/pace.ts` (8 s apart, 14 a page, 40 a visit).
+- **Show engine:** `src/components/assistant/show/` (`actions.ts` the allowed actions, `targets.ts` the registry of items and routes, `run.ts`, `words.ts` tour captions). Items on pages carry `data-onyx-item`. Loaded on first use. A new card or section needs a key; tests compare the keys with the built pages.
+- **Chat moves:** `worker/moves.ts` reads one marker line from the model's answer (`[[show:KEY]]`, `[[open:PAGE]]`, `[[tour]]`, `[[offer:...]]`), checks it against the same lists and adds `act`, `actLabel` and `buttons` to the `/api/chat` reply. Keyword rules there cover the case with no model.
+- **Debug:** under `?onyx=debug`, `window.__onyx.act({do:"show",target:"work.rouse"})`, `.tour()`, `.stop()`, `.showing()`.
+
 ## Gotchas
 - `npm run build` stops every other run with a Next.js security advisory notice. Run it again and it continues. The advisories need the Next server runtime, which a static export does not use, so they do not apply. Upgrading Next to 16.4.5 or later would silence the notice.
 - Cloud sessions can't reach gigiberidze.com or Cloudflare (egress proxy). Check the live site and dashboard through Gigi's Chrome with Claude in Chrome.
@@ -86,4 +94,5 @@ He greets every visitor and comments on his own from about 580 prewritten lines,
 - [[ADR-0034 The site assistant answers from the site's facts on a free model]]
 - [[ADR-0035 Onyx speaks first from a script kept in the visitor's browser]]
 - [[ADR-0037 Onyx answers first with Claude Haiku 5.5, paid per use]]
+- [[ADR-0038 Onyx hosts the site in a confident voice and moves it only from allow-listed actions]]
 - [[Test the site assistant]]

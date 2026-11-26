@@ -2,7 +2,7 @@
 type: decision
 status: accepted
 created: 2026-11-25
-updated: 2026-11-25
+updated: 2026-11-27
 date: 2026-11-25
 tags: [decision, site, cloudflare, assistant]
 supersedes:
@@ -36,3 +36,6 @@ ADR-0030 is not superseded. Its rule-based assistant for lead demos is a differe
 - The site's Worker now has code, but only for `/api/*`. Pages are still static files.
 - Preview builds do not inherit bindings, so they are repeated under `previews` in `wrangler.jsonc`. Previews use the real model, the same allowance and the same rate limit.
 - The real model can only be tried on a Cloudflare build, through the browser on Gigi's computer: [[Test the site assistant]].
+
+
+> 2026-11-27: the label and tone chosen here are replaced by [[ADR-0038 Onyx hosts the site in a confident voice and moves it only from allow-listed actions]]. The rest stands.
