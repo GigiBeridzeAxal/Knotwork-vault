@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ka">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280, initial-scale=1">
+<title>Motion kit</title>
+<link rel="stylesheet" href="core.css">
+<style>
+#k1 .kyear { left: 80px; top: 110px; } #k1 .kred { left: 80px; top: 360px; }
+#k1 .kph { left: 940px; top: 90px; }
+#k1 .kcs { height: 100%; display: flex; flex-direction: column; align-items: center; padding-top: 120px; gap: 10px; color: var(--paper); }
+#k1 .kav { width: 96px; height: 96px; border-radius: 50%; background: #3A3A35; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
+#k1 .kcs b { font-size: 20px; font-weight: 600; } #k1 .kcs span { font-size: 16px; color: var(--grey-d); }
+#k1 .kgo { margin-top: auto; margin-bottom: 70px; width: 72px; height: 72px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; color: #fff; }
+#k1 .kcall { left: 90px; top: 520px; --r: 2deg; font-size: 64px; } #k1 .kx { left: 560px; top: 610px; --r: -3deg; }
+#k1 .kst { left: 470px; top: 400px; }
+#k2 .kb { left: 60px; top: 150px; width: 640px; height: 420px; }
+#k2 .krow { display: flex; align-items: center; gap: 14px; padding: 18px 24px; border-bottom: 1px solid #ECEAE2; }
+#k2 .krow i { width: 54px; height: 40px; border-radius: 6px; background: #E9E7DD; flex: none; }
+#k2 .krow b { height: 12px; border-radius: 6px; background: #D9D6CA; }
+#k2 .kc { left: 790px; top: 150px; width: 400px; padding: 28px 30px; border-radius: 16px; background: var(--paper); border: 3px solid var(--ink); --te: var(--ink); }
+#k2 .kc b { display: block; font-family: var(--geo); font-stretch: 62.5%; font-weight: 900; font-size: 56px; line-height: 1; }
+#k2 .kc span { display: block; margin-top: 10px; font-size: 20px; color: var(--grey-l); }
+#k2 .kr { left: 740px; top: 380px; color: var(--ink); }
+#k2 .kff { left: 60px; top: 590px; font-size: 100px; }
+#k2 .ktx { left: 790px; top: 450px; display: flex; align-items: center; height: 52px; padding: 0 20px; border-radius: 26px; background: #fff; box-shadow: inset 0 0 0 1.5px var(--ink); font-size: 20px; min-width: 420px; }
+#k2 .ktx i { width: 2px; height: 24px; background: var(--ink); margin-left: 2px; }
+#k2 .kws { left: 800px; top: 512px; width: 440px; font-size: 18px; line-height: 24px; }
+#k3 .kpatch { left: 300px; top: 100px; width: 900px; height: 600px; border-radius: 50%; background: radial-gradient(closest-side, #FFF799, rgba(255,247,153,0)); }
+#k3 .kp1 { left: 120px; top: 290px; --r: 3deg; } #k3 .kp2 { left: 70px; top: 130px; --r: -4deg; } #k3 .kp3 { left: 960px; top: 610px; --r: -3deg; }
+#k3 .kst { right: 3.4em; top: 1.6em; font-size: 50px; } #k3 .kcnt { left: 860px; top: 90px; }
+#k3 .kink { left: 740px; top: 320px; --r: -2deg; font-size: 70px; } #k3 .kys { left: 800px; top: 520px; --r: 3deg; }
+#k3 .kff { left: 60px; top: 615px; font-size: 76px; }
+</style>
+</head>
+<body>
+<div id="view"><div id="acts"></div><div id="chap"></div><div id="fx"></div><div id="grain"></div></div>
+<script src="timeline.js"></script>
+<script src="kit.tl.js"></script>
+<script src="core.js"></script>
+<script src="kit.js"></script>
+</body>
+</html>
